@@ -80,7 +80,7 @@ This repository has the following directory structure:
 
 | Column | Description|
 |--------|:-----------|
-```data```| Contains the data used in the assignments
+```data/```| Contains the data used in the assignments
 ```assignment_.*/``` | Contains the 4 assignments
 ```utils``` | Utility functions written by [Ross](https://pure.au.dk/portal/en/persons/ross-deans-kristensenmclachlan(29ad140e-0785-4e07-bdc1-8af12f15856c).html) which are utilised in some of the scripts
 
