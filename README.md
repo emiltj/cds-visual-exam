@@ -5,7 +5,7 @@
     <img src="images/au_logo.png" alt="Logo" width="100" height="40">
   </a>
 
-  <h3 align="center">project_title</h3>
+  <h3 align="center">CDS Visual Analytics exam portfolio</h3>
 
   <p align="center">
     project_description
