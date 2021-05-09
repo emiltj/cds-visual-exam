@@ -7,7 +7,7 @@
   <h3 align="center">CDS Visual Analytics exam portfolio</h3>
 
   <p align="center">
-    project_description
+    CDS Visual Analytics exam portfolio
     <br />
     <a href="https://github.com/emiltj/cds-visual-exam/cds-visual-exam.pdf"><strong>Read about the project »</strong></a>
     <br />
