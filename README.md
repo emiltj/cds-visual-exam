@@ -97,11 +97,19 @@ Furthermore it contains the files:
 
 ### Assignment 2 - Image search
 
+For more information, see ```assignment_2/README.md```
+
 ### Assignment 4 - Logistic Regression and Neural Network benchmark mnist classification
+
+For more information, see ```assignment_4/README.md```
 
 ### Assignment 5 - CNN classification of impressionist paintings
 
+For more information, see ```assignment_5/README.md```
+
 ### Assignment self-assigned
+
+For more information, see ```assignment_self_assigned/README.md```
 
 <!-- DATA -->
 ## Data
