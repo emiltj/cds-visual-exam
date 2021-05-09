@@ -102,6 +102,9 @@ Furthermore it contains the files:
 
 <!-- DATA -->
 ## Data
+flowers
+cf-test
+mnist
 
 <!-- LICENSE -->
 ## License
