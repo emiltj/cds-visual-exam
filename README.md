@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/emiltj/cds-visual-exam">
-    <img src="au.png" alt="Logo" width="100" height="40">
+    <img src="au.png" alt="Logo" width="160" height="80">
   </a>
 
   <h3 align="center">CDS Visual Analytics exam portfolio</h3>
