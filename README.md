@@ -1,9 +1,11 @@
+
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/emiltj/cds-visual-exam">
     <img src="README_images/logo_au.png" alt="Logo" width="225" height="80">
   </a>
+  
   <h3 align="center">CDS Visual Analytics exam portfolio</h3>
 
   <p align="center">
@@ -20,7 +22,7 @@
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <summary>Table of Contents</summary>
   <ol>
     <li><a href="#about-the-project">About the project</a></li>
     <li><a href="#getting-started">Getting started</a></li>
