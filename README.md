@@ -49,7 +49,7 @@
 This project contains the exam portofolio coding related to the Spring 2021 module _Visual Analytics_ as part of the bachelor's tilvalg in _[Cultural Data Science]_(https://bachelor.au.dk/en/supplementary-subject/culturaldatascience/) at Aarhus University. 
 This README contains all the necessary information needed to get an overview of the repository, as well the installation steps required for rerunning the assignments. 
 
-Which assignments have been chosen for this portfolio?
+Assignments chosen for this portfolio:
 * Assignment 2 - Image search 
 * Assignment 4 - Logistic Regression and Neural Network benchmark mnist classification
 * Assignment 5 - CNN classification of impressionist paintings
@@ -105,9 +105,15 @@ Furthermore it contains the files:
 
 <!-- LICENSE -->
 ## License
+Distributed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). See ```LICENSE``` for more information.
 
 <!-- CONTACT -->
 ## Contact
 
+Feel free to write me, Emil Jessen for any questions (also regarding the reviews). 
+You can do so on [Slack](https://app.slack.com/client/T01908QBS9X/D01A1LFRDE0) or on [Facebook](https://www.facebook.com/emil.t.jessen/).
+
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
+* [Python](https://www.rstudio.com/) - Software used for conducting the analysis
+* [Ross Dean McLachlan](https://github.com/CDS-AU-DK/) - Our competent instructor for the module on Visual Analytics
