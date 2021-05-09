@@ -96,6 +96,9 @@ Furthermore it contains the files:
 ## Assignments
 
 ### Assignment 2 - Image search
+#### Content of assignment
+This assignment contains the following:
+
 
 For more information, see ```assignment_2/README.md```
 
