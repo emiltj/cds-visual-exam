@@ -54,7 +54,7 @@ Which assignments have been chosen for this portfolio?
 * Assignment 2 - Image search 
 * Assignment 4 - Logistic Regression and Neural Network benchmark mnist classification
 * Assignment 5 - CNN classification of impressionist paintings
-* Assignment 6 - (Self-assigned) * *
+* Self-assigned - * *
 
 <!-- GETTING STARTED -->
 ## Getting started
