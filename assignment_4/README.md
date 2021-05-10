@@ -53,8 +53,11 @@ lr_mnist.py arguments for commandline to consider:
 - "-s", "--save", type = bool, default = True, required = False, help = "bool - specifying whether to save classification report."
 - "--individual", type = str, default = os.path.join("data", "test.png"), required = False, help = "str - specifying a .png file which is to be classified using this logistic regression model."
 - "--penalty", type = str, default = "none", required = False, help = "str - specifying penalty for the classifier - possible values: \"none\", \"l1\", \"l2\", \"elasticnet\""
-- "--c", type = float, default = 1.0, required = False, help = "int - specifying c-parameter for the classifier. recommended values: 0.01, 0.1, 1.0, 10, 100, where lower values mean stronger regularization"
-
+-       "--c", 
+        type = float,
+        default = 1.0, # Default when not specifying anything in the terminal
+        required = False, # Since we have a default value, it is not required to specify this argument
+        help = "int - specifying c-parameter for the classifier. recommended values: 0.01, 0.1, 1.0, 10, 100, where lower values mean stronger regularization")
 
 nn_mnist.py arguments for commandline to consider:
 
