@@ -40,7 +40,8 @@
 ## About the project
 
 <p align="center"><img src="README_images/analysis_example.png" alt="Logo" width="375" height="295"></p>
-<p align="center"> Example image from one of the assignments </p>
+<p align="center"><em>Example image from one of the assignments</em>
+</p>
 
 
 This project contains the exam portofolio coding related to the Spring 2021 module _Visual Analytics_ as part of the bachelor's tilvalg in [_Cultural Data Science_](https://bachelor.au.dk/en/supplementary-subject/culturaldatascience/) at Aarhus University. 
