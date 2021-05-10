@@ -9,6 +9,7 @@
 
   <p align="center">
     Image search
+    <br />
     <a href="https://github.com/emiltj/cds-visual-exam/issues">Report Bug</a>
     ·
     <a href="https://github.com/emiltj/cds-visual-exam/issues">Request Feature</a>
