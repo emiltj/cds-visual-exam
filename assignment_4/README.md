@@ -43,7 +43,8 @@ Subsequently, use the following code:
 ```bash
 cd cds-visual/assignment_2
 source ../cv101/bin/activate
-python image_search.py
+python lr_mnist.py
+python nn_mnist.py
 ```
 
 ### Optional arguments:

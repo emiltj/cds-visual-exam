@@ -36,6 +36,39 @@ Script that trains and validates a neural networks classifier on [impressionist 
 <!-- USAGE -->
 ## Usage
 
+Make sure to follow the instructions in the README.md located at the parent level of this repository, for the required installation of the virtual environment as well as the data download.
+Subsequently, use the following code:
+
+```bash
+cd cds-visual/assignment_2
+source ../cv101/bin/activate
+python cnn-artists.py
+```
+
+### Optional arguments:
+
+cnn-artists.py arguments for commandline to consider:
+-       "--cnn", 
+        type = str,
+        default = "ShallowNet",
+        required = False,
+        help = "str - specifying cnn architecture, use either \"ShallowNet\" or \"LeNet\"")
+-       "--resizedim",
+        type = list, 
+        default = [32, 32],
+        required = False,
+        help = "list - specifying dimensions that the pictures should be resized to, e.g. [32, 32]")
+-       "--batch_size",
+        type = int, 
+        default = 200,
+        required = False,
+        help = "int - specifying batch size")
+-       "--epochs",
+        type = int, 
+        default = 50,
+        required = False,
+        help = "int - specifying number of epochs")
+
 <!-- METHODS -->
 ## Methods
 
