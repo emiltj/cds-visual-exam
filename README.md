@@ -50,7 +50,7 @@ This README contains all the necessary information needed to get an overview of 
 <!-- GETTING STARTED -->
 ## Getting started
 
-For running my scripts I'd recommend following the below steps in your bash-terminal as a setup of the virtual environment needed for all of the individual assignments.
+For running my scripts I'd recommend following the below steps in your bash-terminal. This functions as a setup of the virtual environment, as well as an execution of a bash script that downloads all the data to the data folders respective to the assignments. 
 
 __MAC/LINUX/WORKER02__
 ```bash
@@ -58,7 +58,6 @@ git clone https://github.com/emiltj/cds-visual.git
 cd cds-visual
 bash data_download.sh
 bash ./create_vis_venv.sh
-source cv101/bin/activate
 ```
 __WINDOWS:__
 ```bash
@@ -66,24 +65,22 @@ git clone https://github.com/emiltj/cds-visual.git
 cd cds-visual
 bash data_download.sh
 bash ./create_vis_venv_win.sh
-source cv101/bin/activate # activating the environment 
 ```
 
 <!-- REPOSITORY STRUCTURE -->
 ## Repository structure
 
-This repository has the following directory structure:
+This repository has the following structure:
 
 | Column | Description|
 |--------|:-----------|
-```data/```| Contains the data used in the assignments
-```assignment_.*/``` | Contains the 4 assignments
-```utils``` | Utility functions written by [Ross](https://pure.au.dk/portal/en/persons/ross-deans-kristensenmclachlan(29ad140e-0785-4e07-bdc1-8af12f15856c).html) which are utilised in some of the scripts
-
-Furthermore it contains the files:
-- ```./create_vis_venv.*.sh``` -> Bash scripts that automatically generates a new virtual environment, and install all the packages contained within ```requirements.txt```
-- ```requirements.txt``` -> A list of packages along with the versions that work for the scripts
-- ```README.md``` -> This very README file
+```assignment_.*/``` | Folders containing the four assignments (both scripts and data)
+```utils``` | Utility functions written by [Ross](https://pure.au.dk/portal/en/persons/ross-deans-kristensenmclachlan(29ad140e-0785-4e07-bdc1-8af12f15856c).html). These are sourced in some of the assignments
+```data_download.sh``` | Bash script that installs all the necessary data
+```create_vis_venv.*.sh``` | Bash scripts that automatically generates a new virtual environment, and install all the packages contained within ```requirements.txt```
+```kill_vision_venv.sh``` | Bash scripts that uninstalls and deletes the virtual environment
+```requirements.txt``` | A list of packages of certain versions
+```README.md``` | This very README file
 
 <!-- ASSIGNMENTS -->
 ## Assignments
@@ -95,13 +92,14 @@ Furthermore it contains the files:
 * Self-assigned - * *
 
 Information on script execution, preprocessing steps, results and discussion can be seen in the READMEs located within each of the assignment directories.
-E.g. ```assignment_5/README.md```, for information on the CNN classification of impressionist paintings project.
+For seeing information on e.g. the CNN classification of impressionist paintings project, view ```assignment_5/README.md```.
 
 <!-- DATA -->
 ## Data
-flowers
-cf-test
-mnist
+Using the provided bash script (```data_download.sh```), the data will be downloaded from a Google Drive folder and automatically placed within the respective assignment folders. The datasets are provided by courtesy of:
+- [Yann Lecun](http://yann.lecun.com/exdb/mnist/) - MNIST dataset
+- [Maria-Elena Nilsback and Andrew Zisserman](https://www.robots.ox.ac.uk/~vgg/data/flowers/17/) - Flowers dataset
+- [Panchajanya Banerjee](https://www.kaggle.com/delayedkarma/impressionist-classifier-data) - Impressionist paintings dataset
 
 <!-- LICENSE -->
 ## License
