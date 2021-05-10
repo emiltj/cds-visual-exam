@@ -53,13 +53,17 @@ __MAC/LINUX/WORKER02__
 ```bash
 git clone https://github.com/emiltj/cds-visual.git
 cd cds-visual
+bash data_download.sh
 bash ./create_vis_venv.sh
+source cv101/bin/activate
 ```
 __WINDOWS:__
 ```bash
 git clone https://github.com/emiltj/cds-visual.git
 cd cds-visual
+bash data_download.sh
 bash ./create_vis_venv_win.sh
+source cv101/bin/activate # activating the environment 
 ```
 
 <!-- REPOSITORY STRUCTURE -->
