@@ -49,6 +49,12 @@ python image_search.py
 ### Optional arguments:
 
 lr_mnist.py arguments for commandline to consider:
+- "--outname", type = str, default = "classif_report_logistic_regression.csv", required = False, help = "str - containing name of classification report."
+- "-s", "--save", type = bool, default = True, required = False, help = "bool - specifying whether to save classification report."
+- "--individual", type = str, default = os.path.join("data", "test.png"), required = False, help = "str - specifying a .png file which is to be classified using this logistic regression model."
+- "--penalty", type = str, default = "none", required = False, help = "str - specifying penalty for the classifier - possible values: \"none\", \"l1\", \"l2\", \"elasticnet\""
+- "--c", type = float, default = 1.0, required = False, help = "int - specifying c-parameter for the classifier. recommended values: 0.01, 0.1, 1.0, 10, 100, where lower values mean stronger regularization"
+
 
 nn_mnist.py arguments for commandline to consider:
 
