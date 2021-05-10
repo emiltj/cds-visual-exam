@@ -6,10 +6,10 @@
     <img src="README_images/logo_au.png" alt="Logo" width="225" height="80">
   </a>
   
-  <h3 align="center">CDS Visual Analytics exam portfolio</h3>
+  <h3 align="center">CDS Visual Analytics</h3>
 
   <p align="center">
-    Emil Trenckner Jessen
+    Exam portfolio
     <br />
     <a href="https://github.com/emiltj/cds-visual-exam/cds-visual-exam.pdf"><strong>Read about the project »</strong></a>
     <br />
