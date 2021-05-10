@@ -27,15 +27,7 @@
     <li><a href="#about-the-project">About the project</a></li>
     <li><a href="#getting-started">Getting started</a></li>
     <li><a href="#repository-structure">Repository structure</a></li>
-    <li>
-      <a href="#assignments">Assignments</a>
-      <ul>
-        <li><a href="#assignment-2">Assignment 2</a></li>
-        <li><a href="#assignment-4">Assignment 4</a></li>
-        <li><a href="#assignment-5">Assignment 5</a></li>
-        <li><a href="#assignment-self-assigned">Assignment self-assigned</a></li>
-      </ul>
-    </li>
+    <li><a href="#assignments">Assignments</a></li>
     <li><a href="#data">Data</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -51,12 +43,6 @@
 
 This project contains the exam portofolio coding related to the Spring 2021 module _Visual Analytics_ as part of the bachelor's tilvalg in [_Cultural Data Science_](https://bachelor.au.dk/en/supplementary-subject/culturaldatascience/) at Aarhus University. 
 This README contains all the necessary information needed to get an overview of the repository, as well the installation steps required for rerunning the assignments. 
-
-Assignments chosen for this portfolio:
-* Assignment 2 - Image search 
-* Assignment 4 - Logistic Regression and Neural Network benchmark mnist classification
-* Assignment 5 - CNN classification of impressionist paintings
-* Self-assigned - * *
 
 <!-- GETTING STARTED -->
 ## Getting started
@@ -95,24 +81,14 @@ Furthermore it contains the files:
 <!-- ASSIGNMENTS -->
 ## Assignments
 
-### Assignment 2 - Image search
-#### Content of assignment
-This assignment contains the following:
+4 assignments have been chosen for this portfolio:
+* Assignment 2 - Image search 
+* Assignment 4 - Logistic Regression and Neural Network benchmark mnist classification
+* Assignment 5 - CNN classification of impressionist paintings
+* Self-assigned - * *
 
-
-For more information, see ```assignment_2/README.md```
-
-### Assignment 4 - Logistic Regression and Neural Network benchmark mnist classification
-
-For more information, see ```assignment_4/README.md```
-
-### Assignment 5 - CNN classification of impressionist paintings
-
-For more information, see ```assignment_5/README.md```
-
-### Assignment self-assigned
-
-For more information, see ```assignment_self_assigned/README.md```
+Information on script execution, preprocessing steps, results and discussion can be seen in the READMEs located within each of the assignment directories.
+E.g. ```assignment_5/README.md```, for information on the CNN classification of impressionist paintings project.
 
 <!-- DATA -->
 ## Data
