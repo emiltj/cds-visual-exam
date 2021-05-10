@@ -25,7 +25,7 @@ from tensorflow.keras.layers import (Conv2D,
 # Define function for retrieving alphabetically sorted artist list:
 def get_artists(artists_path):
     artists = os.listdir(artists_path) # Get list of directories (each names corresponds to artists' names
-    artists = artists[0:4] + artists[5:] # Residue from a deleted file is removed
+    artists = artists[0:4] + artists[5:] # Removing artifact
     artists = sorted(artists) # Sort alphabetically
     return artists
 

@@ -1,3 +1,54 @@
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/emiltj/cds-visual-exam">
+    <img src="../README_images/logo_au.png" alt="Logo" width="225" height="80">
+  </a>
+  
+  <h3 align="center">Assignment 2</h3>
+
+  <p align="center">
+    Image search
+    <a href="https://github.com/emiltj/cds-visual-exam/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/emiltj/cds-visual-exam/issues">Request Feature</a>
+  </p>
+</p>
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#assignment-description">Assignment description</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#methods">Methods</a></li>
+    <li><a href="#results-and-discussion">Results and discussion</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+<!-- ASSIGNMENT DESCRIPTION -->
+## Assignment description
+
+<!-- USAGE -->
+## Usage
+
+<!-- METHODS -->
+## Methods
+
+<!-- RESULTS AND DISCUSSION -->
+## Results and discussion
+
+
+
+
+
+
+
+
+
+
+
 # Assignment 2 - Visual Analytics
 
 ## Content of assignment
@@ -9,8 +60,8 @@ This folder contains the following:
 ```image_search.py```| Calculates distance from a target image, to a set of images within a folder
 
 image_search.py arguments:
-- --targetpath (str - path to target image.  Default = os.path.join("..", "data", "flowers", "image_0730.jpg"))
-- --filepath (str - path to images from which to calculate distance to target image .csv file. Default = os.path.join("..", "data", "flowers", "*02.jpg"))
+- --targetpath (str - path to target image.  Default = os.path.join("data", "image_0730.jpg"))
+- --filepath (str - path to images from which to calculate distance to target image .csv file. Default = os.path.join("data", "*02.jpg"))
 
 ## Running my scripts - MAC/LINUX/WORKER02
 Setup
