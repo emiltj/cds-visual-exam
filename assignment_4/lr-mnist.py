@@ -121,7 +121,7 @@ if __name__=="__main__":
         "-i",
         "--individual", 
         type = str,
-        default = os.path.join("..", "data", "cf_test", "test.png"), # Default when not specifying anything in the terminal
+        default = os.path.join("data", "test.png"), # Default when not specifying anything in the terminal
         required = False, # Since we have a default value, it is not required to specify this argument
         help = "str - specifying a .png file which is to be classified using this logistic regression model.")
     

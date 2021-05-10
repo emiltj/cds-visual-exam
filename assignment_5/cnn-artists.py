@@ -41,11 +41,11 @@ def get_train_test(artists):
     for artist in artists:
         print(f"[INFO] Importing paintings from: {artist}") # Information for user in terminal
         # Training
-        for train_painting in glob.glob(os.path.join("..", "data", "paintings", "training", f"{artist}", "*.jpg")):
+        for train_painting in glob.glob(os.path.join("data", "training", f"{artist}", "*.jpg")):
             train_paintings_artists.append(artist)
             train_paintings.append(cv2.imread(train_painting))
         # Testing
-        for test_painting in glob.glob(os.path.join("..", "data", "paintings", "validation", f"{artist}", "*.jpg")):
+        for test_painting in glob.glob(os.path.join("data", "validation", f"{artist}", "*.jpg")):
             test_paintings_artists.append(artist)
             test_paintings.append(cv2.imread(test_painting))
     
@@ -91,7 +91,7 @@ def plot_history(H, epochs):
 # Defining main function, which uses the previously defined functions as well as trains/tests the model
 def main(cnn, resizedim,  batch_size, epochs):
     # Make a alphabetically sorted list of all the artists
-    artists_path = os.path.join("..", "data", "paintings", "training")
+    artists_path = os.path.join("data", "training")
     artists = get_artists(artists_path)
 
     # Get the data we need
@@ -188,6 +188,10 @@ def main(cnn, resizedim,  batch_size, epochs):
                                 predictions.argmax(axis=1),
                                 target_names=labelNames, output_dict = True))
 
+    # If the folder does not already exist, create it
+    if not os.path.exists("out"):
+        os.makedirs("out")
+        
     # Printing and saving classification_report
     print(classif_report)
     classif_report.to_csv(os.path.join("out", 'classification_report.csv'), sep=',', index = True)

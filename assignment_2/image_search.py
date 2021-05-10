@@ -11,7 +11,7 @@ def main(targetpath, filepath):
     target_name = os.path.split(targetpath)[-1]
     
     # Info for user in terminal
-    if targetpath == os.path.join("..", "data", "flowers", "image_0002.jpg"):
+    if targetpath == os.path.join("data", "image_0002.jpg"):
         print(f"[INFO] Targetpath not specified - using default: \"{target_name}\"")
     
     # Empty lists for appending to
@@ -47,8 +47,12 @@ def main(targetpath, filepath):
     # Find the row with the shortest chisquare distance to target image
     closest_image = df.loc[df['distance'].idxmax()]
     
+    # If the folder does not already exist, create it
+    if not os.path.exists("out"):
+        os.makedirs("out")
+    
     # Create outpath for df and save
-    outpath = f"distances_to_{target_name[:-4]}.csv"
+    outpath = os.path.join("out", f"distances_to_{target_name[:-4]}.csv")
     df.to_csv(outpath, index = False)
     
     # Info for user in terminal - also information on which image is the closest
@@ -64,7 +68,7 @@ if __name__=="__main__":
         "-f",
         "--filepath", 
         type = str,
-        default = os.path.join("..", "data", "flowers", "*.jpg"), # Default path to corpus, when none is specified
+        default = os.path.join("data", "*.jpg"), # Default path to corpus, when none is specified
         required = False,
         help= "str - path to image corpus")
     
@@ -73,7 +77,7 @@ if __name__=="__main__":
         "-t",
         "--targetpath",
         type = str, 
-        default = os.path.join("..", "data", "flowers", "image_0002.jpg"), # Default path to a target image, when none is specified
+        default = os.path.join("data", "image_0002.jpg"), # Default path to a target image, when none is specified
         required = False,
         help = "str - path to target file from which to calculate distance to the other images")
     
