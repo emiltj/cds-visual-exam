@@ -101,7 +101,7 @@ if __name__=="__main__":
     # Add outname argument
     parser.add_argument(
         "-o",
-        "--outname", 
+        "--outname",
         type = str,
         default = "classif_report_logistic_regression.csv", # Default when not specifying name of outputfile
         required = False, # Since we have a default value, it is not required to specify this argument
