@@ -17,4 +17,5 @@ Self-assigned:
 
 In general:
 1. How much information in the argparsing? For "help".
-2.Additional """HELP FOR ALL FUNCTIONS?"""
+2. Additional """HELP FOR ALL FUNCTIONS?"""
+3. Download data using the a .sh file
