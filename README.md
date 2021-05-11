@@ -29,7 +29,6 @@
     <li><a href="#repository-structure">Repository structure</a></li>
     <li><a href="#assignments">Assignments</a></li>
     <li><a href="#data">Data</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
@@ -102,10 +101,6 @@ Using the provided bash script (```data_download.sh```), the data will be downlo
 - [Yann Lecun](http://yann.lecun.com/exdb/mnist/) - MNIST dataset
 - [Maria-Elena Nilsback and Andrew Zisserman](https://www.robots.ox.ac.uk/~vgg/data/flowers/17/) - Flowers dataset
 - [Panchajanya Banerjee](https://www.kaggle.com/delayedkarma/impressionist-classifier-data) - Impressionist paintings dataset
-
-<!-- LICENSE -->
-## License
-Distributed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). See ```LICENSE``` for more information.
 
 <!-- CONTACT -->
 ## Contact
