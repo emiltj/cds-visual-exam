@@ -1,3 +1,9 @@
+# Omitting virtual environment
+cv101/
+
+# Omitting all data
+**/data/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -6,22 +12,6 @@ __pycache__/
 # C extensions
 *.so
 
-<<<<<<< HEAD
-# Omitting virtual environment
-cv101/
-syllabus.md
-assignment_5/data/*
-
-# Omitting some of data
-data/flowers/
-data/paintings/validation/*
-!data/paintings/validation/*7.jpg
-
-data/paintings/training/*
-!data/paintings/training/*7.jpg
-
-=======
->>>>>>> 0777424e9c4bb8a24fabf99d346a208077f3f68a
 # Distribution / packaging
 .Python
 build/
