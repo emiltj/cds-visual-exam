@@ -52,19 +52,29 @@ This README contains all the necessary information needed to get an overview of 
 
 For running my scripts I'd recommend following the below steps in your bash-terminal. This functions as a setup of the virtual environment, as well as an execution of a bash script that downloads all the data to the data folders respective to the assignments. 
 
+### Cloning repository and creating virtual environment
+
+The below code will clone the repository, as well as create a virtual environment
+
 __MAC/LINUX/WORKER02__
 ```bash
 git clone https://github.com/emiltj/cds-visual.git
 cd cds-visual
-bash data_download.sh
 bash ./create_vis_venv.sh
 ```
 __WINDOWS:__
 ```bash
 git clone https://github.com/emiltj/cds-visual.git
 cd cds-visual
-bash data_download.sh
 bash ./create_vis_venv_win.sh
+```
+
+### Retrieving the data
+
+The data is not contained within this repository, considering the sheer size of the data. Using the provided bash script (```data_download.sh```) that I have created, the data will be downloaded from a Google Drive folder and automatically placed within the respective assignment folders. 
+
+```bash
+bash data_download.sh
 ```
 
 <!-- REPOSITORY STRUCTURE -->
@@ -98,7 +108,7 @@ For seeing information on e.g. the CNN classification of impressionist paintings
 
 <!-- DATA -->
 ## Data
-Using the provided bash script (```data_download.sh```), the data will be downloaded from a Google Drive folder and automatically placed within the respective assignment folders. The datasets are provided by courtesy of:
+The datasets are provided by courtesy of:
 - [Yann Lecun](http://yann.lecun.com/exdb/mnist/) - MNIST dataset
 - [Maria-Elena Nilsback and Andrew Zisserman](https://www.robots.ox.ac.uk/~vgg/data/flowers/17/) - Flowers dataset
 - [Panchajanya Banerjee](https://www.kaggle.com/delayedkarma/impressionist-classifier-data) - Impressionist paintings dataset
