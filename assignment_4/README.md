@@ -52,54 +52,64 @@ python nn_mnist.py
 ### Optional arguments:
 
 lr_mnist.py arguments for commandline to consider:
--       "--outname",
+-       "-o"
+        "--outname",
         type = str,
         default = "classif_report_logistic_regression.csv", # Default when not specifying name of outputfile
         required = False, # Since we have a default value, it is not required to specify this argument
         help = "str - containing name of classification report.")
--       "--save", 
+-       "-s"
+        "--save", 
         type = bool,
         default = True, # Default when not specifying anything else
         required = False, # Since we have a default value, it is not required to specify this argument
         help = "bool - specifying whether to save classification report.")
--       "--individual", 
+-       "-i"
+        "--individual", 
         type = str,
         default = os.path.join("data", "test.png"), # Default when not specifying anything in the terminal
         required = False, # Since we have a default value, it is not required to specify this argument
         help = "str - specifying a .png file which is to be classified using this logistic regression model.")
--       "--penalty", 
+-       "-p"
+        "--penalty", 
         type = str,
         default = "none", # Default when not specifying anything in the terminal
         required = False, # Since we have a default value, it is not required to specify this argument
         help = "str - specifying penalty for the classifier - possible values: \"none\", \"l1\", \"l2\", \"elasticnet\"")
--       "--c", 
+-       "-c"
+        "--c", 
         type = float,
         default = 1.0, # Default when not specifying anything in the terminal
         required = False, # Since we have a default value, it is not required to specify this argument
         help = "int - specifying c-parameter for the classifier. recommended values: 0.01, 0.1, 1.0, 10, 100, where lower values mean stronger regularization")
 
 nn_mnist.py arguments for commandline to consider:
--       "--outname", 
+-       "-o"
+        "--outname", 
         type = str,
         default = "classif_report_neural_networks.csv", # Default when not specifying name of outputfile
         required = False, # Since we have a default value, it is not required to specify this argument
         help = "str - containing name of classification report")
--         "--save", 
+-       "-s"
+        "--save", 
         type = bool,
         default = True, # Default when not specifying 
         required = False, # Since we have a default value, it is not required to specify this argument
         help = "bool - specifying whether to save classification report")
--       "--individual", 
+-       "-i"
+        "--individual", 
         type = str,
         default = os.path.join("data", "test.png"), # Default when not specifying anything in the terminal
         required = False, # Since we have a default value, it is not required to specify this argument
         help = "str - specifying a .png file which is to be classified using this neural networks model.")
--       "--hiddenlayers", 
+-       "-H"
+        "--hiddenlayers", 
         type = list,
         default = [8, 16], # Default when not specifying anything in the terminal
         required = False, # Since we have a default value, it is not required to specify this argument
         help = "list - specifying the hidden layers, each element in the list corresponds to number of nodes in layer. index in list corresponds to hiddenlayer number. E.g. [8, 16]")
--       "--epochs", 
+-       "-e"
+        "--epochs", 
         type = int,
         default = 50, # Default when not specifying anything in the terminal
         required = False, # Since we have a default value, it is not required to specify this argument

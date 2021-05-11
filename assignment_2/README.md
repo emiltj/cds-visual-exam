@@ -50,12 +50,14 @@ python image_search.py
 ### Optional arguments:
 
 image_search.py arguments for commandline to consider:
--       "--filepath", 
+-       "-f"
+        "--filepath", 
         type = str,
         default = os.path.join("data", "*.jpg"), # Default path to corpus, when none is specified
         required = False,
         help= "str - path to image corpus")
--       "--targetpath",
+-       "-t"
+        "--targetpath",
         type = str, 
         default = os.path.join("data", "image_0002.jpg"), # Default path to a target image, when none is specified
         required = False,
