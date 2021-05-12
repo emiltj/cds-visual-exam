@@ -3,7 +3,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/emiltj/cds-visual-exam">
-    <img src="README_images/vis_logo.png" alt="Logo" width="100" height="100">
+    <img src="README_images/vis_logo.png" alt="Logo" width="200" height="200">
   </a>
   
   <h3 align="center">CDS Visual Analytics</h3>
