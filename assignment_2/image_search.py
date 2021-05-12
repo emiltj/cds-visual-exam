@@ -61,7 +61,7 @@ def main(targetpath, filepath):
 # Defining behaviour when called from command line
 if __name__=="__main__":
     # Initialize ArgumentParser class
-    parser = argparse.ArgumentParser(description = "Calculates rgb-distance from image corpus to a specified target image using the chi-square method")
+    parser = argparse.ArgumentParser(description = "[SCRIPT DESCRIPTION] Calculates rgb-distance from image corpus to a specified target image using the chi-square method")
     
     # Add inpath argument
     parser.add_argument(

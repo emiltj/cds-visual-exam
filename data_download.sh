@@ -12,10 +12,10 @@ cd assignment_2
 mkdir data
 cd data
 printf "[INFO] Downloading data for assignment 2 ..."
-gdown https://drive.google.com/uc?id=1A7Rlh76wJcQS5UbFgSbJLHy6ta-AiaHw
-tar -xvzf flowers.tgz
-mv jpg/* .
-rm -r jpg files.txt flowers.tgz
+gdown https://drive.google.com/uc?id=1A7Rlh76wJcQS5UbFgSbJLHy6ta-AiaHw # Download data
+tar -xvzf flowers.tgz # Unzip
+mv jpg/* . # Move all files down one folder
+rm -r jpg files.txt flowers.tgz # Delete old folder and .tgz file
 printf "[INFO] The required data for assignment 2 has been downloaded successfully"
 
 # Download data for assignment 4
@@ -23,27 +23,35 @@ cd ../../assignment_4
 mkdir data
 cd data
 printf "\n\n[INFO] Downloading data for assignment 4 ...\n\n"
-gdown https://drive.google.com/uc?id=1LUNFekSNcIVNRjVkRSCFInb_FCMrqAr7
-echo "[INFO] The required data for assignment 4 has been downloaded successfully"
+gdown https://drive.google.com/uc?id=1LUNFekSNcIVNRjVkRSCFInb_FCMrqAr7 # Download data
+printf "[INFO] The required data for assignment 4 has been downloaded successfully"
 
 # Download data for assignment 5
 cd ../../assignment_5
 mkdir data
 cd data
 printf "\n\n[INFO] Downloading data for assignment 5 ...\n\n"
-gdown https://drive.google.com/uc?id=1jqdfwGpUH4LOTAqkoTlqPJwCjg5wUwok
-unzip paintings.zip
-mv training/training/* training
-mv validation/validation/* validation
-rm -r paintings.zip training/training/ validation/validation/
+gdown https://drive.google.com/uc?id=1jqdfwGpUH4LOTAqkoTlqPJwCjg5wUwok # Download
+unzip paintings.zip # Unzip
+mv training/training/* training # Move images a level down
+mv validation/validation/* validation # Move images a level down
+rm -r paintings.zip training/training/ validation/validation/ # Remove old files, and unnecessary folders
 printf "[INFO] The required data for assignment 5 has been downloaded successfully"
 
-# Download data for self-assigned
-#cd ../../self-assigned
-#mkdir data
-#cd data
-#printf "\n\n[INFO] Downloading data for self-assigned assignment ...\n\n"
-#for f in ___ ____ ____ ___ ; do gdown $f; done
-#printf "[INFO] The required data for the self-assigned assignment has been downloaded successfully"
 
+# Data for assignment_self 
 cd ../..
+mkdir -p assignment_self/data/content_vangogh_style_vangogh #Make new folders
+mkdir assignment_self/data/content_monet_style_monet
+echo "1"
+cp assignment_5/data/training/VanGogh/* assignment_self/data/content_vangogh_style_vangogh/ # Copy training data of vangogh to new folder
+echo "1"
+cp assignment_5/data/validation/VanGogh/* assignment_self/data/content_vangogh_style_vangogh/ # Copy validation data of vangogh to new folder
+echo "1"
+cp assignment_5/data/training/Monet/* assignment_self/data/content_monet_style_monet/ # Copy training data of monet to new folder
+echo "1"
+cp assignment_5/data/validation/Monet/* assignment_self/data/content_monet_style_monet/ # Copy validation data of monet to new folder
+printf "[INFO] The required data for assignment_self has been downloaded successfully"
+
+# Ending script
+printf "[INFO] All required data has been downloaded"

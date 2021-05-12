@@ -210,7 +210,9 @@ def main(cnn, resizedim,  batch_size, epochs):
 # Define behaviour when called from command line
 if __name__=="__main__":
     # Initialise ArgumentParser class
-    parser = argparse.ArgumentParser(description = "")
+    parser = argparse.ArgumentParser(description = "[SCRIPT DESCRIPTION] Script that trains a convolutional neural network on impressionist paintings and tests on unseen data. ")
+    
+   
     
     # Add inpath argument
     parser.add_argument(

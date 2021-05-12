@@ -96,7 +96,7 @@ def main(outname, save, individual, penalty, c):
 if __name__=="__main__":
     # Initialize ArgumentParser class
     parser = argparse.ArgumentParser(
-        description = "Script that trains a linear regression classifier on a subset of the mnist dataset. Tests on another part of the mnist dataset and outputs classification report. Can also be used to predict individual images, using the argument --individual.") 
+        description = "[SCRIPT DESCRIPTION] Script that trains a linear regression classifier on a subset of the mnist dataset. Tests on another part of the mnist dataset and outputs classification report. Can also be used to predict individual images, using the argument --individual.") 
 
     # Add outname argument
     parser.add_argument(

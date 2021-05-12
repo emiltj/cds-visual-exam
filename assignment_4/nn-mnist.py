@@ -56,10 +56,10 @@ def main(outname, save, individual, hiddenlayers, epochs):
     
     # Fit the model to the training data
     print("[INFO] Training the neural networks classifier ...") # Information for terminal use
-    nn.fit(X_train, y_train, epochs = epochs)
+    nn.fit(X_train_scaled, y_train, epochs = epochs)
     
     # Using the fitted model to predict the test data
-    predictions = nn.predict(X_test)
+    predictions = nn.predict(X_test_scaled)
 
     # The "predictions" object contains certainties that the given image contains a 0, 1, 2, etc. Instead we want a single prediction
     predictions = predictions.argmax(axis=1)
@@ -115,12 +115,12 @@ def main(outname, save, individual, hiddenlayers, epochs):
 if __name__=="__main__":
     # Initialize ArgumentParser class
     parser = argparse.ArgumentParser(
-        description = "Script that trains a neural networks classifier on a subset of the mnist dataset. Tests on another part of the mnist dataset and outputs classification report. Number and depth of hidden layers can be specified using the -hiddenlayers argument. The trained model can also be used to predict individual images, using the argument --individual.") 
+        description = "[SCRIPT DESCRIPTION] Script that trains a neural networks classifier on a subset of the mnist dataset. Tests on another part of the mnist dataset and outputs classification report. Number and depth of hidden layers can be specified using the -hiddenlayers argument. The trained model can also be used to predict individual images, using the argument --individual.") 
 
     # Add argument specifying name of classification report
     parser.add_argument(
         "-o",
-        "--outname", 
+        "--outname",
         type = str,
         default = "classif_report_neural_networks.csv", # Default when not specifying name of outputfile
         required = False, # Since we have a default value, it is not required to specify this argument
