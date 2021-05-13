@@ -31,6 +31,9 @@
 <!-- ASSIGNMENT DESCRIPTION -->
 ## Assignment description
 
+
+
+
 This assignment includes two scripts; one which utilizes linear regression and what which utilitizes neural networks.
 The first script ```lr-mnist.py``` Trains a linear regression classifier on a subset of the MNIST dataset, with the possibility of setting parameters through terminal use. Subsequently it tests on another part of the MNIST dataset and outputs a classification report. Furthermore, the script has the feature of individual image prediction - making predictions of new images (even with different dimensions) possible. The second script ```nn-mnist.py``` has the same function, except it utilizes a neural network algorithm instead of linear regression.
 

@@ -16,9 +16,8 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import classification_report
 from sklearn.metrics import accuracy_score
 
-# Defining main function
-def main(outname, save, individual, penalty, c):
-
+# Define function for loading and splitting the MNIST dataset
+def load_split_MNIST():
     # Importing data; y = what the image depicts, X = values for all pixels (from top right, moving left)
     print("[INFO] Loading the MNIST dataset ...")
     X, y = fetch_openml('mnist_784', version = 1, return_X_y = True)
@@ -26,7 +25,7 @@ def main(outname, save, individual, penalty, c):
     # Converting to numpy arrays
     X = np.array(X)
     y = np.array(y)
-
+    
     # Make a test-train split of some of the data
     X_train, X_test, y_train, y_test = train_test_split(X, 
                                                         y, 
@@ -34,20 +33,33 @@ def main(outname, save, individual, penalty, c):
                                                         train_size = 20000, # absolute size of test and train set to avoid too much data
                                                         test_size = 2000)
 
+    # Return X and y
+    return X_train, X_test, y_train, y_test
+
+# Define function for min max scaling
+def min_max_scaling(X_train, X_test):
     # Min-max scaling:
     scaler = MinMaxScaler()
     scaler = scaler.fit(X_train) # Important to scale not only train data but also test data information from train
     X_train_scaled = pd.DataFrame(scaler.transform(X_train))
-    X_test_scaled = pd.DataFrame(scaler.transform(X_test)) 
+    X_test_scaled = pd.DataFrame(scaler.transform(X_test))
+    
+    return X_train_scaled, X_test_scaled
 
+# Define function for training logistic regression on MNIST
+def train_log_reg(X_train_scaled, y_train, penalty, c):
     # Fitting a model to the training data
-    print("[INFO] Training a logistic regression classifier ...")
+    print(f"[INFO] Training a logistic regression classifier using penalty: \"{penalty}\" and c-value of: {c} ...")
     clf = LogisticRegression(penalty = penalty, # Type of penalty, if any
                             tol = 0.1, # Tolerance for stopping
                             solver = 'saga', # Solver method
                             C = c, # C-parameter value (smaller value stronger regularization)
                             multi_class = 'multinomial').fit(X_train_scaled, y_train) # Multiclass classification
+    # Return the model
+    return clf
 
+# Define function for getting performance metrics
+def get_performance(save, outname, clf, X_test_scaled, y_test):
     # Predicting the test data, using the model fitted on the training data
     print("[INFO] Evaluating the logistic classifier ...") 
     y_pred = clf.predict(X_test_scaled)
@@ -57,7 +69,7 @@ def main(outname, save, individual, penalty, c):
 
     # Print to terminal
     print(classif_report)
-
+    
     # Save as csv in "out"-folder, if save == True
     if save == True:
         # If the folder does not already exist, create it
@@ -73,24 +85,43 @@ def main(outname, save, individual, penalty, c):
         outpath_lr_model = os.path.join("out", "lr_model.pkl")
         joblib.dump(clf, outpath_lr_model)
         print(f"[INFO] The trained logistic regression classifier model has been saved: \"{outpath_lr_model}\".")
-        
+
+# Define function for prediction individual image from trained model
+def pred_individual(individual, clf, y_train):
+    # Get the possible labels, as well as the number of possible labels
+    classes = sorted(set(y_train))
+    nclasses = len(classes)
+
+    # Read individual image and convert to grayscale
+    image = cv2.imread(individual) 
+    gray = cv2.bitwise_not(cv2.cvtColor(image, cv2.COLOR_BGR2GRAY))
+
+    # Compress image to fit the input size of the model 
+    compressed = cv2.resize(gray, (28, 28), interpolation=cv2.INTER_AREA)
+
+    # Predict the individual image, using the previously trained model
+    individual_pred = clf_util.predict_unseen_assignment4(compressed, clf, classes)
+    print(f"[IMAGE PREDICTION] Image prediction for \"{individual}\": {individual_pred}")
+
+
+# Defining main function
+def main(outname, save, individual, penalty, c):
+    # Load MNIST dataset and split it
+    X_train, X_test, y_train, y_test = load_split_MNIST()
+    
+    # Min-max scale the X-values
+    X_train_scaled, X_test_scaled = min_max_scaling(X_train, X_test)
+    
+    # Train a logistic regression classifier, with parameters "penalty" and "c"
+    clf = train_log_reg(X_train_scaled, y_train, penalty, c)
+    
+    # Get performance - and if save == True, then save performance
+    get_performance(save, outname, clf, X_test_scaled, y_test)
+    
     # If the argument for individual prediction is not "None", then predict the individual image
-    if individual != None: 
-                
-        # Get the possible labels, as well as the number of possible labels
-        classes = sorted(set(y))
-        nclasses = len(classes)
+    if individual != None:
+        pred_individual(individual, clf, y_train)
         
-        # Read individual image and convert to grayscale
-        image = cv2.imread(individual) 
-        gray = cv2.bitwise_not(cv2.cvtColor(image, cv2.COLOR_BGR2GRAY))
-        
-        # Compress image to fit the input size of the model 
-        compressed = cv2.resize(gray, (28, 28), interpolation=cv2.INTER_AREA)
-        
-        # Predict the individual image, using the previously trained model
-        individual_pred = clf_util.predict_unseen_assignment4(compressed, clf, classes)
-        print(f"[IMAGE PREDICTION] Image prediction for \"{individual}\": {individual_pred}")
 
 # Define behaviour when called from command line
 if __name__=="__main__":

@@ -97,7 +97,7 @@ def main(cnn, resizedim,  batch_size, epochs):
     # Get the data we need
     train_paintings, train_paintings_artists, test_paintings, test_paintings_artists = get_train_test(artists)
 
-    # Resize and array-tize images
+    # Resize and make into arrays
     train_paintings_resized = get_resized_arrays(train_paintings, resizedim[0], resizedim[1])
     test_paintings_resized = get_resized_arrays(test_paintings, resizedim[0], resizedim[1])
 

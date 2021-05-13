@@ -36,7 +36,6 @@ unzip paintings.zip # Unzip
 mv training/training/* training # Move images a level down
 mv validation/validation/* validation # Move images a level down
 rm -r paintings.zip training/training/ validation/validation/ # Remove old files, and unnecessary folders
-rm training/Monet/9223372032559844173.jpg # Removing corrupt image file
 printf "[INFO] The required data for assignment 5 has been downloaded successfully"
 
 # Data for assignment_self 
@@ -47,6 +46,7 @@ cp assignment_5/data/training/VanGogh/* assignment_self/data/content_vangogh_sty
 cp assignment_5/data/validation/VanGogh/* assignment_self/data/content_vangogh_style_vangogh/ # Copy validation data of vangogh to new folder
 cp assignment_5/data/training/Monet/* assignment_self/data/content_monet_style_monet/ # Copy training data of monet to new folder
 cp assignment_5/data/validation/Monet/* assignment_self/data/content_monet_style_monet/ # Copy validation data of monet to new folder
+rm assignment_self/data/content_monet_style_monet/9223372032559844173.jpg # Removing corrupt image file
 printf "[INFO] The required data for assignment_self has been downloaded successfully"
 
 # Ending script

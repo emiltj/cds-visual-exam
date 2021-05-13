@@ -3,32 +3,40 @@
 # Import libraries
 import os, glob, argparse, cv2
 import pandas as pd
+from shutil import copyfile
 
-# Defining main function
-def main(targetpath, filepath):
-    
+# Defining function for getting information on the target image
+def get_target_inf(targetpath):
     # Getting the filename of the target image
     target_name = os.path.split(targetpath)[-1]
     
-    # Info for user in terminal
-    if targetpath == os.path.join("data", "image_0002.jpg"):
-        print(f"[INFO] Targetpath not specified - using default: \"{target_name}\"")
-    
-    # Empty lists for appending to
-    filenames = []
-    distances_to_target = []
-
     # Load target image, calculate histogram and normalize
     target = cv2.imread(targetpath)
     target_hist = cv2.calcHist([target], [0, 1, 2], None, [8, 8, 8], [0, 255, 0, 255, 0, 255]) 
     target_hist_norm = cv2.normalize(target_hist, target_hist, 0, 255, cv2.NORM_MINMAX)
     
+    # Return target name and target histogram
+    return target_name, target_hist_norm
+
+# Calculating chisq distance from corpus to target
+def get_dist(filepath, target_hist_norm, target_name, targetpath):
     # Info for user in terminal
-    print(f"[INFO] Calculating distances from corpus to \"{target_name}\" ...")
+    print(f"[INFO] Calculating distances from corpus \"{filepath}\" to \"{target_name}\" ...")
+    
+    # Empty lists for appending to
+    file_names = []
+    distances_to_target = []
+    
+    # Filepath to corpus
+    files = glob.glob(filepath)
+    
+    # Excluding the target
+    files.remove(targetpath)
+    
     # For each of the non-target files, get filename and calculate distance to target
-    for file in glob.glob(filepath):
+    for file in files:
         # Get filename and append to list
-        filenames.append(os.path.split(file)[-1])
+        file_names.append(os.path.split(file)[-1])
 
         # For each file, read image, get histogram, normalize and calculate distance using the chi-square method
         img = cv2.imread(file)
@@ -38,14 +46,16 @@ def main(targetpath, filepath):
         distances_to_target.append(dist)
     
     # Info for user in terminal
-    print(f"[INFO] Distances between the 3D color histogram of \"{target_name}\" and the corpus in \"{filepath}\" have been calculated using the chi-square method.")
-    
+    print(f"[INFO] Distances between the 3D color histogram of \"{target_name}\" and the corpus \"{filepath}\" have been calculated using the chi-square method.")    
+        
+    # Return file names and distances to target
+    return file_names, distances_to_target
+
+# Save the distances to target as a .csv
+def save_df(file_names, distances_to_target, target_name):
     # Create a df with the information on distances
-    df = pd.DataFrame(list(zip(filenames, distances_to_target)),
+    df = pd.DataFrame(list(zip(file_names, distances_to_target)),
                 columns = ["filename", "distance"])
-    
-    # Find the row with the shortest chisquare distance to target image
-    closest_image = df.loc[df['distance'].idxmax()]
     
     # If the folder does not already exist, create it
     if not os.path.exists("out"):
@@ -55,9 +65,31 @@ def main(targetpath, filepath):
     outpath = os.path.join("out", f"distances_to_{target_name[:-4]}.csv")
     df.to_csv(outpath, index = False)
     
-    # Info for user in terminal - also information on which image is the closest
-    print(f"[INFO] A new file with the distances has been created succesfully: \"{outpath}\" \n NOTE: The image \"{closest_image[0]}\" has the shortest chi-square distance to target with a distance of: {closest_image[1]}")
+    # Info for user in terminal
+    print(f"[INFO] A new file with the distances has been created succesfully: \"{outpath}\"")
+    
+    # Return dataframe
+    return outpath, df
 
+# Defining main function
+def main(targetpath, filepath):
+    # Get target info
+    target_name, target_hist_norm = get_target_inf(targetpath)
+    
+    # Get distances to target from corpus (and corpus filenames)
+    file_names, distances_to_target = get_dist(filepath, target_hist_norm, target_name, targetpath)
+    
+    # Save information as .csv
+    outpath, df = save_df(file_names, distances_to_target, target_name)
+    
+    # Find the distance and the filename of the image with the shortest chisquare distance to target image
+    closest_image = df.loc[df['distance'].idxmin()]
+    
+    # Copy target image and closest image to out (and print to terminal)
+    copyfile(targetpath, os.path.join("out", "target_image.jpg"))
+    copyfile(os.path.join("data", closest_image[0]), os.path.join("out", "closest_image.jpg"))
+    print(f"[INFO] The target image (\"{target_name})\" and the closest image (\"{closest_image[0]})\" have been saved to \"out\". The chi-square histogram distance was found to be: {closest_image[1]}")
+    
 # Defining behaviour when called from command line
 if __name__=="__main__":
     # Initialize ArgumentParser class
@@ -77,7 +109,7 @@ if __name__=="__main__":
         "-t",
         "--targetpath",
         type = str, 
-        default = os.path.join("data", "image_0002.jpg"), # Default path to a target image, when none is specified
+        default = os.path.join("data", "image_0003.jpg"), # Default path to a target image, when none is specified
         required = False,
         help = "str - path to target file from which to calculate distance to the other images")
     
