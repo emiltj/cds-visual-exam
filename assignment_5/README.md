@@ -2,10 +2,9 @@
 <br />
 <p align="center">
   <a href="https://github.com/emiltj/cds-visual-exam">
-    <img src="../README_images/logo_au.png" alt="Logo" width="225" height="80">
+    <img src="../README_images/vis_logo.png" alt="Logo" width="200" height="200">
   </a>
-  
-  <h3 align="center">Assignment 5</h3>
+  <h1 align="center">Assignment 5</h1>
 
   <p align="center">
     CNN classification of impressionist paintings
