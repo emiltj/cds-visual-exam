@@ -82,7 +82,7 @@ I have tried to as accessible and user-friendly as possible. This has been attem
 <!-- RESULTS AND DISCUSSION -->
 ## Results and discussion
 By running the function with the default target image we get:
-<p align="center"><img src="./out/target_image.png" alt="Logo" width="128" height="128"><img src="./out/closest_image.png" alt="Logo" width="128" height="128"></p>
+<p align="center"><a href="https://github.com/emiltj/cds-visual-exam/assignment_2"><img src="./out/target_image.png" alt="Logo" width="128" height="128"><img src="./out/closest_image.png" alt="Logo" width="128" height="128"></p>
 
 By looking at the target image (left) and the image with the smallest histogram distance (right), we see some clear similarities in terms of color and color intensities. The species is different however. Although the placement of the high intensities of yellow are similar, as is the ground around it, this was not a given. 
 This method does not take placement of the different color intensities into account; images with high pixel intensities in the bottom left for a given color will - using this method - be as similar to an image with the same high pixel intensities in the top left for the same given color (given that all other pixels are the same for both images). If you want to find images that are similar in a way that is more in line with the human interpretation of the word "similar", you might want to consider using CNN approaches instead.
