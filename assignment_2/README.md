@@ -68,11 +68,13 @@ image_search.py arguments for commandline to consider:
 ## Methods
 
 *Specifically for this assignment:*
+
 For solving the project task I have made use of several functions from the cv2 library; the most important being calcHist(). It was used in this assignment for accessing information about the intensity distribution of all 3 color channels.
 The histograms of non-target images and the target images were then compared using the [chi-square method](https://docs.opencv.org/3.4/d6/dc7/group__imgproc__hist.html#gga994f53817d621e2e4228fc646342d386aa88d6751fb2bb79e07aa8c8717fda881).
 As a bonus, to allow for an easy inspection of the results, I included in the script the ability of saving the target image, and the image closest in distance (see images in ```out```, or in the "Results and discussion" section below).
 
 *On a more general level (this applies to all assignments):*
+
 I have tried to as accessible and user-friendly as possible. This has been attempted by the use of:
 - Smaller functions. These are intended to solve the sub-tasks of the assignment. This is meant to improve readability of the script, as well as simplifying the use of the script.
 - Information prints. Information is printed to the terminal to allow the user to know what is being processed in the background
