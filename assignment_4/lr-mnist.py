@@ -65,7 +65,7 @@ def get_performance(save, outname, clf, X_test_scaled, y_test):
     y_pred = clf.predict(X_test_scaled)
 
     # Get classification report as a data frame
-    classif_report = pd.DataFrame(metrics.classification_report(y_test, y_pred, output_dict = True))
+    classif_report = pd.DataFrame(metrics.classification_report(y_test, y_pred, output_dict = True, digits = 3))
 
     # Print to terminal
     print(classif_report)
@@ -78,7 +78,7 @@ def get_performance(save, outname, clf, X_test_scaled, y_test):
         
         # Create outpath and save
         outpath = os.path.join("out", outname)
-        classif_report.to_csv(outpath, index = False)
+        classif_report.to_csv(outpath, index = True)
         print(f"[INFO] The classification benchmark report has been saved: \"{outpath}\".")
         
         # Saving model

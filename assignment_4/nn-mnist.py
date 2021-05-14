@@ -6,6 +6,7 @@ sys.path.append(os.path.join(".."))
 import utils.classifier_utils as clf_util
 import numpy as np 
 import pandas as pd
+import matplotlib.pyplot as plt
 from sklearn import metrics
 from sklearn import datasets
 from sklearn.datasets import fetch_openml
@@ -83,7 +84,7 @@ def get_performance(save, outname, nn, X_test_scaled, y_test):
     
     # Getting a classification report:
     print("[INFO] Evaluating the neural networks classifier ...") # Information for terminal use
-    classif_report = pd.DataFrame(classification_report(y_test.argmax(axis=1), predictions, output_dict = True))
+    classif_report = pd.DataFrame(classification_report(y_test.argmax(axis=1), predictions, output_dict = True, digits = 3))
 
     # Print to terminal
     print(classif_report)
@@ -96,7 +97,7 @@ def get_performance(save, outname, nn, X_test_scaled, y_test):
             
         # Saving classification report
         outpath_classif_report = os.path.join("out", outname)
-        classif_report.to_csv(outpath_classif_report, index = False)
+        classif_report.to_csv(outpath_classif_report, index = True)
         print(f"[INFO] The classification benchmark report has been saved: \"{outpath_classif_report}\".")
         
         # Saving model
@@ -186,18 +187,18 @@ if __name__=="__main__":
         "-H",
         "--hiddenlayers", 
         type = list,
-        default = [8, 16], # Default when not specifying anything in the terminal
+        default = [32, 16], # Default when not specifying anything in the terminal
         required = False, # Since we have a default value, it is not required to specify this argument
-        help = "list - specifying the hidden layers, each element in the list corresponds to number of nodes in layer. index in list corresponds to hiddenlayer number. E.g. [8, 16]")
+        help = "list - specifying the hidden layers, each element in the list corresponds to number of nodes in layer. index in list corresponds to hiddenlayer number. E.g. [32, 16]")
     
     # Add argument specifying number of epochs
     parser.add_argument(
         "-e",
         "--epochs", 
         type = int,
-        default = 50, # Default when not specifying anything in the terminal
+        default = 500, # Default when not specifying anything in the terminal
         required = False, # Since we have a default value, it is not required to specify this argument
-        help = "int - specifying number of epochs for training the model. Default = 50")
+        help = "int - specifying number of epochs for training the model.")
     
     # Taking all the arguments we added to the parser and input into "args"
     args = parser.parse_args()
