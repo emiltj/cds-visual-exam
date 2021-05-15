@@ -142,23 +142,24 @@ I have tried to as accessible and user-friendly as possible. This has been attem
 <!-- RESULTS AND DISCUSSION -->
 ## Results and discussion
 
-**Logistic regression classification report**
+#### Classification reports
 |           | 0                  | 1                 | 2                  | 3                  | 4                  | 5                  | 6                  | 7                  | 8                  | 9                  | accuracy | macro avg          | weighted avg       | 
 |-----------|--------------------|-------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|----------|--------------------|--------------------| 
 | precision | 0.96 | 0.93 | 0.91 | 0.89 | 0.91 | 0.86 | 0.96 | 0.93 | 0.89 | 0.91 | 0.91    | 0.91  | 0.91 | 
 | recall    | 0.97 | 0.97 | 0.91 | 0.88               | 0.95 | 0.85 | 0.95               | 0.94 | 0.83 | 0.89 | 0.91    | 0.91 | 0.919              | 
 | f1-score  | 0.97 | 0.95 | 0.91 | 0.88 | 0.93 | 0.86 | 0.95 | 0.93 | 0.86 | 0.90 | 0.91    | 0.91 | 0.91 | 
 | support   | 198.0              | 232.0             | 194.0              | 225.0              | 165.0              | 171.0              | 180.0              | 203.0              | 198.0              | 234.0              | 0.919    | 2000.0             | 2000.0             | 
+<p align="center"><em>Logistic regression classification report</em></p>
 
+<br/>
 
-**Neural networks classification report**
 |           | 0                  | 1                  | 2                  | 3                  | 4                  | 5                  | 6                  | 7                  | 8                  | 9                  | accuracy | macro avg          | weighted avg       | 
 |-----------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|----------|--------------------|--------------------| 
 | precision | 0.94 | 0.96 | 0.91 | 0.91 | 0.88 | 0.90 | 0.94 | 0.91 | 0.89 | 0.90 | 0.92     | 0.91 | 0.91 | 
 | recall    | 0.95 | 0.97 | 0.91 | 0.91 | 0.92 | 0.84  | 0.93 | 0.93 | 0.90 | 0.88 | 0.92     | 0.91 | 0.92               | 
 | f1-score  | 0.95               | 0.96 | 0.91 | 0.91 | 0.90 | 0.87 | 0.94 | 0.92 | 0.89 | 0.89 | 0.92     | 0.91 | 0.91 | 
 | support   | 198.0              | 232.0              | 194.0              | 225.0              | 165.0              | 171.0              | 180.0              | 203.0              | 198.0              | 234.0              | 0.92     | 2000.0             | 2000.0             | 
-
+<p align="center"><em>Neural networks classification report</em></p>
 
 
 When looking at the results, the classification benchmarks for the Logistic Regression (LR) classifier and the Neural Networks (NN) classifier seem to have similar performance, with a macro average f1-scores of .91 for both models. NN's tend to outperform LR classifiers when both data and training time is plentiful and given the right hidden layer structure and parameter settings. As NN classifiers often take longer to train, the default parameters (hidden layer structure and number of epochs) were set to result in low runtimes for faster processing. More training would likely have resulted in higher performance.
