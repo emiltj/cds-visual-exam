@@ -30,7 +30,7 @@
 <!-- ASSIGNMENT DESCRIPTION -->
 ## Assignment description
 
-This self-assigned assignment has two main questions it seeks to investigate.
+This self-assigned assignment has two main questions it seeks to investigate. The investigation is not hypothesis driven nor research oriented. Rather, it is meant to be a fun and atypical way of exploring some methods used in visual analytics.
 
 **Question 1 - Generating stylized paintings**
 
@@ -41,7 +41,9 @@ This assignment seeks to investigate the possibility of not just transferring st
 
 **Question 2 - Classification of stylized images**
 
-_When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to investigate the importance of content vs. style when classifying images.
+_When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to investigate the importance of content vs. style when classifying images. Style transfer refers to the act of minimizing the loss of information between two sets of imbedded images. One image (the style image) is imbedded using the first few layers of a neural network and network activations are sampled from this imbedded image. The other image (the content image) is imbedded using the same neural network, but using the first many layers of the network. Likewise, the network activations of this layer is also sampled. Using these two samples style transfer seeks to synthesize these two imbedded images with the least amount of 
+
+forward propagated through a neural network seeks use an image imbedding imbed a content image Given that the method of style transfer between two images is a minimization of the loss of information between the first
 Train a model (or use a pre-trained model) to classify paintings from two artists. Use this model to 
 
 
