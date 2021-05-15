@@ -87,13 +87,12 @@ I have tried to as accessible and user-friendly as possible. This has been attem
 
 #### Generating stylized images:
 <p align="center">
-<em>NOTE: 
+
+Top: Content
 <br/>
-At top: Content
+Middle: Style
 <br/>
-At middle: Style
-<br/>
-At bottom: Stylized image
+Bottom: Stylized image
 </em>
 <br/>
 </p>
