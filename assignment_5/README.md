@@ -108,7 +108,7 @@ As can be seen in the tables (using default parameters), similar performance wer
 Paintings from artists such as Monet seems to be easier to classify, compared to artists such as Cezanne. High performance for Monet, may very well be due to the fact that Monet's paintings almost always depicts the same subject matter - namely French landscapes. 
 
 <p align="center"><a href="https://github.com/emiltj/cds-visual-exam/tree/main/assignment_2/out"><img src="./out/ShallowNet_training_history.png" alt="Logo" width="256" height="256">   <img src="./out/LeNet_training_history.png" alt="Logo" width="256" height="256"></a></p>
-<p align="center"><em>ShallowNet training history &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LeNet training history</em><p/>
+<p align="center"><em>ShallowNet training history &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LeNet training history</em><p/>
 When looking at the training histories of the CNN following the _ShallowNet_ architecture ...
 
 When looking at the training histories of the CNN following the _LeNet_ architecture
