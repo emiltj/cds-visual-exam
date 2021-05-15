@@ -3,7 +3,7 @@
 ############### Importing libraries ################
 # base tools
 import os, sys, random, cv2, glob, argparse
-random.seed(11)
+random.seed(14) # 13 is okay
 sys.path.append(os.path.join(".."))
 
 # Ross' function for showing imgs
@@ -39,22 +39,24 @@ def file_load_random(files):
     Function which loads files from a directory and shuffles the order
     """
     # Info for terminal use
-    print(f"[INFO] Loading files from \"{files}\" ...")
+    print(f"[INFO] Loading files: \"{files}\" ...")
     
     # Empty list for appending to
-    loaded = []
-    
-    #loaded = loaded[:10]
-    
+    loaded_imgs = []
+        
     # For every filename in the path, st_load
     for filename in glob.glob(files):
-        loaded.append(st_load(filename))
+        # Append to list
+        loaded_imgs.append(st_load(filename))
     
     # Shuffle order
-    random.shuffle(loaded)
+    random.shuffle(loaded_imgs)
+    
+    # Subset
+    loaded_imgs = loaded_imgs[:50]
     
     # Return randomly shuffled, loaded images
-    return loaded
+    return loaded_imgs
 
 def get_stylized(imgs_a, imgs_b):
     """
@@ -76,10 +78,10 @@ def get_stylized(imgs_a, imgs_b):
 
     # Return them
     return content_a_style_b, content_b_style_a
-    
+
 def preprocess(imgs):
     """
-    Function preprocesses a list of images; returns images as arrays and converts from BGR to RGB.
+    Function that preprocesses a list of images; returns images as arrays and converts from BGR to RGB.
     """
     # Info for terminal use
     print(f"[INFO] Preprocessing stylized images ...")
@@ -106,6 +108,31 @@ def preprocess(imgs):
     # Return preprocessed imgs
     return preprocessed
 
+def save_examples(content_img, style_img, stylized_img, unique_ending):
+    """
+    Function that saves a set of content, style and stylized images.
+    """
+    # Create outpath if it does not exist
+    if not os.path.exists("out"):
+        os.mkdir("out")
+
+    # Define outpath
+    example_outpath = os.path.join("out", f"example_{unique_ending}.jpg")
+    
+    # Creating borders, making it easier to distinguish border around the concatenated images
+    content_img = cv2.copyMakeBorder(content_img, 0, 10, 10, 10, cv2.BORDER_CONSTANT) # Creating a border of 10 pixels on all edges except for top.
+    style_img = cv2.copyMakeBorder(style_img, 0, 10, 10, 10, cv2.BORDER_CONSTANT)
+    stylized_img = cv2.copyMakeBorder(stylized_img, 0, 10, 10, 10, cv2.BORDER_CONSTANT)
+        
+    # Concatenate images
+    example = np.concatenate((content_img, style_img), axis=0)
+    example = np.concatenate((example, stylized_img), axis=0)
+    
+    example = cv2.copyMakeBorder(example, 10, 0, 0, 0, cv2.BORDER_CONSTANT) # Creating a top edge
+    
+    # Write images
+    cv2.imwrite(example_outpath, example)
+    
 def save_imgs(imgs, outfolder):
     """
     Function which saves a list of images to a given outfolder with unique names. Also creates the outfolder if it does not already exist.
@@ -146,8 +173,19 @@ def main(inpath_a, inpath_b, outpath_content_a_style_b, outpath_content_b_style_
     content_a_style_b, content_b_style_a = get_stylized(a, b)
     
     # Preprocess images
+    print(f"[INFO] Preprocessing stylized images ...") # Info for terminal use
+    a = preprocess(a)
+    b = preprocess(b)
     content_a_style_b = preprocess(content_a_style_b)
     content_b_style_a = preprocess(content_b_style_a)
+       
+    # Save examples
+    print("[INFO] Saving examples of stylized images to \".out/\" ...") # Info for terminal use
+    for i in range(10):
+        save_examples(a[i], b[i], content_a_style_b[i], f"{i}")
+
+    for i in range(10):
+        save_examples(b[i], a[i], content_b_style_a[i], f"{i+10}")
     
     # Save images
     save_imgs(content_a_style_b, outpath_content_a_style_b)
@@ -163,7 +201,7 @@ if __name__=="__main__":
         "-i",
         "--inpatha", 
         type = str,
-        default = os.path.join("data", "content_vangogh_style_vangogh", "*2.jpg"), # Default path to corpus, when none is specified
+        default = os.path.join("data", "content_gauguin_style_gauguin", "*2.jpg"), # Default path to corpus, when none is specified
         required = False,
         help= "str - path to image corpus a")
     
@@ -181,7 +219,7 @@ if __name__=="__main__":
         "-o",
         "--outpatha",
         type = str,
-        default = os.path.join("data", "content_vangogh_style_monet"), # Default path to corpus, when none is specified
+        default = os.path.join("data", "content_gauguin_style_monet"), # Default path to corpus, when none is specified
         required = False,
         help= "str - path to output path of the stylized images with content_a_style_b")
     
@@ -190,7 +228,7 @@ if __name__=="__main__":
         "-O",
         "--outpathb",
         type = str,
-        default = os.path.join("data", "content_monet_style_vangogh"), # Default path to corpus, when none is specified
+        default = os.path.join("data", "content_monet_style_gauguin"), # Default path to corpus, when none is specified
         required = False,
         help= "str - path to output path of the stylized images with content_b_style_a")
     
