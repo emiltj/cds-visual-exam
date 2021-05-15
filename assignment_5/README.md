@@ -90,21 +90,22 @@ I have tried to as accessible and user-friendly as possible. This has been attem
 ## Results and discussion
 
 #### Classification reports
-**_ShallowNet_ architecture classification report**
 |           | Cezanne             | Degas               | Gauguin             | Hassam             | Matisse             | Monet               | Pissarro            | Renoir              | Sargent             | VanGogh             | accuracy            | macro avg           | weighted avg        | 
 |-----------|---------------------|---------------------|---------------------|--------------------|---------------------|---------------------|---------------------|---------------------|---------------------|---------------------|---------------------|---------------------|---------------------| 
 | precision | 0.21  | 0.44  | 0.42 | 0.23 | 0.45 | 0.32  | 0.36  | 0.43 | 0.49 | 0.38 | 0.34 | 0.37 | 0.37 | 
 | recall    | 0.43 | 0.15 | 0.37 | 0.38 | 0.20 | 0.24 | 0.45 | 0.44  | 0.31 | 0.40 | 0.34 | 0.34  | 0.34 | 
 | f1-score  | 0.29 | 0.22  | 0.39 | 0.29 | 0.27  | 0.27 | 0.40 | 0.43 | 0.38 | 0.39  | 0.34 | 0.33 | 0.33 | 
 | support   | 99.0                | 99.0                | 99.0                | 99.0               | 99.0                | 99.0                | 99.0                | 99.0                | 99.0                | 99.0                | 0.34 | 990.0               | 990.0               | 
+<p align="center"><em>ShallowNet architecture classification report</em></p>
 
-**_LeNet_ architecture classification report**
+
 |           | Cezanne             | Degas               | Gauguin             | Hassam              | Matisse             | Monet               | Pissarro            | Renoir             | Sargent             | VanGogh             | accuracy           | macro avg           | weighted avg        | 
 |-----------|---------------------|---------------------|---------------------|---------------------|---------------------|---------------------|---------------------|--------------------|---------------------|---------------------|--------------------|---------------------|---------------------| 
 | precision | 0.26  | 0.29 | 0.39 | 0.38 | 0.32 | 0.30   | 0.24 | 0.34            | 0.41  | 0.37  | 0.31 | 0.33 | 0.33 | 
 | recall    | 0.10 | 0.26 | 0.34  | 0.17  | 0.23 | 0.42 | 0.60  | 0.33 | 0.36 | 0.35 | 0.31 | 0.31  | 0.31  | 
 | f1-score  | 0.14 | 0.27  | 0.36  | 0.23 | 0.27 | 0.35 | 0.34   | 0.33 | 0.38  | 0.36  | 0.31 | 0.30  | 0.30  | 
 | support   | 99.0                | 99.0                | 99.0                | 99.0                | 99.0                | 99.0                | 99.0                | 99.0               | 99.0                | 99.0                | 0.31 | 990.0               | 990.0               | 
+<p align="center"><em>LeNet architecture classification report</em></p>
 
 As can be seen in the tables (using default parameters), similar performance were found when utilizing the _LeNet_ and the _ShallowNet_ architecture, with slightly higher perfomance for the less complex architecture, _LeNet_. It achieved a macro average F1-score of .33 , compared to the score of .30 , that _ShallowNet_ achieved. Baseline accuracy for 10 classes would have been around 10%, which means an increase of about 20 percentage points compared to a model classifying randomly.
 Paintings from artists such as Monet seems to be easier to classify, compared to artists such as Cezanne. High performance for Monet, may very well be due to the fact that Monet's paintings almost always depicts the same subject matter - namely French landscapes.
