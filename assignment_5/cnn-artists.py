@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+############### Importing libraries ################
 # data tools
 import os, cv2, glob, argparse
 import numpy as np
@@ -22,6 +23,7 @@ from tensorflow.keras.layers import (Conv2D,
                                      Flatten, 
                                      Dense)
 
+############### Defining functions to be used in main ###############
 # Define function for retrieving alphabetically sorted artist list:
 def get_artists(artists_path):
     artists = os.listdir(artists_path) # Get list of directories (each names corresponds to artists' names
@@ -91,7 +93,7 @@ def plot_history(H, epochs, cnn):
     plt.tight_layout()
     plt.savefig(os.path.join("out", f'{cnn}_training_history.png'), format='png', dpi=100)
 
-# Defining main function, which uses the previously defined functions as well as trains/tests the model
+############### Defining main function ###############
 def main(cnn, resizedim,  batch_size, epochs):
     
     # Make a alphabetically sorted list of all the artists
@@ -211,7 +213,7 @@ def main(cnn, resizedim,  batch_size, epochs):
     plot_model(model, to_file = model_plot_outname, show_shapes=True, show_layer_names=True)
     print(f"A visualization of the CNN model architecture has been saved succesfully: \"{model_plot_outname}\"")
 
-# Define behaviour when called from command line
+############### Defining use when called from terminal ################
 if __name__=="__main__":
     # Initialise ArgumentParser class
     parser = argparse.ArgumentParser(description = "[SCRIPT DESCRIPTION] Script that trains a convolutional neural network on impressionist paintings and tests on unseen data. ")
