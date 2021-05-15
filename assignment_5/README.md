@@ -89,7 +89,7 @@ I have tried to as accessible and user-friendly as possible. This has been attem
 <!-- RESULTS AND DISCUSSION -->
 ## Results and discussion
 
-### Classification reports
+#### Classification reports
 **_ShallowNet_ architecture classification report**
 |           | Cezanne             | Degas               | Gauguin             | Hassam             | Matisse             | Monet               | Pissarro            | Renoir              | Sargent             | VanGogh             | accuracy            | macro avg           | weighted avg        | 
 |-----------|---------------------|---------------------|---------------------|--------------------|---------------------|---------------------|---------------------|---------------------|---------------------|---------------------|---------------------|---------------------|---------------------| 
@@ -109,7 +109,7 @@ I have tried to as accessible and user-friendly as possible. This has been attem
 As can be seen in the tables (using default parameters), similar performance were found when utilizing the _LeNet_ and the _ShallowNet_ architecture, with slightly higher perfomance for the less complex architecture, _LeNet_. It achieved a macro average F1-score of .33 , compared to the score of .30 , that _ShallowNet_ achieved. Baseline accuracy for 10 classes would have been around 10%, which means an increase of about 20 percentage points compared to a model classifying randomly.
 Paintings from artists such as Monet seems to be easier to classify, compared to artists such as Cezanne. High performance for Monet, may very well be due to the fact that Monet's paintings almost always depicts the same subject matter - namely French landscapes.
 
-### Training histories
+#### Training histories
 <p align="center"><a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_5/out/ShallowNet_training_history.png"><img src="./out/ShallowNet_training_history.png" alt="Logo" width="256" height="256"></a>   <a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_5/out/LeNet_training_history.png"><img src="./out/LeNet_training_history.png" alt="Logo" width="256" height="256"></a></p>
 <p align="center"><em>ShallowNet training history &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LeNet training history</em><p/>
 
