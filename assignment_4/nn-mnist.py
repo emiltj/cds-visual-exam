@@ -19,8 +19,11 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import accuracy_score
 
 ############### Defining functions to be used in main ###############
-# Define function for loading and splitting the MNIST dataset
+
 def load_split_MNIST():
+    """
+    Function loads and splits the MNIST daatset
+    """
     # Importing data; y = what the image depicts, X = values for all pixels (from top right, moving left)
     print("[INFO] Loading the MNIST dataset ...")
     X, y = fetch_openml('mnist_784', version = 1, return_X_y = True)
@@ -39,8 +42,10 @@ def load_split_MNIST():
     # Return X and y
     return X_train, X_test, y_train, y_test
 
-# Define function for min max scaling
 def min_max_scaling(X_train, X_test):
+    """
+    Function which min-max scales X_train and X_test
+    """
     # Min-max scaling:
     scaler = MinMaxScaler()
     scaler = scaler.fit(X_train) # Important to scale not only train data but also test data information from train
@@ -50,8 +55,10 @@ def min_max_scaling(X_train, X_test):
     # Return scaled values
     return X_train_scaled, X_test_scaled, scaler
 
-# Define function for binarizing labels
 def binarize_labels(y_train, y_test):
+    """
+    Function which binarizes labels of y_train and y_test
+    """
     # Binarize the labels (getting from e.g. [3,1,2] to [[0,0,1],[1,0,0],[0,1,0], instead of course with numbers from 0-10) 
     y_train = LabelBinarizer().fit_transform(y_train) 
     y_test = LabelBinarizer().fit_transform(y_test)
@@ -59,8 +66,10 @@ def binarize_labels(y_train, y_test):
     # Return binarized labels
     return y_train, y_test
 
-# Define function for training neural network with set parameters
 def train_nn(X_train_scaled, y_train, hiddenlayers, epochs):
+    """
+    Function which trains a neural network, with specified parameters
+    """
     # Assigning more layers in the neural network:
     hiddenlayers.insert(0, X_train_scaled.shape[1]) # Inserting the number of features as the input layer
     hiddenlayers.append(10) # Inserting the number of possible outcomes as the output layer
@@ -75,8 +84,10 @@ def train_nn(X_train_scaled, y_train, hiddenlayers, epochs):
     # Return the model
     return nn
 
-# Define function for getting performance metrics
 def get_performance(save, outname, nn, X_test_scaled, y_test):
+    """
+    Function which test the trained neural networks model and outputs a classification metric
+    """
     # Using the fitted model to predict the test data
     predictions = nn.predict(X_test_scaled)
 
@@ -106,8 +117,10 @@ def get_performance(save, outname, nn, X_test_scaled, y_test):
         joblib.dump(nn, outpath_nn_model)
         print(f"[INFO] The trained neural networks model has been saved: \"{outpath_nn_model}\".")
 
-# Define function for prediction individual image from trained model
 def pred_individual(individual, nn, y_train, scaler):
+    """
+    Function which uses a trained logistic regression classifier to classify a new image outside the MNIST corpus.
+    """
     # Read individual image and convert to grayscale
     image = cv2.imread(individual)
     gray = cv2.bitwise_not(cv2.cvtColor(image, cv2.COLOR_BGR2GRAY))
@@ -131,6 +144,9 @@ def pred_individual(individual, nn, y_train, scaler):
     
 ############### Defining main function ###############
 def main(outname, save, individual, hiddenlayers, epochs):
+    """
+    Main function
+    """
     # Load MNIST dataset and split it
     X_train, X_test, y_train, y_test = load_split_MNIST()
     
