@@ -3,7 +3,7 @@
 ############### Importing libraries ################
 # base tools
 import os, sys, random, cv2, glob, argparse
-random.seed(14) # 13 is okay
+random.seed(14)
 sys.path.append(os.path.join(".."))
 
 # Ross' function for showing imgs
@@ -53,7 +53,7 @@ def file_load_random(files):
     random.shuffle(loaded_imgs)
     
     # Subset
-    loaded_imgs = loaded_imgs[:50]
+    # loaded_imgs = loaded_imgs[:50]
     
     # Return randomly shuffled, loaded images
     return loaded_imgs
@@ -97,7 +97,6 @@ def preprocess(imgs):
         
         # Convert to RGB instead of BGR
         i = cv2.cvtColor(i, cv2.COLOR_BGR2RGB)
-        #i[:,:,::-1]
         
         # Convert to have values between 255 and 0, instead of between 0 and 1 (to allow for using cv2.imwrite)
         i = i*255
@@ -179,7 +178,7 @@ def main(inpath_a, inpath_b, outpath_content_a_style_b, outpath_content_b_style_
     content_a_style_b = preprocess(content_a_style_b)
     content_b_style_a = preprocess(content_b_style_a)
        
-    # Save examples
+    # Save a few examples
     print("[INFO] Saving examples of stylized images to \".out/\" ...") # Info for terminal use
     for i in range(10):
         save_examples(a[i], b[i], content_a_style_b[i], f"{i}")
@@ -187,7 +186,7 @@ def main(inpath_a, inpath_b, outpath_content_a_style_b, outpath_content_b_style_
     for i in range(10):
         save_examples(b[i], a[i], content_b_style_a[i], f"{i+10}")
     
-    # Save images
+    # Save all newly stylized paintings
     save_imgs(content_a_style_b, outpath_content_a_style_b)
     save_imgs(content_b_style_a, outpath_content_b_style_a)
 
