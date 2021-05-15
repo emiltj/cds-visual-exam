@@ -6,8 +6,10 @@ import pandas as pd
 from shutil import copyfile
 
 ############### Defining functions to be used in main ###############
-# Defining function for getting information on the target image
 def get_target_inf(targetpath):
+    """
+    Function which retrieves information on the target image (normalized rgb histogram and name of target image) 
+    """
     # Getting the filename of the target image
     target_name = os.path.split(targetpath)[-1]
     
@@ -19,8 +21,10 @@ def get_target_inf(targetpath):
     # Return target name and target histogram
     return target_name, target_hist_norm
 
-# Calculating chisq distance from corpus to target
 def get_dist(filepath, target_hist_norm, target_name, targetpath):
+    """
+    Function which calculates RGB-histogram distances using the chi-square method, between target image and the corpus.
+    """
     # Info for user in terminal
     print(f"[INFO] Calculating distances from corpus \"{filepath}\" to \"{target_name}\" ...")
     
@@ -52,8 +56,10 @@ def get_dist(filepath, target_hist_norm, target_name, targetpath):
     # Return file names and distances to target
     return file_names, distances_to_target
 
-# Save the distances to target as a .csv
 def save_df(file_names, distances_to_target, target_name):
+    """
+    Function which saves a .csv file with distances from corpus to target image (as well as the filenames)
+    """
     # Create a df with the information on distances
     df = pd.DataFrame(list(zip(file_names, distances_to_target)),
                 columns = ["filename", "distance"])
@@ -74,6 +80,9 @@ def save_df(file_names, distances_to_target, target_name):
 
 ############### Defining main function ###############
 def main(targetpath, filepath):
+    """
+    Main function of the script 
+    """
     # Get target info
     target_name, target_hist_norm = get_target_inf(targetpath)
     
@@ -94,7 +103,7 @@ def main(targetpath, filepath):
 ############### Defining use when called from terminal ################
 if __name__=="__main__":
     # Initialize ArgumentParser class
-    parser = argparse.ArgumentParser(description = "[SCRIPT DESCRIPTION] Calculates rgb-distance from image corpus to a specified target image using the chi-square method")
+    parser = argparse.ArgumentParser(description = "[SCRIPT DESCRIPTION] Calculates RGB-distance from image corpus to a specified target image using the chi-square method")
     
     # Add inpath argument
     parser.add_argument(
@@ -117,5 +126,5 @@ if __name__=="__main__":
     # Taking all the arguments we added to the parser and input into "args"
     args = parser.parse_args()
     
-    # Perform main function
+    # Execute main function
     main(args.targetpath, args.filepath)
