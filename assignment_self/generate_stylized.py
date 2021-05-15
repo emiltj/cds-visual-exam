@@ -3,7 +3,7 @@
 ############### Importing libraries ################
 # base tools
 import os, sys, random, cv2, glob, argparse
-random.seed(14)
+random.seed(15)
 sys.path.append(os.path.join(".."))
 
 # Ross' function for showing imgs
@@ -121,7 +121,7 @@ def save_examples(content_img, style_img, stylized_img, unique_ending):
     example = np.concatenate((content_img, style_img), axis=0)
     example = np.concatenate((example, stylized_img), axis=0)
     
-    example = cv2.copyMakeBorder(example, 10, 0, 0, 0, cv2.BORDER_CONSTANT) # Creating a top edge
+    example = cv2.copyMakeBorder(example, 10, 0, 0, 0, cv2.BORDER_CONSTANT) # Creating a top edge for the concatenated image
     
     # Write images
     cv2.imwrite(example_outpath, example)
@@ -194,7 +194,7 @@ if __name__=="__main__":
         "-i",
         "--inpatha", 
         type = str,
-        default = os.path.join("data", "content_gauguin_style_gauguin", "*.jpg"), # Default path to corpus, when none is specified
+        default = os.path.join("data", "content_cezanne_style_cezanne", "*.jpg"), # Default path to corpus, when none is specified
         required = False,
         help= "str - path to image corpus a")
     
@@ -212,7 +212,7 @@ if __name__=="__main__":
         "-o",
         "--outpatha",
         type = str,
-        default = os.path.join("data", "content_gauguin_style_monet"), # Default path to corpus, when none is specified
+        default = os.path.join("data", "content_cezanne_style_monet"), # Default path to corpus, when none is specified
         required = False,
         help= "str - path to output path of the stylized images with content_a_style_b")
     
@@ -221,7 +221,7 @@ if __name__=="__main__":
         "-O",
         "--outpathb",
         type = str,
-        default = os.path.join("data", "content_monet_style_gauguin"), # Default path to corpus, when none is specified
+        default = os.path.join("data", "content_monet_style_cezanne"), # Default path to corpus, when none is specified
         required = False,
         help= "str - path to output path of the stylized images with content_b_style_a")
     
