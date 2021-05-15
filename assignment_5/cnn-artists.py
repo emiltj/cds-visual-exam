@@ -24,7 +24,6 @@ from tensorflow.keras.layers import (Conv2D,
                                      Dense)
 
 ############### Defining functions to be used in main ###############
-
 def get_artists(artists_path):
     """
     Function which retrieves an alphabetically sorted artists list
