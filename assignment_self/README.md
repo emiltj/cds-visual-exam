@@ -87,6 +87,7 @@ I have tried to as accessible and user-friendly as possible. This has been attem
 
 #### Generating stylized images:
 <p align="center">
+<em>
 Top: Content
 <br/>
 Middle: Style
