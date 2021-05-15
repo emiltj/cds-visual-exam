@@ -49,8 +49,9 @@ python cnn-artists.py
 ```
 
 ### Optional arguments:
-
+s
 .py arguments for commandline to consider:
+-       s
 -       
 .py arguments for commandline to consider:
 -       
