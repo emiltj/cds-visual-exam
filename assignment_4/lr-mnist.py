@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Importing libraries
+############### Importing libraries ################
 import sys, os, cv2, joblib, argparse
 sys.path.append(os.path.join(".."))
 import utils.classifier_utils as clf_util
@@ -16,6 +16,7 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import classification_report
 from sklearn.metrics import accuracy_score
 
+############### Defining functions to be used in main ###############
 # Define function for loading and splitting the MNIST dataset
 def load_split_MNIST():
     # Importing data; y = what the image depicts, X = values for all pixels (from top right, moving left)
@@ -104,7 +105,7 @@ def pred_individual(individual, clf, y_train):
     print(f"[IMAGE PREDICTION] Image prediction for \"{individual}\": {individual_pred}")
 
 
-# Defining main function
+############### Defining main function ###############
 def main(outname, save, individual, penalty, c):
     # Load MNIST dataset and split it
     X_train, X_test, y_train, y_test = load_split_MNIST()
@@ -123,7 +124,7 @@ def main(outname, save, individual, penalty, c):
         pred_individual(individual, clf, y_train)
         
 
-# Define behaviour when called from command line
+############### Defining use when called from terminal ################
 if __name__=="__main__":
     # Initialize ArgumentParser class
     parser = argparse.ArgumentParser(
