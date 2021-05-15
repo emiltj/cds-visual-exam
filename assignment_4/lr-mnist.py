@@ -17,8 +17,10 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import accuracy_score
 
 ############### Defining functions to be used in main ###############
-# Define function for loading and splitting the MNIST dataset
 def load_split_MNIST():
+    """
+    Function which loads and splits the MNIST dataset.
+    """
     # Importing data; y = what the image depicts, X = values for all pixels (from top right, moving left)
     print("[INFO] Loading the MNIST dataset ...")
     X, y = fetch_openml('mnist_784', version = 1, return_X_y = True)
@@ -37,8 +39,10 @@ def load_split_MNIST():
     # Return X and y
     return X_train, X_test, y_train, y_test
 
-# Define function for min max scaling
 def min_max_scaling(X_train, X_test):
+    """
+    Function which min-max scales X_train and X_test.
+    """
     # Min-max scaling:
     scaler = MinMaxScaler()
     scaler = scaler.fit(X_train) # Important to scale not only train data but also test data information from train
@@ -47,8 +51,10 @@ def min_max_scaling(X_train, X_test):
     
     return X_train_scaled, X_test_scaled
 
-# Define function for training logistic regression on MNIST
 def train_log_reg(X_train_scaled, y_train, penalty, c):
+    """
+    Function which trains a logistic regression classifier.
+    """
     # Fitting a model to the training data
     print(f"[INFO] Training a logistic regression classifier using penalty: \"{penalty}\" and c-value of: {c} ...")
     clf = LogisticRegression(penalty = penalty, # Type of penalty, if any
@@ -61,6 +67,9 @@ def train_log_reg(X_train_scaled, y_train, penalty, c):
 
 # Define function for getting performance metrics
 def get_performance(save, outname, clf, X_test_scaled, y_test):
+    """
+    Function which test the logistic regression classifier, and outputs performance metrics.
+    """
     # Predicting the test data, using the model fitted on the training data
     print("[INFO] Evaluating the logistic classifier ...") 
     y_pred = clf.predict(X_test_scaled)
@@ -87,8 +96,10 @@ def get_performance(save, outname, clf, X_test_scaled, y_test):
         joblib.dump(clf, outpath_lr_model)
         print(f"[INFO] The trained logistic regression classifier model has been saved: \"{outpath_lr_model}\".")
 
-# Define function for prediction individual image from trained model
 def pred_individual(individual, clf, y_train):
+    """
+    Function which uses a trained logistic regression classifier to classify a new image outside the MNIST corpus.
+    """
     # Get the possible labels, as well as the number of possible labels
     classes = sorted(set(y_train))
     nclasses = len(classes)
@@ -107,6 +118,9 @@ def pred_individual(individual, clf, y_train):
 
 ############### Defining main function ###############
 def main(outname, save, individual, penalty, c):
+    """
+    Main function
+    """
     # Load MNIST dataset and split it
     X_train, X_test, y_train, y_test = load_split_MNIST()
     
