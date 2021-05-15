@@ -41,11 +41,7 @@ This assignment seeks to investigate the possibility of not just transferring st
 
 **Question 2 - Classification of stylized images**
 
-_When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to investigate the importance of content vs. style when classifying images. Style transfer refers to the act of minimizing the loss of information between two sets of imbedded images. One image (the style image) is imbedded using the first few layers of a neural network and network activations are sampled from this imbedded image. The other image (the content image) is imbedded using the same neural network, but using the first many layers of the network. Likewise, the network activations of this layer is also sampled. Using these two samples style transfer seeks to synthesize these two imbedded images with the least amount of 
-
-forward propagated through a neural network seeks use an image imbedding imbed a content image Given that the method of style transfer between two images is a minimization of the loss of information between the first
-Train a model (or use a pre-trained model) to classify paintings from two artists. Use this model to 
-
+_When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to investigate the importance of content vs. style when classifying images. Style transfer refers to the act of minimizing the loss of information between two sets of imbedded images. One image (the style image) is imbedded using the first few layers of a neural network and network activations are sampled from this imbedded image. The other image (the content image) is imbedded using the same neural network, but using the first many layers of the network. Likewise, the imbedded image from this layer is also extracted. Using these two imbedded images, style transfer then seeks to synthesize these two imbedded images with regards to a loss function with minimizes the information loss of both images - weighted equally.
 
 <!-- USAGE -->
 ## Usage
@@ -99,7 +95,10 @@ Bottom: Stylized image
 <p align="center"><a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_11.jpg"><img src="./out/example_11.jpg" alt="Logo" width="256" height="768"></a>&nbsp; &nbsp; &nbsp; &nbsp;<a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_1.jpg"><img src="./out/example_1.jpg" alt="Logo" width="256" height="768"></a></p>
 <p align="center"><em>Content: Monet, style: Gauguin  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Content: Gauguin, style: Monet</em><p/>
 
+When looking at the above two images ([and the rest of the examples](https://github.com/emiltj/cds-visual-exam/tree/main/assignment_self/out)), it does indeed seem possible to transfer style from a painting, to another painting. However, from a brief glance at the 20 examples there is a [single image](https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_16.jpg), in which the process seemed to generate a painting which is hard to interpret.
+
 #### Classification of stylized images
+
 
 
 <!-- CONTACT -->
