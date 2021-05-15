@@ -22,7 +22,7 @@ from sklearn.metrics import accuracy_score
 
 def load_split_MNIST():
     """
-    Function loads and splits the MNIST daatset
+    Function which loads and splits the MNIST daatset
     """
     # Importing data; y = what the image depicts, X = values for all pixels (from top right, moving left)
     print("[INFO] Loading the MNIST dataset ...")
