@@ -30,6 +30,10 @@
 <!-- ASSIGNMENT DESCRIPTION -->
 ## Assignment description
 
+This self-assigned assignment has two main questions it seeks to investigate.
+
+**Question 1 - Generating stylized paintings**
+Is it possible to use the method of style transfer to stylize paintings of one artist with the style of another?
 [impressionist paintings](https://www.kaggle.com/delayedkarma/impressionist-classifier-data). 
 
 <!-- USAGE -->
