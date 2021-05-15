@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+############### Importing libraries ################
 # base tools
 import os, sys, random, cv2, glob, argparse
 random.seed(11)
@@ -30,8 +33,11 @@ import matplotlib.image as mpimg
 hub_handle = 'https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2'
 hub_module = hub.load(hub_handle)
 
-# Defining function for loading files
+############### Defining functions to be used in main ###############
 def file_load_random(files):
+    """
+    Function which loads files from a directory and shuffles the order
+    """
     # Info for terminal use
     print(f"[INFO] Loading files from \"{files}\" ...")
     
@@ -50,8 +56,10 @@ def file_load_random(files):
     # Return randomly shuffled, loaded images
     return loaded
 
-# Defining function for generating stylized images
 def get_stylized(imgs_a, imgs_b):
+    """
+    Function which generates stylized images. Takes two arguments; imgs_a (list) and imgs_b (also list). Outputs the two lists of images, with each others style.
+    """
     # Info for terminal use
     print(f"[INFO] Generating stylized images (this may take a while) ...")
     
@@ -69,8 +77,10 @@ def get_stylized(imgs_a, imgs_b):
     # Return them
     return content_a_style_b, content_b_style_a
     
-# Define function for preprocessing
 def preprocess(imgs):
+    """
+    Function preprocesses a list of images; returns images as arrays and converts from BGR to RGB.
+    """
     # Info for terminal use
     print(f"[INFO] Preprocessing stylized images ...")
     
@@ -96,8 +106,10 @@ def preprocess(imgs):
     # Return preprocessed imgs
     return preprocessed
 
-# Define function for saving the stylized images
 def save_imgs(imgs, outfolder):
+    """
+    Function which saves a list of images to a given outfolder with unique names. Also creates the outfolder if it does not already exist.
+    """
     # Info for terminal use
     print(f"[INFO] Saving stylized images to \"{outfolder}\" ...")
     
@@ -121,9 +133,11 @@ def save_imgs(imgs, outfolder):
     # Info for terminal use
     print(f"[INFO] Stylized images have been saved to \"{outfolder}\" successfully")
     
-# Defining main function
+############### Defining main function ###############
 def main(inpath_a, inpath_b, outpath_content_a_style_b, outpath_content_b_style_a):
-    
+    """
+    Main function.
+    """
     # Loading files
     a = file_load_random(inpath_a)
     b = file_load_random(inpath_b)
@@ -139,7 +153,7 @@ def main(inpath_a, inpath_b, outpath_content_a_style_b, outpath_content_b_style_
     save_imgs(content_a_style_b, outpath_content_a_style_b)
     save_imgs(content_b_style_a, outpath_content_b_style_a)
 
-# Defining behaviour when called from command line
+############### Defining use when called from terminal ################
 if __name__=="__main__":
     # Initialize ArgumentParser class
     parser = argparse.ArgumentParser(description = "[SCRIPT DESCRIPTION] Generates two sets of stylized images from two corpora. It pairs images from the two corpora randomly, and generates two new stylized images per pair. One with content of image a and style of image b, and vice versa.")
