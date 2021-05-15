@@ -31,8 +31,9 @@
 ## Assignment description
 
 Build and train a deep neural networks classifier to classify artists of [impressionist paintings](https://www.kaggle.com/delayedkarma/impressionist-classifier-data). Can a machine-learning algorithm classify the artist of an impressionist painting? Use either the architecture _ShallowNet_ or _LeNet_.
-You should save visualizations showing loss/accuracy of the model during training; you should also a save the output from the classification report.
-
+- You should save visualizations showing loss/accuracy of the model during training
+- You should also a save the output from the classification report.
+- For reshaping images, I suggest checking out cv.resize() with the cv2.INTER_AREA method
 
 <!-- USAGE -->
 ## Usage
