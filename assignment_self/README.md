@@ -33,8 +33,17 @@
 This self-assigned assignment has two main questions it seeks to investigate.
 
 **Question 1 - Generating stylized paintings**
-Is it possible to use the method of style transfer to stylize paintings of one artist with the style of another?
-[impressionist paintings](https://www.kaggle.com/delayedkarma/impressionist-classifier-data). 
+
+_Is it possible to use the method of style transfer to stylize paintings of one artist with the style of another?_ 
+This assignment seeks to investigate the possibility of not just transferring style from a painting to an actual image, but to transfer the style of a painting to another painting. Using paintings from the artists _Van Gogh_ and _Monet_ using the [impressionist paintings dataset](https://www.kaggle.com/delayedkarma/impressionist-classifier-data), create a script which generates new stylized images (contents of Van Gogh with styles of Monet and vice versa).
+- Save the stylized images in unique folders with names specifying the stylized images.
+- Save images that provide an example of the stylized images. Show a content image, a style image, and the stylized image.
+
+**Question 2 - Classification of stylized images**
+
+_When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to investigate the importance of content vs. style when classifying images.
+Train a model (or use a pre-trained model) to classify paintings from two artists. Use this model to 
+
 
 <!-- USAGE -->
 ## Usage
