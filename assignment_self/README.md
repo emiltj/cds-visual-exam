@@ -87,7 +87,8 @@ I have tried to as accessible and user-friendly as possible. This has been attem
 
 #### Generating stylized images:
 <p align="center">
-<em>NOTE:
+<em>NOTE: 
+<br/>
 At top: Content
 <br/>
 At middle: Style
@@ -97,8 +98,7 @@ At bottom: Stylized image
 <br/>
 </p>
 <p align="center"><a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_11.jpg"><img src="./out/example_11.jpg" alt="Logo" width="256" height="768"></a>&nbsp; &nbsp; &nbsp; &nbsp;<a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_1.jpg"><img src="./out/example_1.jpg" alt="Logo" width="256" height="768"></a></p>
-<p align="center"><em>Content: Monet  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Content: Gauguin</em><p/>
-<p align="center"><em>Style: Gauguin  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Style: Monet</em><p/>
+<p align="center"><em>Content: Monet, Style: Gauguin  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Content: Gauguin, Style: Monet</em><p/>
 
 #### Classifying artists
 <p align="center"><a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_5/out/ShallowNet_training_history.png"><img src="./out/ShallowNet_training_history.png" alt="Logo" width="256" height="256"></a>   <a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_5/out/LeNet_training_history.png"><img src="./out/LeNet_training_history.png" alt="Logo" width="256" height="256"></a></p>
