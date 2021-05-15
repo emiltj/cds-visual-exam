@@ -24,15 +24,20 @@ from tensorflow.keras.layers import (Conv2D,
                                      Dense)
 
 ############### Defining functions to be used in main ###############
-# Define function for retrieving alphabetically sorted artist list:
+
 def get_artists(artists_path):
+    """
+    Function which retrieves an alphabetically sorted artists list
+    """
     artists = os.listdir(artists_path) # Get list of directories (each names corresponds to artists' names
     artists = artists[0:4] + artists[5:] # Removing artifact
     artists = sorted(artists) # Sort alphabetically
     return artists
 
-# Define function for retrieving test/train data:
 def get_train_test(artists):
+    """
+    Function which retrieves the train/test data from the folder structure.
+    """
     # Make empty lists, which are to be appended to
     train_paintings, train_paintings_artists = [], []
     test_paintings, test_paintings_artists = [], []
@@ -54,8 +59,10 @@ def get_train_test(artists):
     # Return the lists
     return train_paintings, train_paintings_artists, test_paintings, test_paintings_artists
 
-# Define function for resizing and making into array
-def get_resized_arrays(paintings, width, height):
+def get_resized_arrays(paintings, width, height): 
+    """
+    Function which resizes images to argument dimensions and makes them into np.arrays
+    """
     # Empty list for appending to
     paintings_resized = []
     
@@ -76,9 +83,10 @@ def get_resized_arrays(paintings, width, height):
     # Return
     return paintings_resized
 
-# Define function for plotting accuracy and loss over epochs
 def plot_history(H, epochs, cnn):
-    
+    """
+    Function which plots accuracy and loss over epochs (courtesy of Ross McLachlan)
+    """
     # Visualizing performance
     plt.style.use("fivethirtyeight")
     plt.figure()
@@ -95,7 +103,9 @@ def plot_history(H, epochs, cnn):
 
 ############### Defining main function ###############
 def main(cnn, resizedim,  batch_size, epochs):
-    
+    """
+    Main function.
+    """
     # Make a alphabetically sorted list of all the artists
     artists_path = os.path.join("data", "training")
     artists = get_artists(artists_path)
