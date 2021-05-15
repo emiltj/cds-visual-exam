@@ -86,7 +86,7 @@ I have tried to as accessible and user-friendly as possible. This has been attem
 ## Results and discussion
 
 #### Generating stylized images
-<p align="center"><a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_11.jpg"><img src="./out/example_11.jpg" alt="Logo" width="256" height="768"></a>   <a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_1.jpg"><img src="./out/example_1.jpg" alt="Logo" width="256" height="768"></a></p>
+<p align="center"><a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_11.jpg"><img src="./out/example_11.jpg" alt="Logo" width="256" height="768"></a>&nbsp; &nbsp; &nbsp; &nbsp;<a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_1.jpg"><img src="./out/example_1.jpg" alt="Logo" width="256" height="768"></a></p>
 <p align="center"><em>Monet content, Gauguin style &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Gauguin content, Monet style</em><p/>
 
 
