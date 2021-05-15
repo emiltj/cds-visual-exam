@@ -84,7 +84,7 @@ I have tried to as accessible and user-friendly as possible. This has been attem
 <!-- RESULTS AND DISCUSSION -->
 ## Results and discussion
 <p align="center"><a href="https://github.com/emiltj/cds-visual-exam/tree/main/assignment_2/out"><img src="./out/target_image.jpg" alt="Logo" width="256" height="256">   <img src="./out/closest_image.jpg" alt="Logo" width="256" height="256"></a></p>
-<p align="center">Target image &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Closest image<p/>
+<p align="center"><em>Target image &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Closest image</em><p/>
 
 After running the function with the default arguments, we [the output .csv file](https://github.com/emiltj/cds-visual-exam/blob/main/assignment_2/out/distances_to_image_0002.csv) showing all the distances between target image and corpus.
 By looking at the images above; target image (left) and the image with the smallest histogram distance (right), we see some clear similarities in terms of color and color intensities (although the plant species are not the same). The placement of the high intensities of yellow are similar, as is the ground around it. This was however not a given. 
