@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
-# Import libraries
+############### Importing libraries ################
 import os, glob, argparse, cv2
 import pandas as pd
 from shutil import copyfile
 
+############### Defining functions to be used in main ###############
 # Defining function for getting information on the target image
 def get_target_inf(targetpath):
     # Getting the filename of the target image
@@ -71,7 +72,7 @@ def save_df(file_names, distances_to_target, target_name):
     # Return dataframe
     return outpath, df
 
-# Defining main function
+############### Defining main function ###############
 def main(targetpath, filepath):
     # Get target info
     target_name, target_hist_norm = get_target_inf(targetpath)
@@ -90,7 +91,7 @@ def main(targetpath, filepath):
     copyfile(os.path.join("data", closest_image[0]), os.path.join("out", "closest_image.jpg"))
     print(f"[INFO] The target image (\"{target_name})\" and the closest image (\"{closest_image[0]})\" have been saved to \"out\". The chi-square histogram distance was found to be: {closest_image[1]}")
     
-# Defining behaviour when called from command line
+############### Defining use when called from terminal ################
 if __name__=="__main__":
     # Initialize ArgumentParser class
     parser = argparse.ArgumentParser(description = "[SCRIPT DESCRIPTION] Calculates rgb-distance from image corpus to a specified target image using the chi-square method")
