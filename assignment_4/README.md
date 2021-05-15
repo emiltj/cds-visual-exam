@@ -130,7 +130,7 @@ nn_mnist.py arguments for commandline to consider:
 Prior to training, both scripts had the data min-max scaled to allow for faster processing and better convergence. Both the training and test data was scaled using the values of the training data, to avoid information to flow from the training set to the test set.
 These scripts allows for simple model benchmarking on the MNIST dataset, which could prove useful if one wanted to test other models for classification of the same dataset.
 
-Moreover, the \[BONUS\] features were included. This means that the user is allowed to specify parameters such as number of epochs, hiddenlayers for the Neural Network, while the arguments for the Logistic Regression script lets the user specify C-values and the penalty method. The classification reports can be saved if specified using the arguments, and the user can furthermore predict any new images (regardless of dimensions) using the argument _--individual__ 
+Moreover, the \[BONUS\] features were included. This means that the user is allowed to specify parameters such as number of epochs, hiddenlayers for the Neural Network, while the arguments for the Logistic Regression script lets the user specify C-values and the penalty method. The classification reports can be saved if specified using the arguments, and the user can furthermore predict any new images (regardless of dimensions) using the argument _--individual_.
 
 **On a more general level (this applies to all assignments):**
 
@@ -150,16 +150,19 @@ I have tried to as accessible and user-friendly as possible. This has been attem
 | f1-score  | 0.9724310776942355 | 0.953781512605042 | 0.9123711340206185 | 0.8878923766816144 | 0.9349112426035504 | 0.8647058823529411 | 0.9553072625698323 | 0.9362745098039216 | 0.8616187989556137 | 0.9051724137931034 | 0.919    | 0.9184466211080473 | 0.9185747048733469 | 
 | support   | 198.0              | 232.0             | 194.0              | 225.0              | 165.0              | 171.0              | 180.0              | 203.0              | 198.0              | 234.0              | 0.919    | 2000.0             | 2000.0             | 
 
+
 **Neural networks classification report**
 |           | 0                  | 1                  | 2                  | 3                  | 4                  | 5                  | 6                  | 7                  | 8                  | 9                  | accuracy | macro avg          | weighted avg       | 
 |-----------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|----------|--------------------|--------------------| 
-| precision | 0.9095238095238095 | 0.9696969696969697 | 0.9230769230769231 | 0.8528138528138528 | 0.8928571428571429 | 0.852760736196319  | 0.9130434782608695 | 0.8947368421052632 | 0.8563829787234043 | 0.8502024291497976 | 0.8915   | 0.8915095162404352 | 0.8918247844595311 | 
-| recall    | 0.9646464646464646 | 0.9655172413793104 | 0.8041237113402062 | 0.8755555555555555 | 0.9090909090909091 | 0.8128654970760234 | 0.9333333333333333 | 0.9211822660098522 | 0.8131313131313131 | 0.8974358974358975 | 0.8915   | 0.8896882188998866 | 0.8915             | 
-| f1-score  | 0.9362745098039216 | 0.9676025917926565 | 0.859504132231405  | 0.8640350877192982 | 0.9009009009009009 | 0.8323353293413173 | 0.9230769230769231 | 0.9077669902912622 | 0.8341968911917099 | 0.8731808731808732 | 0.8915   | 0.8898874229530268 | 0.8909608472780384 | 
-| support   | 198.0              | 232.0              | 194.0              | 225.0              | 165.0              | 171.0              | 180.0              | 203.0              | 198.0              | 234.0              | 0.8915   | 2000.0             | 2000.0             | 
+| precision | 0.9405940594059405 | 0.9658119658119658 | 0.9123711340206185 | 0.9155555555555556 | 0.8895348837209303 | 0.9006211180124224 | 0.9491525423728814 | 0.9174757281553398 | 0.8905472636815921 | 0.9078947368421053 | 0.92     | 0.9189558987579354 | 0.9199781119487453 | 
+| recall    | 0.9595959595959596 | 0.9741379310344828 | 0.9123711340206185 | 0.9155555555555556 | 0.9272727272727272 | 0.847953216374269  | 0.9333333333333333 | 0.9310344827586207 | 0.9040404040404041 | 0.8846153846153846 | 0.92     | 0.9189910128601356 | 0.92               | 
+| f1-score  | 0.95               | 0.9699570815450644 | 0.9123711340206185 | 0.9155555555555556 | 0.9080118694362018 | 0.8734939759036144 | 0.9411764705882353 | 0.9242053789731051 | 0.8972431077694235 | 0.8961038961038961 | 0.92     | 0.9188118469895716 | 0.9198436874595133 | 
+| support   | 198.0              | 232.0              | 194.0              | 225.0              | 165.0              | 171.0              | 180.0              | 203.0              | 198.0              | 234.0              | 0.92     | 2000.0             | 2000.0             | 
 
 
-When looking at the results, the classification benchmarks for the Logistic Regression (LR) classifier and the Neural Networks (NN) classifier seem to have similar performance, with a macro average f1-score of .92 and * , respectively. NN's tend to outperform LR classifiers when both data and training time is plentiful and given the right hidden layer structure and parameter settings. The NN classifiers do, as here, however often take longer to train.
+
+When looking at the results, the classification benchmarks for the Logistic Regression (LR) classifier and the Neural Networks (NN) classifier seem to have similar performance, with a macro average f1-scores of .92 for both models. NN's tend to outperform LR classifiers when both data and training time is plentiful and given the right hidden layer structure and parameter settings. As NN classifiers often take longer to train, the default parameters (hidden layer structure and number of epochs) were set to result in low runtimes for faster processing. More training would likely have resulted in higher performance.
+
 When looking at the performances for the individual numbers, it becomes evident that the classifer did not classify equally well for all numbers. 3, 5 and 8 seem to be harder to predict - this is likely due to the similarity that they may have with other numbers (i.e. pixels of 3 and 5 might have a lot of overlapping). 
 As for out of sample images the scripts were also capable of classifying the individual test image of a written number, correctly classifying it as 4.
 
