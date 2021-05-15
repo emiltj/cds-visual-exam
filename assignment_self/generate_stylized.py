@@ -52,9 +52,6 @@ def file_load_random(files):
     # Shuffle order
     random.shuffle(loaded_imgs)
     
-    # Subset
-    # loaded_imgs = loaded_imgs[:50]
-    
     # Return randomly shuffled, loaded images
     return loaded_imgs
 
@@ -83,9 +80,6 @@ def preprocess(imgs):
     """
     Function that preprocesses a list of images; returns images as arrays and converts from BGR to RGB.
     """
-    # Info for terminal use
-    print(f"[INFO] Preprocessing stylized images ...")
-    
     # Empty list for appending to
     preprocessed = []
     
@@ -200,7 +194,7 @@ if __name__=="__main__":
         "-i",
         "--inpatha", 
         type = str,
-        default = os.path.join("data", "content_gauguin_style_gauguin", "*2.jpg"), # Default path to corpus, when none is specified
+        default = os.path.join("data", "content_gauguin_style_gauguin", "*.jpg"), # Default path to corpus, when none is specified
         required = False,
         help= "str - path to image corpus a")
     
@@ -209,7 +203,7 @@ if __name__=="__main__":
         "-I",
         "--inpathb",
         type = str,
-        default = os.path.join("data", "content_monet_style_monet", "*2.jpg"), # Default path to corpus, when none is specified
+        default = os.path.join("data", "content_monet_style_monet", "*.jpg"), # Default path to corpus, when none is specified
         required = False,
         help= "str - path to image corpus b")
     
