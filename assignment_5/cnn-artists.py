@@ -61,8 +61,10 @@ def get_resized_arrays(paintings, width, height):
     for painting in paintings:
         # Resize painting
         resized = cv2.resize(painting, (width, height), interpolation = cv2.INTER_AREA)
+        
         # Normalize painting
         resized = resized.astype("float") / 255.
+        
         # Append to list
         paintings_resized.append(resized)
     
@@ -74,6 +76,7 @@ def get_resized_arrays(paintings, width, height):
 
 # Define function for plotting accuracy and loss over epochs
 def plot_history(H, epochs, cnn):
+    
     # Visualizing performance
     plt.style.use("fivethirtyeight")
     plt.figure()
@@ -90,6 +93,7 @@ def plot_history(H, epochs, cnn):
 
 # Defining main function, which uses the previously defined functions as well as trains/tests the model
 def main(cnn, resizedim,  batch_size, epochs):
+    
     # Make a alphabetically sorted list of all the artists
     artists_path = os.path.join("data", "training")
     artists = get_artists(artists_path)

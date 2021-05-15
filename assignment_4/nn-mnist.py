@@ -187,7 +187,7 @@ if __name__=="__main__":
         "-H",
         "--hiddenlayers", 
         type = list,
-        default = [32, 16], # Default when not specifying anything in the terminal
+        default = [16, 8], # Default when not specifying anything in the terminal
         required = False, # Since we have a default value, it is not required to specify this argument
         help = "list - specifying the hidden layers, each element in the list corresponds to number of nodes in layer. index in list corresponds to hiddenlayer number. E.g. [32, 16]")
     
@@ -196,7 +196,7 @@ if __name__=="__main__":
         "-e",
         "--epochs", 
         type = int,
-        default = 500, # Default when not specifying anything in the terminal
+        default = 200, # Default when not specifying anything in the terminal
         required = False, # Since we have a default value, it is not required to specify this argument
         help = "int - specifying number of epochs for training the model.")
     
