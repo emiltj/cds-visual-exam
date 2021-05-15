@@ -94,9 +94,7 @@ When reducing the complexity of an image to its RGB histogram, we lose important
 
 **Output .csv file (distances\_to\_image\_.\*.csv):**
 
-After running the function with the default arguments, we [the output .csv file](https://github.com/emiltj/cds-visual-exam/blob/main/assignment_2/out/distances_to_image_0002.csv). This shows the distances for the images in the image corpus to the target image, and clearly shows filename.
-
-
+After running the function with the default arguments, a new [output .csv file](https://github.com/emiltj/cds-visual-exam/blob/main/assignment_2/out/distances_to_image_0002.csv) is created. It shows the distances for the images in the image corpus to the target image, and clearly shows filename.
 
 <!-- CONTACT -->
 ## Contact
