@@ -117,9 +117,7 @@ We see a steady climb in training loss and training accuracy - the more epochs t
 
 **Training history of CNN following the _LeNet_ architecture (right):** 
 
-We see a different trend. Given the more complex architecture of the LeNet model, we have a model that does not result in much overfitting given the first 50 epochs. Given longer training, this model may very well have begun to achieve even higher accuracies and F1-scores than the other model.
-
-
+We see a different trend when using the LeNet architecture. Given the more complex architecture of the LeNet model, we have a model that does not result in much overfitting given the first 50 epochs. Given longer training, this model may very well have begun to achieve even higher accuracies and F1-scores than the other model. Given any future use, this would be recommended.
 
 <!-- CONTACT -->
 ## Contact
