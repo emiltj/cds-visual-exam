@@ -87,12 +87,13 @@ I have tried to as accessible and user-friendly as possible. This has been attem
 
 #### Generating stylized images:
 <p align="center">
-_NOTE: 
+<em>NOTE:
 At top: Content
 <br/>
 At middle: Style
 <br/>
 At bottom: Stylized image
+</em>
 <br/>
 </p>
 <p align="center"><a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_11.jpg"><img src="./out/example_11.jpg" alt="Logo" width="256" height="768"></a>&nbsp; &nbsp; &nbsp; &nbsp;<a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_1.jpg"><img src="./out/example_1.jpg" alt="Logo" width="256" height="768"></a></p>
