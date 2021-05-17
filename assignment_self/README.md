@@ -46,8 +46,8 @@ This assignment seeks to investigate the possibility of not just transferring st
 
 _When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to train and test a classifier on the original paintings, and subsequently use the same trained model to classify the stylized paintings. In other words, investigate the importance of content vs. style when classifying paintings.
 * Use a pre-trained CNN classifier to distinguish between Cezanne paintings and Monet paintings.
-* Use this model to classify between the newly generated stylized images. 
-* Are Monet paintings with Cezanne style classified as Monet due to their content? Or rather classified as Cezanne due to their style? Discuss the findings and consider whether the results tell us something general about the classifier or about the stylization process. 
+* Use the same model to classify between the newly generated stylized images. 
+* Are Monet paintings with Cezanne style classified as Monet due to their content? Or rather classified as Cezanne due to their style? Discuss the findings and consider whether the results tell us something general about either the classifier or about the stylization process. 
 
 <!-- METHODS -->
 ## Methods
@@ -58,14 +58,14 @@ The original paintings were loaded and their order shuffled. They were then pair
 
 **Classifying paintings and stylized paintings**
 
-Both the original paintings and the stylized paintings were loaded using a self-define function, and labels were automatically assigned. The paintings were then resized and formatted, as to match the input expectations of the subsequently defined pre-trained CNN model ([MobileNetV2](https://arxiv.org/abs/1801.04381)). The model was then trained to classify the artists of the original paintings, and later tested on an unseen subset of the same data. The same model was then set to classify the stylized images. Classification reports showing the results for both test sets is printed to the terminal, as well as saved to ```out``` along with the training history. 
+Both the original paintings and the stylized paintings were loaded using a self-define function and labels were automatically assigned. The paintings were then resized and formatted, as to match the input expectations of the subsequently defined pre-trained CNN model ([MobileNetV2](https://arxiv.org/abs/1801.04381)). The model was then trained to classify the artists of the original paintings, and later tested on an unseen subset of the same data. The same model was then set to classify the stylized images. The training history as well as the classification reports for both test sets were printed to the terminal and saved to the ```./out/``` folder.
 
 **On a more general level (this applies to all assignments):**
 
 I have tried to as accessible and user-friendly as possible. This has been attempted by the use of:
 * Smaller functions. These are intended to solve the sub-tasks of the assignment. This is meant to improve readability of the script, as well as simplifying the use of the script.
 * Information prints. Information is printed to the terminal to allow the user to know what is being processed in the background
-* Argparsing. Arguments that let the user determine the behaviour and paths of the script (see "Optional arguments" section for more information)
+* Argparsing. Arguments that let the user determine the behaviour and paths of the script (see <a href="#optional-arguments">"Optional arguments"</a> section for more information)
 
 
 <!-- RESULTS AND DISCUSSION -->
