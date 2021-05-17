@@ -47,11 +47,7 @@ This assignment seeks to investigate the possibility of not just transferring st
 _When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to investigate the importance of content vs. style when classifying images.
 - Use a pre-trained CNN classifier to distinguish between Cezanne paintings and Monet paintings.
 - Use this model to classify between the newly generated stylized images. 
-  - Are Monet paintings with Cezanne style classified as Monet due to their content, or rather Cezanne due to their ?
-- Discuss whether this 
-
-Style transfer refers to the act of minimizing the loss of information between two sets of embedded images. One image (the style image) is embedded using the first few layers of a neural network and network activations are sampled from this embedded image. The other image (the content image) is embedded using the same neural network, but using the first <ins>many</ins> layers of the network. Likewise, the embedded image from this layer is also extracted. Using these two embeddings, style transfer then seeks to synthesize the two with regards to a loss function that minimizes the information loss of both images.
-
+- Are Monet paintings with Cezanne style classified as Monet due to their content, or rather Cezanne due to their style? Discuss the findings and consider whether the results tell us something general about the classifier or about the stylization process. 
 
 <!-- METHODS -->
 ## Methods
@@ -94,6 +90,9 @@ When looking at the above two images and ([the rest of the examples](https://git
 
 Alternatively to the random pairings of style/content images, one could have considered extracting the styles of all images of one artist and then subsequently found the weights resulting in the least information loss across all these images. This way we would have the general style of an artist to use as the style image when stylizing images. However, a caveat to this method would be the artist we have here, tend to not have the same style of painting over time. The fact that the noise from the content that is inevitably fed into the style imbedding would also require an enormous number of paintings from each artist.
 
+
+Style transfer refers to the act of minimizing the loss of information between two sets of embedded images. One image (the style image) is embedded using the first few layers of a neural network and network activations are sampled from this embedded image. The other image (the content image) is embedded using the same neural network, but using the first <ins>many</ins> layers of the network. Likewise, the embedded image from this layer is also extracted. Using these two embeddings, style transfer then seeks to synthesize the two with regards to a loss function that minimizes the information loss of both images.
+
 #### Classification of stylized images
 
 <!-- USAGE -->
@@ -105,15 +104,16 @@ Subsequently, use the following code:
 ```bash
 cd cds-visual/assignment_2
 source ../cv101/bin/activate
-python cnn-artists.py
+python generate_stylized.py
+python cnn_stylized.py
 ```
 
 ### Optional arguments:
 s
-.py arguments for commandline to consider:
+generate_stylized.py arguments for commandline to consider:
 -       s
 -       
-.py arguments for commandline to consider:
+cnn_stylized.py arguments for commandline to consider:
 -       
 
 <!-- CONTACT -->
