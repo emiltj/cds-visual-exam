@@ -7,7 +7,7 @@
   <h1 align="center">????</h1>
 
   <p align="center">
-    ??????
+    Stylized paintings and classification
     <br />
     <a href="https://github.com/emiltj/cds-visual-exam/issues">Report Bug</a>
     ·
@@ -38,13 +38,20 @@ This self-assigned assignment has two main questions it seeks to investigate. Th
 **Question 1 - Generating stylized paintings**
 
 _Is it possible to use the method of style transfer to stylize paintings of one artist with the style of another?_ 
-This assignment seeks to investigate the possibility of not just transferring style from a painting to an actual image, but to transfer the style of a painting to another painting. Using paintings from the artists _Cezanne_ and _Monet_ using the [impressionist paintings dataset](https://www.kaggle.com/delayedkarma/impressionist-classifier-data), create a script which generates new stylized images (contents of Cezanne with styles of Monet and vice versa).
+This assignment seeks to investigate the possibility of not just transferring style from a painting to an actual image as is so often done, but to explore the transferral of the style of one painting to another painting. Using paintings from the artists _Cezanne_ and _Monet_ from the [impressionist paintings dataset](https://www.kaggle.com/delayedkarma/impressionist-classifier-data), create a script which generates new stylized images. The stylized images should contain the contents of Cezanne with styles of Monet and vice versa.
 - Save the stylized images in unique folders with names specifying the stylized images.
-- Save images that provide an example of the stylized images. Show a content image, a style image, and the resulting stylized image.
+- Save examples that clearly show the before and after result; save an image which includes content image, style image, and the resulting stylized image.
 
 **Question 2 - Classification of stylized images**
 
-_When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to investigate the importance of content vs. style when classifying images. Style transfer refers to the act of minimizing the loss of information between two sets of embedded images. One image (the style image) is embedded using the first few layers of a neural network and network activations are sampled from this embedded image. The other image (the content image) is embedded using the same neural network, but using the first <ins>many</ins> layers of the network. Likewise, the embedded image from this layer is also extracted. Using these two embeddings, style transfer then seeks to synthesize the two with regards to a loss function that minimizes the information loss of both images.
+_When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to investigate the importance of content vs. style when classifying images.
+- Use a pre-trained CNN classifier to distinguish between Cezanne paintings and Monet paintings.
+- Use this model to classify between the newly generated stylized images. 
+* Are Monet paintings with Cezanne style classified as Monet due to their content, or rather Cezanne due to their ?
+- Discuss whether this 
+
+Style transfer refers to the act of minimizing the loss of information between two sets of embedded images. One image (the style image) is embedded using the first few layers of a neural network and network activations are sampled from this embedded image. The other image (the content image) is embedded using the same neural network, but using the first <ins>many</ins> layers of the network. Likewise, the embedded image from this layer is also extracted. Using these two embeddings, style transfer then seeks to synthesize the two with regards to a loss function that minimizes the information loss of both images.
+
 
 <!-- METHODS -->
 ## Methods
