@@ -90,19 +90,19 @@ When looking at the above two images and ([the rest of the examples](https://git
 Alternatively to the random pairings of style/content images, one could have considered extracting the styles of all images of one artist and then subsequently found the weights resulting in the least information loss across all these images. This way we would have the general style of an artist to use as the style image when stylizing images. However, a caveat to this method would be the artist we have here, tend to not have the same style of painting over time. The fact that the noise from the content that is inevitably fed into the style imbedding would also require an enormous number of paintings from each artist.
 
 #### Classification of stylized images
-
+<p align="center">
 |           |                    |                    |                    |                    |                    | 
 |-----------|--------------------|--------------------|--------------------|--------------------|--------------------| 
 |           | monet              | cezanne            | accuracy           | macro avg          | weighted avg       | 
-| precision | 0.9245283018867925 | 0.967741935483871  | 0.9447236180904522 | 0.9461351186853317 | 0.9458093877788211 | 
-| recall    | 0.9702970297029703 | 0.9183673469387755 | 0.9447236180904522 | 0.9443321883208728 | 0.9447236180904522 | 
-| f1-score  | 0.9468599033816426 | 0.9424083769633509 | 0.9447236180904522 | 0.9446341401724967 | 0.9446676943917302 | 
-| support   | 101.0              | 98.0               | 0.9447236180904522 | 199.0              | 199.0              | 
-<p align="center"><em> Original paintings classification report </em></p>
-
+| precision | 0.92 | 0.97  | 0.94 | 0.95 | 0.95 | 
+| recall    | 0.97 | 0.92 | 0.94 | 0.94 | 0.94 | 
+| f1-score  | 0.95 | 0.94 | 0.94 | 0.94 | 0.94 | 
+| support   | 101.0              | 98.0               | 0.94 | 199.0              | 199.0              | 
+<em> Original paintings classification report </em></p>
 
 <br/>
 
+<p align="center">
 |           |                     |                     |                     |                     |                     | 
 |-----------|---------------------|---------------------|---------------------|---------------------|---------------------| 
 |           | monet               | cezanne             | accuracy            | macro avg           | weighted avg        | 
@@ -110,8 +110,7 @@ Alternatively to the random pairings of style/content images, one could have con
 | recall    | 0.18 | 0.32   | 0.25 | 0.25 | 0.25 | 
 | f1-score  | 0.19 | 0.3 | 0.25 | 0.24   | 0.24   | 
 | support   | 497.0               | 497.0               | 0.25 | 994.0               | 994.0               | 
-
-<p align="center"><em> Stylized paintings classification report </em></p>
+<em> Stylized paintings classification report </em></p>
 
 As can be seen in the classification report when predicting the original paintings (top)
 
