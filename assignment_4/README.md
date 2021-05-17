@@ -4,10 +4,11 @@
   <a href="https://github.com/emiltj/cds-visual-exam">
     <img src="../README_images/vis_logo.png" alt="Logo" width="200" height="200">
   </a>
-  <h1 align="center">Assignment 4</h1>
+  <h1 align="center">Logistic Regression and Neural Network benchmark MNIST classification
+</h1>
   
   <p align="center">
-    Logistic Regression and Neural Network benchmark MNIST classification
+    Assignment 4
     <br />
     <a href="https://github.com/emiltj/cds-visual-exam/issues">Report Bug</a>
     ·
