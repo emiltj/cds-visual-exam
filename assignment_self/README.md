@@ -35,13 +35,14 @@ This self-assigned assignment has two main questions it seeks to investigate. Th
 **Question 1 - Generating stylized paintings**
 
 _Is it possible to use the method of style transfer to stylize paintings of one artist with the style of another?_ 
-This assignment seeks to investigate the possibility of not just transferring style from a painting to an actual image, but to transfer the style of a painting to another painting. Using paintings from the artists _Van Gogh_ and _Monet_ using the [impressionist paintings dataset](https://www.kaggle.com/delayedkarma/impressionist-classifier-data), create a script which generates new stylized images (contents of Van Gogh with styles of Monet and vice versa).
+This assignment seeks to investigate the possibility of not just transferring style from a painting to an actual image, but to transfer the style of a painting to another painting. Using paintings from the artists _Cezanne_ and _Monet_ using the [impressionist paintings dataset](https://www.kaggle.com/delayedkarma/impressionist-classifier-data), create a script which generates new stylized images (contents of Cezanne with styles of Monet and vice versa).
 - Save the stylized images in unique folders with names specifying the stylized images.
-- Save images that provide an example of the stylized images. Show a content image, a style image, and the stylized image.
+- Save images that provide an example of the stylized images. Show a content image, a style image, and the resulting stylized image.
 
 **Question 2 - Classification of stylized images**
 
-_When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to investigate the importance of content vs. style when classifying images. Style transfer refers to the act of minimizing the loss of information between two sets of imbedded images. One image (the style image) is imbedded using the first few layers of a neural network and network activations are sampled from this imbedded image. The other image (the content image) is imbedded using the same neural network, but using the first many layers of the network. Likewise, the imbedded image from this layer is also extracted. Using these two imbedded images, style transfer then seeks to synthesize these two imbedded images with regards to a loss function with minimizes the information loss of both images - weighted equally.
+_When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to investigate the importance of content vs. style when classifying images. Style transfer refers to the act of minimizing the loss of information between two sets of embedded images. One image (the style image) is embedded using the first few layers of a neural network and network activations are sampled from this embedded image. The other image (the content image) is embedded using the same neural network, but using the first <ins>many</ins> layers of the network. Likewise, the embedded image from this layer is also extracted. Using these two embeddings, style transfer then seeks to synthesize the two with regards to a loss function that minimizes the information loss of both images.
+
 
 <!-- USAGE -->
 ## Usage
@@ -68,7 +69,12 @@ s
 
 **Specifically for this assignment:**
 
-s
+For generating stylized images,
+
+https://en.wikipedia.org/wiki/Neural_Style_Transfer#Formulation
+
+
+
 
 **On a more general level (this applies to all assignments):**
 
@@ -92,10 +98,12 @@ Bottom: Stylized image
 </em>
 <br/>
 </p>
-<p align="center"><a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_11.jpg"><img src="./out/example_11.jpg" alt="Logo" width="256" height="768"></a>&nbsp; &nbsp; &nbsp; &nbsp;<a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_1.jpg"><img src="./out/example_1.jpg" alt="Logo" width="256" height="768"></a></p>
-<p align="center"><em>Content: Monet, style: Gauguin  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Content: Gauguin, style: Monet</em><p/>
+<p align="center"><a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_7.jpg"><img src="./out/example_11.jpg" alt="Logo" width="256" height="768"></a>&nbsp; &nbsp; &nbsp; &nbsp;<a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_17.jpg"><img src="./out/example_1.jpg" alt="Logo" width="256" height="768"></a></p>
+<p align="center"><em>Content: Monet, style: Cezanne  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Content: Gauguin, style: Cezanne</em><p/>
 
-When looking at the above two images ([and the rest of the examples](https://github.com/emiltj/cds-visual-exam/tree/main/assignment_self/out)), it does indeed seem possible to transfer style from a painting, to another painting. However, from a brief glance at the 20 examples there is a [single image](https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_16.jpg), in which the process seemed to generate a painting which is hard to interpret.
+When looking at the above two images and ([the rest of the examples](https://github.com/emiltj/cds-visual-exam/tree/main/assignment_self/out)), it does indeed seem possible to transfer style from a painting, to another painting. However, from a brief glance at the 20 examples it seems that when using portraits of people as style image, the process seems to generate paintings that are hard to interpret (e.g. [image 12](https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_12.jpg).
+
+Alternatively to the random pairings of style/content images, one could have considered extracting the styles of all images of one artist and then subsequently found the weights resulting in the least information loss across all these images. This way we would have the general style of an artist to use as the style image when stylizing images. However, a caveat to this method would be the artist we have here, tend to not have the same style of painting over time. The fact that the noise from the content that is inevitably fed into the style imbedding would also require an enormous number of paintings from each artist.
 
 #### Classification of stylized images
 

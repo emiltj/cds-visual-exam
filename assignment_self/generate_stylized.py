@@ -6,9 +6,6 @@ import os, sys, random, cv2, glob, argparse
 random.seed(15)
 sys.path.append(os.path.join(".."))
 
-# Ross' function for showing imgs
-from utils.imutils import jimshow
-
 # data analysis
 import numpy as np
 from PIL import Image
@@ -106,11 +103,11 @@ def save_examples(content_img, style_img, stylized_img, unique_ending):
     Function that saves a set of content, style and stylized images.
     """
     # Create outpath if it does not exist
-    if not os.path.exists("out"):
-        os.mkdir("out")
+    if not os.path.exists(os.path.join("out", "examples"):
+        os.makedirs(os.path.join("out", "examples"))
 
     # Define outpath
-    example_outpath = os.path.join("out", f"example_{unique_ending}.jpg")
+    example_outpath = os.path.join("out", "examples", f"example_{unique_ending}.jpg")
     
     # Creating borders, making it easier to distinguish border around the concatenated images
     content_img = cv2.copyMakeBorder(content_img, 0, 10, 10, 10, cv2.BORDER_CONSTANT) # Creating a border of 10 pixels on all edges except for top.

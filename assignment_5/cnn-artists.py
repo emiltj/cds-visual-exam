@@ -196,12 +196,12 @@ def main(cnn, resizedim,  batch_size, epochs):
     print(f"[INFO] Training of the model has been completed using a batchsize of {batch_size} and using the CNN architecture from {cnn}: \n {architecture}\n")
 
     # Get predictions:
-    predictions = model.predict(testX, batch_size=batch_size)
+    predictions = model.predict(testX, batch_size = batch_size)
 
     # Get classification report from predictions
     classif_report = pd.DataFrame(classification_report(testY.argmax(axis=1),
-                                predictions.argmax(axis=1),
-                                target_names=labelNames, output_dict = True))
+                                predictions.argmax(axis = 1),
+                                target_names = labelNames, output_dict = True))
 
     # If the folder does not already exist, create it
     if not os.path.exists("out"):
