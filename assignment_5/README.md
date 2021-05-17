@@ -20,13 +20,15 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#assignment-description">Assignment description</a></li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#methods">Methods</a></li>
     <li><a href="#results-and-discussion">Results and discussion</a></li>
+    <li><a href="#usage">Usage</a></li>
+          <ul>
+        <li><a href="#optional-arguments">Optional arguments</a></li>
+      </ul>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
-
 <!-- ASSIGNMENT DESCRIPTION -->
 ## Assignment description
 
@@ -34,42 +36,6 @@ Build and train a deep neural networks classifier to classify artists of [impres
 - You should save visualizations showing loss/accuracy of the model during training
 - You should also a save the output from the classification report.
 - For reshaping images, I suggest checking out cv.resize() with the cv2.INTER_AREA method
-
-<!-- USAGE -->
-## Usage
-
-Make sure to follow the instructions in the README.md located at the parent level of this repository, for the required installation of the virtual environment as well as the data download.
-Subsequently, use the following code:
-
-```bash
-cd cds-visual/assignment_2
-source ../cv101/bin/activate
-python cnn-artists.py
-```
-
-### Optional arguments:
-
-cnn-artists.py arguments for commandline to consider:
--       "--cnn", 
-        type = str,
-        default = "ShallowNet",
-        required = False,
-        help = "str - specifying cnn architecture, use either \"ShallowNet\" or \"LeNet\"")
--       "--resizedim",
-        type = list, 
-        default = [32, 32],
-        required = False,
-        help = "list - specifying dimensions that the pictures should be resized to, e.g. [32, 32]")
--       "--batch_size",
-        type = int, 
-        default = 200,
-        required = False,
-        help = "int - specifying batch size")
--       "--epochs",
-        type = int, 
-        default = 50,
-        required = False,
-        help = "int - specifying number of epochs")
 
 <!-- METHODS -->
 ## Methods
@@ -123,6 +89,42 @@ We see a steady climb in training loss and training accuracy - the more epochs t
 **Training history of CNN following the _LeNet_ architecture (right):** 
 
 We see a different trend when using the LeNet architecture. Given the more complex architecture of the LeNet model, we have a model that does not result in much overfitting given the first 50 epochs. Given longer training, this model may very well have begun to achieve even higher accuracies and F1-scores than the other model. Given any future use, this would be recommended.
+
+<!-- USAGE -->
+## Usage
+
+Make sure to follow the instructions in the README.md located at the parent level of this repository, for the required installation of the virtual environment as well as the data download.
+Subsequently, use the following code:
+
+```bash
+cd cds-visual/assignment_2
+source ../cv101/bin/activate
+python cnn-artists.py
+```
+
+### Optional arguments:
+
+cnn-artists.py arguments for commandline to consider:
+-       "--cnn", 
+        type = str,
+        default = "ShallowNet",
+        required = False,
+        help = "str - specifying cnn architecture, use either \"ShallowNet\" or \"LeNet\"")
+-       "--resizedim",
+        type = list, 
+        default = [32, 32],
+        required = False,
+        help = "list - specifying dimensions that the pictures should be resized to, e.g. [32, 32]")
+-       "--batch_size",
+        type = int, 
+        default = 200,
+        required = False,
+        help = "int - specifying batch size")
+-       "--epochs",
+        type = int, 
+        default = 50,
+        required = False,
+        help = "int - specifying number of epochs")
 
 <!-- CONTACT -->
 ## Contact
