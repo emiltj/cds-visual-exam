@@ -4,7 +4,7 @@
   <a href="https://github.com/emiltj/cds-visual-exam">
     <img src="../README_images/vis_logo.png" alt="Logo" width="200" height="200">
   </a>
-  <h1 align="center">Logistic Regression and Neural Network benchmarking</h1>
+  <h2 align="center">Logistic Regression and Neural Network benchmarking</h2>
   
   <p align="center">
     Assignment 4
