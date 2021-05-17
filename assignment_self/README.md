@@ -40,7 +40,7 @@ This self-assigned assignment has two main questions it seeks to investigate. Th
 _Is it possible to use the method of style transfer to stylize paintings of one artist with the style of another?_ 
 This assignment seeks to investigate the possibility of not just transferring style from a painting to an actual image as is so often done, but to explore the transferral of the style of one painting to another painting. Using paintings from the artists _Cezanne_ and _Monet_ from the [impressionist paintings dataset](https://www.kaggle.com/delayedkarma/impressionist-classifier-data), create a script which generates new stylized images. The stylized images should contain the contents of Cezanne with styles of Monet and vice versa.
 * Save the stylized images in unique folders with names specifying the stylized images.
-* Save examples that clearly show the before and after result; save an image which includes content image, style image, and the resulting stylized image.
+* Save examples that clearly show the before and after result; save an image which includes content image, style image and the resulting stylized image.
 
 **Question 2 - Classification of stylized images**
 
@@ -52,13 +52,13 @@ _When CNN's classify paintings from artists, do they rely on the style of a give
 <!-- METHODS -->
 ## Methods
 
-**Specifically for this assignment:**
+**Generating stylized paintings**
 
-For generating stylized images,
+For generating stylized paintings,
 
 https://en.wikipedia.org/wiki/Neural_Style_Transfer#Formulation
 
-
+**Classifying paintings and stylized paintings**
 
 
 **On a more general level (this applies to all assignments):**
