@@ -21,9 +21,9 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#assignment-description">Assignment description</a></li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#methods">Methods</a></li>
     <li><a href="#results-and-discussion">Results and discussion</a></li>
+    <li><a href="#usage">Usage</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -35,34 +35,6 @@ Using the [Oxford-17](https://www.robots.ox.ac.uk/~vgg/data/flowers/17/) dataset
 
 - Make sure to round the number to 2 decimal places
 - Also find the image with the shortest distance to target image and print it in the terminal.
-
-<!-- USAGE -->
-## Usage
-
-Make sure to follow the instructions in the README.md located at the parent level of this repository, for the required installation of the virtual environment as well as the data download.
-Subsequently, use the following code:
-
-```bash
-cd cds-visual/assignment_2
-source ../cv101/bin/activate
-python image_search.py
-```
-
-### Optional arguments:
-
-image_search.py arguments for commandline to consider:
--       "-f"
-        "--filepath", 
-        type = str,
-        default = os.path.join("data", "*.jpg"), # Default path to corpus, when none is specified
-        required = False,
-        help= "str - path to image corpus")
--       "-t"
-        "--targetpath",
-        type = str, 
-        default = os.path.join("data", "image_0002.jpg"), # Default path to a target image, when none is specified
-        required = False,
-        help = "str - path to target file from which to calculate distance to the other images")
 
 <!-- METHODS -->
 ## Methods
@@ -95,6 +67,34 @@ When reducing the complexity of an image to its RGB histogram, we lose important
 **Output .csv file (distances\_to\_image\_.\*.csv):**
 
 After running the function with the default arguments, a new [output .csv file](https://github.com/emiltj/cds-visual-exam/blob/main/assignment_2/out/distances_to_image_0002.csv) is created. It shows the distances for the images in the image corpus to the target image, and clearly shows filename.
+
+<!-- USAGE -->
+## Usage
+
+Make sure to follow the instructions in the README.md located at the parent level of this repository, for the required installation of the virtual environment as well as the data download.
+Subsequently, use the following code:
+
+```bash
+cd cds-visual/assignment_2
+source ../cv101/bin/activate
+python image_search.py
+```
+
+### Optional arguments:
+
+image_search.py arguments for commandline to consider:
+-       "-f"
+        "--filepath", 
+        type = str,
+        default = os.path.join("data", "*.jpg"), # Default path to corpus, when none is specified
+        required = False,
+        help= "str - path to image corpus")
+-       "-t"
+        "--targetpath",
+        type = str, 
+        default = os.path.join("data", "image_0002.jpg"), # Default path to a target image, when none is specified
+        required = False,
+        help = "str - path to target file from which to calculate distance to the other images")
 
 <!-- CONTACT -->
 ## Contact
