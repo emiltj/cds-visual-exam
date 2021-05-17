@@ -39,15 +39,15 @@ This self-assigned assignment has two main questions it seeks to investigate. Th
 
 _Is it possible to use the method of style transfer to stylize paintings of one artist with the style of another?_ 
 This assignment seeks to investigate the possibility of not just transferring style from a painting to an actual image as is so often done, but to explore the transferral of the style of one painting to another painting. Using paintings from the artists _Cezanne_ and _Monet_ from the [impressionist paintings dataset](https://www.kaggle.com/delayedkarma/impressionist-classifier-data), create a script which generates new stylized images. The stylized images should contain the contents of Cezanne with styles of Monet and vice versa.
-- Save the stylized images in unique folders with names specifying the stylized images.
-- Save examples that clearly show the before and after result; save an image which includes content image, style image, and the resulting stylized image.
+* Save the stylized images in unique folders with names specifying the stylized images.
+* Save examples that clearly show the before and after result; save an image which includes content image, style image, and the resulting stylized image.
 
 **Question 2 - Classification of stylized images**
 
 _When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to investigate the importance of content vs. style when classifying images.
-- Use a pre-trained CNN classifier to distinguish between Cezanne paintings and Monet paintings.
-- Use this model to classify between the newly generated stylized images. 
-- Are Monet paintings with Cezanne style classified as Monet due to their content, or rather Cezanne due to their style? Discuss the findings and consider whether the results tell us something general about the classifier or about the stylization process. 
+* Use a pre-trained CNN classifier to distinguish between Cezanne paintings and Monet paintings.
+* Use this model to classify between the newly generated stylized images. 
+* Are Monet paintings with Cezanne style classified as Monet due to their content, or rather Cezanne due to their style? Discuss the findings and consider whether the results tell us something general about the classifier or about the stylization process. 
 
 <!-- METHODS -->
 ## Methods
@@ -64,9 +64,9 @@ https://en.wikipedia.org/wiki/Neural_Style_Transfer#Formulation
 **On a more general level (this applies to all assignments):**
 
 I have tried to as accessible and user-friendly as possible. This has been attempted by the use of:
-- Smaller functions. These are intended to solve the sub-tasks of the assignment. This is meant to improve readability of the script, as well as simplifying the use of the script.
-- Information prints. Information is printed to the terminal to allow the user to know what is being processed in the background
-- Argparsing. Arguments that let the user determine the behaviour and paths of the script (see "Optional arguments" section for more information)
+* Smaller functions. These are intended to solve the sub-tasks of the assignment. This is meant to improve readability of the script, as well as simplifying the use of the script.
+* Information prints. Information is printed to the terminal to allow the user to know what is being processed in the background
+* Argparsing. Arguments that let the user determine the behaviour and paths of the script (see "Optional arguments" section for more information)
 
 
 <!-- RESULTS AND DISCUSSION -->
