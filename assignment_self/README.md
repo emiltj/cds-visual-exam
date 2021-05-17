@@ -4,10 +4,10 @@
   <a href="https://github.com/emiltj/cds-visual-exam">
     <img src="../README_images/vis_logo.png" alt="Logo" width="200" height="200">
   </a>
-  <h1 align="center">????</h1>
+  <h1 align="center">Stylized paintings and classification</h1>
 
   <p align="center">
-    Stylized paintings and classification
+    Assignment 6
     <br />
     <a href="https://github.com/emiltj/cds-visual-exam/issues">Report Bug</a>
     ·
