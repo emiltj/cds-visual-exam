@@ -20,9 +20,12 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#assignment-description">Assignment description</a></li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#methods">Methods</a></li>
     <li><a href="#results-and-discussion">Results and discussion</a></li>
+    <li><a href="#usage">Usage</a></li>
+          <ul>
+        <li><a href="#optional-arguments">Optional arguments</a></li>
+      </ul>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -42,6 +45,52 @@ This assignment includes two scripts; one which utilizes linear regression and w
 The first script ```lr-mnist.py``` Trains a linear regression classifier on a subset of the MNIST dataset, with the possibility of setting parameters through terminal use. Subsequently it tests on another part of the MNIST dataset and outputs a classification report. Furthermore, the script has the feature of individual image prediction - making predictions of new images (even with different dimensions) possible. The second script ```nn-mnist.py``` has the same function, except it utilizes a neural network algorithm instead of logistic regression.
 
 Both scripts outputs classification reports in the terminal, but additionally also saves both classification report as well as the trained model to the folder ```assignment_4/out/```, when using the _save_ argument.
+
+<!-- METHODS -->
+## Methods
+**Specifically for this assignment:**
+
+Prior to training, both scripts had the data min-max scaled to allow for faster processing and better convergence. Both the training and test data was scaled using the values of the training data, to avoid information to flow from the training set to the test set.
+These scripts allows for simple model benchmarking on the MNIST dataset, which could prove useful if one wanted to test other models for classification of the same dataset.
+
+Moreover, all the "\[BONUS\]" features were included. This means that the user is allowed to specify parameters such as number of epochs and hiddenlayers for the Neural Network, while the arguments for the Logistic Regression script lets the user specify C-values and penalty method. The classification reports can be saved if specified using the arguments, and the user can furthermore predict any new images (regardless of dimensions and colors) using the argument _--individual_.
+
+**On a more general level (this applies to all assignments):**
+
+I have tried to as accessible and user-friendly as possible. This has been attempted by the use of:
+- Smaller functions. These are intended to solve the sub-tasks of the assignment. This is meant to improve readability of the script, as well as simplifying the use of the script.
+- Information prints. Information is printed to the terminal to allow the user to know what is being processed in the background
+- Argparsing. Arguments that let the user determine the behaviour and paths of the script (see "Optional arguments" section for more information)
+
+<!-- RESULTS AND DISCUSSION -->
+## Results and discussion
+
+#### Classification reports
+|           | 0                  | 1                 | 2                  | 3                  | 4                  | 5                  | 6                  | 7                  | 8                  | 9                  | accuracy | macro avg          | weighted avg       | 
+|-----------|--------------------|-------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|----------|--------------------|--------------------| 
+| precision | 0.96 | 0.93 | 0.91 | 0.89 | 0.91 | 0.86 | 0.96 | 0.93 | 0.89 | 0.91 | 0.91    | 0.91  | 0.91 | 
+| recall    | 0.97 | 0.97 | 0.91 | 0.88               | 0.95 | 0.85 | 0.95               | 0.94 | 0.83 | 0.89 | 0.91    | 0.91 | 0.919              | 
+| f1-score  | 0.97 | 0.95 | 0.91 | 0.88 | 0.93 | 0.86 | 0.95 | 0.93 | 0.86 | 0.90 | 0.91    | 0.91 | 0.91 | 
+| support   | 198.0              | 232.0             | 194.0              | 225.0              | 165.0              | 171.0              | 180.0              | 203.0              | 198.0              | 234.0              | 0.919    | 2000.0             | 2000.0             | 
+<p align="center"><em>Logistic regression classification report</em></p>
+
+<br/>
+
+|           | 0                  | 1                  | 2                  | 3                  | 4                  | 5                  | 6                  | 7                  | 8                  | 9                  | accuracy | macro avg          | weighted avg       | 
+|-----------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|----------|--------------------|--------------------| 
+| precision | 0.94 | 0.96 | 0.91 | 0.91 | 0.88 | 0.90 | 0.94 | 0.91 | 0.89 | 0.90 | 0.92     | 0.91 | 0.91 | 
+| recall    | 0.95 | 0.97 | 0.91 | 0.91 | 0.92 | 0.84  | 0.93 | 0.93 | 0.90 | 0.88 | 0.92     | 0.91 | 0.92               | 
+| f1-score  | 0.95               | 0.96 | 0.91 | 0.91 | 0.90 | 0.87 | 0.94 | 0.92 | 0.89 | 0.89 | 0.92     | 0.91 | 0.91 | 
+| support   | 198.0              | 232.0              | 194.0              | 225.0              | 165.0              | 171.0              | 180.0              | 203.0              | 198.0              | 234.0              | 0.92     | 2000.0             | 2000.0             | 
+<p align="center"><em>Neural networks classification report</em></p>
+
+
+When looking at the results, the classification benchmarks for the Logistic Regression (LR) classifier and the Neural Networks (NN) classifier seem to have similar performance, with a macro average f1-scores of .91 for both models. NN's tend to outperform LR classifiers when both data and training time is plentiful and given the right hidden layer structure and parameter settings. As NN classifiers often take longer to train, the default parameters (hidden layer structure and number of epochs) were set to result in low runtimes for faster processing. More training would likely have resulted in higher performance.
+
+When looking at the performances for the individual numbers, it becomes evident that the classifer did not classify equally well for all numbers. 3, 5 and 8 seem to be harder to predict - this is likely due to the similarity that they may have with other numbers (i.e. pixels of 3 and 5 might have a lot of overlapping). 
+As for out of sample images the scripts were also capable of classifying the individual test image of a written number, correctly classifying it as 4.
+
+In conclusion, the classification reports serve as benchmarks that might be used when evaluating new models for classification purposes: _how well does another model compare in comparison to the relatively simple models used here?_
 
 <!-- USAGE -->
 ## Usage
@@ -121,53 +170,6 @@ nn_mnist.py arguments for commandline to consider:
         default = 50, # Default when not specifying anything in the terminal
         required = False, # Since we have a default value, it is not required to specify this argument
         help = "int - specifying number of epochs for training the model. Default = 50")
-
-
-<!-- METHODS -->
-## Methods
-**Specifically for this assignment:**
-
-Prior to training, both scripts had the data min-max scaled to allow for faster processing and better convergence. Both the training and test data was scaled using the values of the training data, to avoid information to flow from the training set to the test set.
-These scripts allows for simple model benchmarking on the MNIST dataset, which could prove useful if one wanted to test other models for classification of the same dataset.
-
-Moreover, all the "\[BONUS\]" features were included. This means that the user is allowed to specify parameters such as number of epochs and hiddenlayers for the Neural Network, while the arguments for the Logistic Regression script lets the user specify C-values and penalty method. The classification reports can be saved if specified using the arguments, and the user can furthermore predict any new images (regardless of dimensions and colors) using the argument _--individual_.
-
-**On a more general level (this applies to all assignments):**
-
-I have tried to as accessible and user-friendly as possible. This has been attempted by the use of:
-- Smaller functions. These are intended to solve the sub-tasks of the assignment. This is meant to improve readability of the script, as well as simplifying the use of the script.
-- Information prints. Information is printed to the terminal to allow the user to know what is being processed in the background
-- Argparsing. Arguments that let the user determine the behaviour and paths of the script (see "Optional arguments" section for more information)
-
-<!-- RESULTS AND DISCUSSION -->
-## Results and discussion
-
-#### Classification reports
-|           | 0                  | 1                 | 2                  | 3                  | 4                  | 5                  | 6                  | 7                  | 8                  | 9                  | accuracy | macro avg          | weighted avg       | 
-|-----------|--------------------|-------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|----------|--------------------|--------------------| 
-| precision | 0.96 | 0.93 | 0.91 | 0.89 | 0.91 | 0.86 | 0.96 | 0.93 | 0.89 | 0.91 | 0.91    | 0.91  | 0.91 | 
-| recall    | 0.97 | 0.97 | 0.91 | 0.88               | 0.95 | 0.85 | 0.95               | 0.94 | 0.83 | 0.89 | 0.91    | 0.91 | 0.919              | 
-| f1-score  | 0.97 | 0.95 | 0.91 | 0.88 | 0.93 | 0.86 | 0.95 | 0.93 | 0.86 | 0.90 | 0.91    | 0.91 | 0.91 | 
-| support   | 198.0              | 232.0             | 194.0              | 225.0              | 165.0              | 171.0              | 180.0              | 203.0              | 198.0              | 234.0              | 0.919    | 2000.0             | 2000.0             | 
-<p align="center"><em>Logistic regression classification report</em></p>
-
-<br/>
-
-|           | 0                  | 1                  | 2                  | 3                  | 4                  | 5                  | 6                  | 7                  | 8                  | 9                  | accuracy | macro avg          | weighted avg       | 
-|-----------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|----------|--------------------|--------------------| 
-| precision | 0.94 | 0.96 | 0.91 | 0.91 | 0.88 | 0.90 | 0.94 | 0.91 | 0.89 | 0.90 | 0.92     | 0.91 | 0.91 | 
-| recall    | 0.95 | 0.97 | 0.91 | 0.91 | 0.92 | 0.84  | 0.93 | 0.93 | 0.90 | 0.88 | 0.92     | 0.91 | 0.92               | 
-| f1-score  | 0.95               | 0.96 | 0.91 | 0.91 | 0.90 | 0.87 | 0.94 | 0.92 | 0.89 | 0.89 | 0.92     | 0.91 | 0.91 | 
-| support   | 198.0              | 232.0              | 194.0              | 225.0              | 165.0              | 171.0              | 180.0              | 203.0              | 198.0              | 234.0              | 0.92     | 2000.0             | 2000.0             | 
-<p align="center"><em>Neural networks classification report</em></p>
-
-
-When looking at the results, the classification benchmarks for the Logistic Regression (LR) classifier and the Neural Networks (NN) classifier seem to have similar performance, with a macro average f1-scores of .91 for both models. NN's tend to outperform LR classifiers when both data and training time is plentiful and given the right hidden layer structure and parameter settings. As NN classifiers often take longer to train, the default parameters (hidden layer structure and number of epochs) were set to result in low runtimes for faster processing. More training would likely have resulted in higher performance.
-
-When looking at the performances for the individual numbers, it becomes evident that the classifer did not classify equally well for all numbers. 3, 5 and 8 seem to be harder to predict - this is likely due to the similarity that they may have with other numbers (i.e. pixels of 3 and 5 might have a lot of overlapping). 
-As for out of sample images the scripts were also capable of classifying the individual test image of a written number, correctly classifying it as 4.
-
-In conclusion, the classification reports serve as benchmarks that might be used when evaluating new models for classification purposes: _how well does another model compare in comparison to the relatively simple models used here?_
 
 <!-- CONTACT -->
 ## Contact
