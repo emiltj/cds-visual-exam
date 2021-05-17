@@ -91,6 +91,7 @@ Alternatively to the random pairings of style/content images, one could have con
 
 #### Classification of stylized images
 <p align="center">
+  
 |           |                    |                    |                    |                    |                    | 
 |-----------|--------------------|--------------------|--------------------|--------------------|--------------------| 
 |           | monet              | cezanne            | accuracy           | macro avg          | weighted avg       | 
@@ -98,11 +99,13 @@ Alternatively to the random pairings of style/content images, one could have con
 | recall    | 0.97 | 0.92 | 0.94 | 0.94 | 0.94 | 
 | f1-score  | 0.95 | 0.94 | 0.94 | 0.94 | 0.94 | 
 | support   | 101.0              | 98.0               | 0.94 | 199.0              | 199.0              | 
+
 <em> Original paintings classification report </em></p>
 
 <br/>
 
 <p align="center">
+  
 |           |                     |                     |                     |                     |                     | 
 |-----------|---------------------|---------------------|---------------------|---------------------|---------------------| 
 |           | monet               | cezanne             | accuracy            | macro avg           | weighted avg        | 
@@ -110,6 +113,7 @@ Alternatively to the random pairings of style/content images, one could have con
 | recall    | 0.18 | 0.32   | 0.25 | 0.25 | 0.25 | 
 | f1-score  | 0.19 | 0.3 | 0.25 | 0.24   | 0.24   | 
 | support   | 497.0               | 497.0               | 0.25 | 994.0               | 994.0               | 
+
 <em> Stylized paintings classification report </em></p>
 
 As can be seen in the classification report when predicting the original paintings (top)
