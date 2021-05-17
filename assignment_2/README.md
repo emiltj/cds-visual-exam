@@ -52,7 +52,7 @@ As a bonus, to allow for an easy inspection of the results, I included in the sc
 I have tried to as accessible and user-friendly as possible. This has been attempted by the use of:
 * Smaller functions. These are intended to solve the sub-tasks of the assignment. This is meant to improve readability of the script, as well as simplifying the use of the script.
 * Information prints. Information is printed to the terminal to allow the user to know what is being processed in the background
-* Argparsing. Arguments that let the user determine the behaviour and paths of the script (see "Optional arguments" section for more information)
+* Argparsing. Arguments that let the user determine the behaviour and paths of the script (see <a href="#optional-arguments">"Optional arguments"</a> section for more information)
 
 
 <!-- RESULTS AND DISCUSSION -->
