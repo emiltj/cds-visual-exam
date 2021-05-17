@@ -20,9 +20,12 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#assignment-description">Assignment description</a></li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#methods">Methods</a></li>
     <li><a href="#results-and-discussion">Results and discussion</a></li>
+    <li><a href="#usage">Usage</a></li>
+          <ul>
+        <li><a href="#optional-arguments">Optional arguments</a></li>
+      </ul>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -42,27 +45,6 @@ This assignment seeks to investigate the possibility of not just transferring st
 **Question 2 - Classification of stylized images**
 
 _When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to investigate the importance of content vs. style when classifying images. Style transfer refers to the act of minimizing the loss of information between two sets of embedded images. One image (the style image) is embedded using the first few layers of a neural network and network activations are sampled from this embedded image. The other image (the content image) is embedded using the same neural network, but using the first <ins>many</ins> layers of the network. Likewise, the embedded image from this layer is also extracted. Using these two embeddings, style transfer then seeks to synthesize the two with regards to a loss function that minimizes the information loss of both images.
-
-
-<!-- USAGE -->
-## Usage
-
-Make sure to follow the instructions in the README.md located at the parent level of this repository, for the required installation of the virtual environment as well as the data download.
-Subsequently, use the following code:
-
-```bash
-cd cds-visual/assignment_2
-source ../cv101/bin/activate
-python cnn-artists.py
-```
-
-### Optional arguments:
-s
-.py arguments for commandline to consider:
--       s
--       
-.py arguments for commandline to consider:
--       
 
 <!-- METHODS -->
 ## Methods
@@ -107,7 +89,25 @@ Alternatively to the random pairings of style/content images, one could have con
 
 #### Classification of stylized images
 
+<!-- USAGE -->
+## Usage
 
+Make sure to follow the instructions in the README.md located at the parent level of this repository, for the required installation of the virtual environment as well as the data download.
+Subsequently, use the following code:
+
+```bash
+cd cds-visual/assignment_2
+source ../cv101/bin/activate
+python cnn-artists.py
+```
+
+### Optional arguments:
+s
+.py arguments for commandline to consider:
+-       s
+-       
+.py arguments for commandline to consider:
+-       
 
 <!-- CONTACT -->
 ## Contact
