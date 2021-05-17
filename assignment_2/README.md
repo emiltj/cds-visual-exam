@@ -34,10 +34,9 @@
 <!-- ASSIGNMENT DESCRIPTION -->
 ## Assignment description
 
-Using the [Oxford-17](https://www.robots.ox.ac.uk/~vgg/data/flowers/17/) dataset, compare RGB-histograms of a target image and the rest of the image corpus. Utilize the chi-square method to the calculations one-by-one. Furthermore, have the script save a data frame with two column names; _filename_ and _distance_. 
-
-- Make sure to round the number to 2 decimal places
-- Also find the image with the shortest distance to target image and print it in the terminal.
+Using the [Oxford-17](https://www.robots.ox.ac.uk/~vgg/data/flowers/17/) dataset, compare RGB-histograms of a target image and the rest of the image corpus. Utilize the chi-square method to the calculations one-by-one. Furthermore, have the script save a data frame with two column names; _filename_ and _distance_.
+* Make sure to round the number to 2 decimal places
+* Also find the image with the shortest distance to target image and print it in the terminal.
 
 <!-- METHODS -->
 ## Methods
@@ -51,9 +50,9 @@ As a bonus, to allow for an easy inspection of the results, I included in the sc
 **On a more general level (this applies to all assignments):**
 
 I have tried to as accessible and user-friendly as possible. This has been attempted by the use of:
-- Smaller functions. These are intended to solve the sub-tasks of the assignment. This is meant to improve readability of the script, as well as simplifying the use of the script.
-- Information prints. Information is printed to the terminal to allow the user to know what is being processed in the background
-- Argparsing. Arguments that let the user determine the behaviour and paths of the script (see "Optional arguments" section for more information)
+* Smaller functions. These are intended to solve the sub-tasks of the assignment. This is meant to improve readability of the script, as well as simplifying the use of the script.
+* Information prints. Information is printed to the terminal to allow the user to know what is being processed in the background
+* Argparsing. Arguments that let the user determine the behaviour and paths of the script (see "Optional arguments" section for more information)
 
 
 <!-- RESULTS AND DISCUSSION -->
