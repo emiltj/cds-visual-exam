@@ -92,6 +92,14 @@ Alternatively to the random pairings of style/content images, one could have con
 #### Classification of stylized images
 
 <p align="center"><em> Original paintings classification report </em></p>
+|           |                    |                    |                   |                    |                    | 
+|-----------|--------------------|--------------------|-------------------|--------------------|--------------------| 
+|           | ???                | ???                | accuracy          | macro avg          | weighted avg       | 
+| precision | 0.93 | 0.97 | 0.95 | 0.95 | 0.95 | 
+| recall    | 0.98 | 0.92 | 0.95 | 0.95 | 0.95  | 
+| f1-score  | 0.95 | 0.95 | 0.95 | 0.95 | 0.95 | 
+| support   | 101.0              | 98.0               | 0.95 | 199.0              | 199.0              | 
+
 
 <br/>
 
