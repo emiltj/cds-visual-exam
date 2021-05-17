@@ -114,7 +114,7 @@ Alternatively to the random pairings of style/content images, one could have con
 | f1-score  | 0.19 | 0.3 | 0.25 | 0.24   | 0.24   | 
 | support   | 497.0               | 497.0               | 0.25 | 994.0               | 994.0               | 
 
-<em> Stylized paintings classification report </em></p>
+<em> Stylized paintings classification report. NOTE: Column "monet" refers to classifying the stylized monet paintings (monet content, cezanne style) as monet </em></p>
 
 As can be seen in the classification report when predicting the original paintings (top)
 
