@@ -4,7 +4,7 @@
   <a href="https://github.com/emiltj/cds-visual-exam">
     <img src="../README_images/vis_logo.png" alt="Logo" width="200" height="200">
   </a>
-  <h1 align="center">CNN classification of impressionist paintings</h1>
+  <h2 align="center">CNN classification of impressionist paintings</h2>
 
   <p align="center">
     Assignment 5
