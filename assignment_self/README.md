@@ -47,7 +47,7 @@ This assignment seeks to investigate the possibility of not just transferring st
 _When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to investigate the importance of content vs. style when classifying images.
 - Use a pre-trained CNN classifier to distinguish between Cezanne paintings and Monet paintings.
 - Use this model to classify between the newly generated stylized images. 
-* Are Monet paintings with Cezanne style classified as Monet due to their content, or rather Cezanne due to their ?
+  - Are Monet paintings with Cezanne style classified as Monet due to their content, or rather Cezanne due to their ?
 - Discuss whether this 
 
 Style transfer refers to the act of minimizing the loss of information between two sets of embedded images. One image (the style image) is embedded using the first few layers of a neural network and network activations are sampled from this embedded image. The other image (the content image) is embedded using the same neural network, but using the first <ins>many</ins> layers of the network. Likewise, the embedded image from this layer is also extracted. Using these two embeddings, style transfer then seeks to synthesize the two with regards to a loss function that minimizes the information loss of both images.
