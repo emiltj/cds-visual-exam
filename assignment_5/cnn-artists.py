@@ -112,24 +112,16 @@ def main(cnn, resizedim,  batch_size, epochs):
     # Get the data we need
     train_paintings, train_paintings_artists, test_paintings, test_paintings_artists = get_train_test(artists)
 
-    # Resize and make into arrays
-    train_paintings_resized = get_resized_arrays(train_paintings, resizedim[0], resizedim[1])
-    test_paintings_resized = get_resized_arrays(test_paintings, resizedim[0], resizedim[1])
-
-    # Make ML names for train
-    trainX = train_paintings_resized
-    trainY = train_paintings_artists
-    
-    # Make ML names for test
-    testX = test_paintings_resized
-    testY = test_paintings_artists
+    # Resize and make into arrays (and give proper name)
+    trainX = get_resized_arrays(train_paintings, resizedim[0], resizedim[1])
+    testX = get_resized_arrays(test_paintings, resizedim[0], resizedim[1])
 
     # Binarize labels
     lb = LabelBinarizer()
-    trainY = lb.fit_transform(trainY)
-    testY = lb.fit_transform(testY)
+    trainY = lb.fit_transform(train_paintings_artists)
+    testY = lb.fit_transform(test_paintings_artists)
 
-    # Initialize label names for CIFAR-10 dataset
+    # Initialize label names
     labelNames = artists # Here we know that the order is the same in "artists", so we know how to map the binarized labels onto the string names
     
     # If we're using the ShallowNet architecture

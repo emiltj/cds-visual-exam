@@ -38,16 +38,16 @@ mv validation/validation/* validation # Move images a level down
 rm -r paintings.zip training/training/ validation/validation/ # Remove old files, and unnecessary folders
 printf "[INFO] The required data for assignment 5 has been downloaded successfully"
 
-# Data for assignment_self 
+# Data for assignment_6 
 cd ../..
-mkdir -p assignment_self/data/content_cezanne_style_cezanne #Make new folders
-mkdir assignment_self/data/content_monet_style_monet
-cp assignment_5/data/training/Cezanne/* assignment_self/data/content_cezanne_style_cezanne/ # Copy training data of cezanne to new folder
-cp assignment_5/data/validation/Cezanne/* assignment_self/data/content_cezanne_style_cezanne/ # Copy validation data of cezanne to new folder
-cp assignment_5/data/training/Monet/* assignment_self/data/content_monet_style_monet/ # Copy training data of monet to new folder
-cp assignment_5/data/validation/Monet/* assignment_self/data/content_monet_style_monet/ # Copy validation data of monet to new folder
-rm assignment_self/data/content_monet_style_monet/9223372032559844173.jpg # Removing corrupt image file
-printf "[INFO] The required data for assignment_self has been downloaded successfully"
+mkdir -p assignment_6/data/content_cezanne_style_cezanne #Make new folders
+mkdir assignment_6/data/content_monet_style_monet
+cp assignment_5/data/training/Cezanne/* assignment_6/data/content_cezanne_style_cezanne/ # Copy training data of cezanne to new folder
+cp assignment_5/data/validation/Cezanne/* assignment_6/data/content_cezanne_style_cezanne/ # Copy validation data of cezanne to new folder
+cp assignment_5/data/training/Monet/* assignment_6/data/content_monet_style_monet/ # Copy training data of monet to new folder
+cp assignment_5/data/validation/Monet/* assignment_6/data/content_monet_style_monet/ # Copy validation data of monet to new folder
+rm assignment_6/data/content_monet_style_monet/9223372032559844173.jpg # Removing corrupt image file
+printf "[INFO] The required data for assignment_6 has been downloaded successfully"
 
 # Ending script
 printf "[INFO] All required data has been downloaded"
