@@ -44,22 +44,21 @@ This assignment seeks to investigate the possibility of not just transferring st
 
 **Question 2 - Classification of stylized images**
 
-_When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to investigate the importance of content vs. style when classifying images.
+_When CNN's classify paintings from artists, do they rely on the style of a given image? Or rather more on the content of the image?_ This part of the assignment seeks to train and test a classifier on the original paintings, and subsequently use the same trained model to classify the stylized paintings. In other words, investigate the importance of content vs. style when classifying paintings.
 * Use a pre-trained CNN classifier to distinguish between Cezanne paintings and Monet paintings.
 * Use this model to classify between the newly generated stylized images. 
-* Are Monet paintings with Cezanne style classified as Monet due to their content, or rather Cezanne due to their style? Discuss the findings and consider whether the results tell us something general about the classifier or about the stylization process. 
+* Are Monet paintings with Cezanne style classified as Monet due to their content? Or rather classified as Cezanne due to their style? Discuss the findings and consider whether the results tell us something general about the classifier or about the stylization process. 
 
 <!-- METHODS -->
 ## Methods
 
 **Generating stylized paintings**
 
-For generating stylized paintings,
-
-https://en.wikipedia.org/wiki/Neural_Style_Transfer#Formulation
+The original paintings were loaded and their order shuffled. They were then paired by index and each pair was then use to generate two new stylized paintings using the ["magenta/arbitrary-image-stylization-v1-256"](https://arxiv.org/abs/1705.06830). Content from painting A and style from painting B and vice versa. The stylized images were then preprocessed and a few examples of content + style + stylized images were saved to the ```./out/``` folder. The entire script is designed to generalize to any other image corpora of any size.
 
 **Classifying paintings and stylized paintings**
 
+Both the original paintings and the stylized paintings were loaded using a self-define function, and labels were automatically assigned. The paintings were then resized and formatted, as to match the input expectations of the subsequently defined pre-trained CNN model ([MobileNetV2](https://arxiv.org/abs/1801.04381)). The model was then trained to classify the artists of the original paintings, and later tested on an unseen subset of the same data. The same model was then set to classify the stylized images. Classification reports showing the results for both test sets is printed to the terminal, as well as saved to ```out``` along with the training history. 
 
 **On a more general level (this applies to all assignments):**
 
@@ -90,10 +89,22 @@ When looking at the above two images and ([the rest of the examples](https://git
 
 Alternatively to the random pairings of style/content images, one could have considered extracting the styles of all images of one artist and then subsequently found the weights resulting in the least information loss across all these images. This way we would have the general style of an artist to use as the style image when stylizing images. However, a caveat to this method would be the artist we have here, tend to not have the same style of painting over time. The fact that the noise from the content that is inevitably fed into the style imbedding would also require an enormous number of paintings from each artist.
 
+#### Classification of stylized images
+
+<p align="center"><em> Original paintings classification report </em></p>
+
+<br/>
+
+
+<p align="center"><em> Stylized paintings classification report </em></p>
+
+As can be seen in the classification report when predicting the original paintings (top)
+
+As can be seen in the classification report when predicting the stylized images (bottom)
+
+https://en.wikipedia.org/wiki/Neural_Style_Transfer#Formulation
 
 Style transfer refers to the act of minimizing the loss of information between two sets of embedded images. One image (the style image) is embedded using the first few layers of a neural network and network activations are sampled from this embedded image. The other image (the content image) is embedded using the same neural network, but using the first <ins>many</ins> layers of the network. Likewise, the embedded image from this layer is also extracted. Using these two embeddings, style transfer then seeks to synthesize the two with regards to a loss function that minimizes the information loss of both images.
-
-#### Classification of stylized images
 
 <!-- USAGE -->
 ## Usage
