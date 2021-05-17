@@ -24,6 +24,9 @@
     <li><a href="#methods">Methods</a></li>
     <li><a href="#results-and-discussion">Results and discussion</a></li>
     <li><a href="#usage">Usage</a></li>
+          <ul>
+        <li><a href="#optional-arguments">Optional arguments</a></li>
+      </ul>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
