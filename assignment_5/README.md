@@ -33,9 +33,9 @@
 ## Assignment description
 
 Build and train a deep neural networks classifier to classify artists of [impressionist paintings](https://www.kaggle.com/delayedkarma/impressionist-classifier-data). Can a machine-learning algorithm classify the artist of an impressionist painting? Use either the architecture _ShallowNet_ or _LeNet_.
-- You should save visualizations showing loss/accuracy of the model during training
-- You should also a save the output from the classification report.
-- For reshaping images, I suggest checking out cv.resize() with the cv2.INTER_AREA method
+* You should save visualizations showing loss/accuracy of the model during training
+* You should also a save the output from the classification report.
+* For reshaping images, I suggest checking out cv.resize() with the cv2.INTER_AREA method
 
 <!-- METHODS -->
 ## Methods
@@ -47,9 +47,9 @@ Using a compact looped structure, the paintings of the individual artists were l
 **On a more general level (this applies to all assignments):**
 
 I have tried to as accessible and user-friendly as possible. This has been attempted by the use of:
-- Smaller functions. These are intended to solve the sub-tasks of the assignment. This is meant to improve readability of the script, as well as simplifying the use of the script.
-- Information prints. Information is printed to the terminal to allow the user to know what is being processed in the background
-- Argparsing. Arguments that let the user determine the behaviour and paths of the script (see "Optional arguments" section for more information)
+* Smaller functions. These are intended to solve the sub-tasks of the assignment. This is meant to improve readability of the script, as well as simplifying the use of the script.
+* Information prints. Information is printed to the terminal to allow the user to know what is being processed in the background
+* Argparsing. Arguments that let the user determine the behaviour and paths of the script (see "Optional arguments" section for more information)
 
 
 <!-- RESULTS AND DISCUSSION -->
