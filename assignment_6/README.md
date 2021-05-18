@@ -101,6 +101,8 @@ Alternatively to the random pairings of style/content images, one could have con
 
 <em> Original paintings classification report </em>
 
+As can be seen in the classification report when predicting the original paintings (top), the classifier is able with an macro average F1-score of .94 - in other words performing reasonably well. This was expected, given F1-scores of approx. .32 when classifying between 10 artists in assignment 5.
+
 <br/>
   
 |           |                     |                     |                     |                     |                     | 
@@ -111,11 +113,12 @@ Alternatively to the random pairings of style/content images, one could have con
 | f1-score  | 0.19 | 0.3 | 0.25 | 0.24   | 0.24   | 
 | support   | 497.0               | 497.0               | 0.25 | 994.0               | 994.0               | 
 
-<em> Stylized paintings classification report. **NOTE: Column "monet" refers to classifying the stylized monet paintings (monet content, cezanne style) as monet** </em>
+<em> Stylized paintings classification report. **NOTE: The Monet paintings with style from Cezanne had - for this classification - set their True label labelled as "Monet".** </em>
 
-As can be seen in the classification report when predicting the original paintings (top), the classifier is able with an macro average F1-score of .94 - in other words performing reasonably well. This was expected, given F1-scores of approx. .32 when classifying between 10 artists in assignment 5.
+When inspecting the classification report of the model predicting the stylized images (bottom), it looks quite differently. 
 
-When inspecting the classification report of the model predicting the stylized images (bottom), it looks quite differently. *Important to note when interpreting the results, though: The Monet paintings with style from Cezanne had, for this classification, set their True label labelled as "Monet".*
+
+Do note here that Monet paintings with Cezanne style were labelled "Monet" for the classifer, although they of course are not Monet paintings.
 
 
 https://en.wikipedia.org/wiki/Neural_Style_Transfer#Formulation
