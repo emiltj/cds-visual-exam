@@ -79,7 +79,7 @@ Subsequently, use the following code (when within the ```cds-visual-exam``` fold
 
 ```bash
 cd assignment_2
-source ../cv101/bin/activate
+source ../cv101/bin/activate # If not already activated
 python image_search.py
 ```
 
