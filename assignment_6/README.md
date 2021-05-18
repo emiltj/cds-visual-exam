@@ -121,17 +121,9 @@ As can be seen in the classification report when predicting the original paintin
 
 <em> Stylized paintings classification report. **NOTE: The Monet paintings with style from Cezanne had - for this classification - their True label set as "Monet".** </em>
 
-From inspecting the classification report when predicting the stylized images, we can see that the classifier predicted roughly 25% of the Monet paintings with Cezanne style, as Monet (and vice versa). There are two ways of interpreting these results. The first being that the model bases its predictions not so much on the content of the painting, but rather on the style. The second way of interpreting the results takes the way in which the stylized paintings were generated into account. The results are likely the product of the fact that the stylized paintings that were synthesized were not 50% content and 50% style. Neural style transfer in its most basic form seeks to minimize the distance between the content of one image, and the style of another. However, 
+From inspecting the classification report when predicting the stylized images, we can see that the classifier predicted roughly 25% of the Monet paintings with Cezanne style, as Monet (and vice versa). There are two ways of interpreting these results. The first being that the model bases its predictions not so much on the content of the painting, but rather on the style. The second way of interpreting the results takes the way in which the stylized paintings were generated into account. The results are likely the product of the fact that the stylized paintings that were synthesized were not 50% content and 50% style. Neural style transfer in its most basic form seeks to minimize the distance between the content of one image and the style of another - resulting in roughly half of each. However, the [MobileNetV2](https://arxiv.org/abs/1801.04381) model uses a more sophisticated approach.
 
-The specific model used for doing the stylization 
-
-
-
-https://en.wikipedia.org/wiki/Neural_Style_Transfer#Formulation
-
- 
-
-loss of both images.
+In summary, the classification report of the stylized paintings cannot lead to any direct conclusions. If instead a simple neural transfer model that stylized images with equal weighting to both content and style had been used, then we would have been able to infer the relative importance that content and style had on the classifier.
 
 <!-- USAGE -->
 ## Usage
