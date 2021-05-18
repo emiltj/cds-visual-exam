@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 absl-py==0.12.0
 argon2-cffi==20.1.0
 astunparse==1.6.3
@@ -109,3 +110,21 @@ Werkzeug==1.0.1
 widgetsnbextension==3.5.1
 wrapt==1.12.1
 zipp==3.4.1
+=======
+sklearn
+opencv-python
+argparse
+joblib
+matplotlib
+tqdm
+numpy==1.19.4
+pathlib==1.0.1
+pandas==1.1.5
+seaborn==0.11.1
+tensorflow==2.4.1
+tensorflow-estimator==2.4.0
+tensorflow-hub==0.12.0
+pydot==1.4.2
+pydotplus==2.0.2
+graphviz==0.16
+>>>>>>> 6e30dfd1d06ff1026fede07c63961df9c3f944d5
