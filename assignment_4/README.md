@@ -41,11 +41,6 @@ Create two command-line tools which can be used to perform a simple classificati
 * \[BONUS\] Allow the user to add an unseen data of any dimensions, process it, and let the classifier classify the new image
 * \[BONUS\] Allow the user to save the neural network model for future use
 
-This assignment includes two scripts; one which utilizes linear regression and what which utilitizes neural networks.
-The first script ```lr-mnist.py``` Trains a linear regression classifier on a subset of the MNIST dataset, with the possibility of setting parameters through terminal use. Subsequently it tests on another part of the MNIST dataset and outputs a classification report. Furthermore, the script has the feature of individual image prediction - making predictions of new images (even with different dimensions) possible. The second script ```nn-mnist.py``` has the same function, except it utilizes a neural network algorithm instead of logistic regression.
-
-Both scripts outputs classification reports in the terminal, but additionally also saves both classification report as well as the trained model to the folder ```assignment_4/out/```, when using the _save_ argument.
-
 <!-- METHODS -->
 ## Methods
 **Specifically for this assignment:**
@@ -53,7 +48,7 @@ Both scripts outputs classification reports in the terminal, but additionally al
 Prior to training, both scripts had the data min-max scaled to allow for faster processing and better convergence. Both the training and test data was scaled using the values of the training data, to avoid information to flow from the training set to the test set.
 These scripts allows for simple model benchmarking on the MNIST dataset, which could prove useful if one wanted to test other models for classification of the same dataset.
 
-Moreover, all the "\[BONUS\]" features were included. This means that the user is allowed to specify parameters such as number of epochs and hiddenlayers for the Neural Network, while the arguments for the Logistic Regression script lets the user specify C-values and penalty method. The classification reports can be saved if specified using the arguments, and the user can furthermore predict any new images (regardless of dimensions and colors) using the argument _--individual_.
+Moreover, all the "\[BONUS\]" features were included. This means that the user is allowed to specify parameters such as number of epochs and hiddenlayers for the Neural Network (NN), while the arguments for the Logistic Regression (LR) script lets the user specify C-values and penalty method. The classification reports can be saved if specified using the arguments, and the user can furthermore predict any new images (regardless of dimensions and colors) using the argument _--individual_.
 
 **On a more general level (this applies to all assignments):**
 
@@ -85,7 +80,7 @@ I have tried to as accessible and user-friendly as possible. This has been attem
 <p align="center"><em>Neural networks classification report</em></p>
 
 
-When looking at the results, the classification benchmarks for the Logistic Regression (LR) classifier and the Neural Networks (NN) classifier seem to have similar performance, with a macro average f1-scores of .91 for both models. NN's tend to outperform LR classifiers when both data and training time is plentiful and given the right hidden layer structure and parameter settings. As NN classifiers often take longer to train, the default parameters (hidden layer structure and number of epochs) were set to result in low runtimes for faster processing. More training would likely have resulted in higher performance.
+When looking at the results, the classification benchmarks for the LR classifier and the NN classifier seem to have similar performance, with a macro average f1-scores of .91 for both models. NN's tend to outperform LR classifiers when both data and training time is plentiful and given the right hidden layer structure and parameter settings. As NN classifiers often take longer to train, the default parameters (hidden layer structure and number of epochs) were set to result in low runtimes for faster processing. More training would likely have resulted in higher performance.
 
 When looking at the performances for the individual numbers, it becomes evident that the classifer did not classify equally well for all numbers. 3, 5 and 8 seem to be harder to predict - this is likely due to the similarity that they may have with other numbers (i.e. pixels of 3 and 5 might have a lot of overlapping). 
 As for out of sample images the scripts were also capable of classifying the individual test image of a written number, correctly classifying it as 4.
