@@ -1,6 +1,5 @@
 sklearn
 opencv-python
-shutil
 argparse
 joblib
 matplotlib
