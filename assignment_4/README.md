@@ -101,7 +101,7 @@ Subsequently, use the following code (when within the ```cds-visual-exam``` fold
 
 ```bash
 cd assignment_4
-source ../cv101/bin/activate
+source ../cv101/bin/activate # If not already activated
 python lr_mnist.py
 python nn_mnist.py
 ```
