@@ -90,7 +90,6 @@ When looking at the above two images and ([the rest of the examples](https://git
 Alternatively to the random pairings of style/content images, one could have considered extracting the styles of all images of one artist and then subsequently found the weights resulting in the least information loss across all these images. This way we would have the general style of an artist to use as the style image when stylizing images. However, a caveat to this method would be the artist we have here, tend to not have the same style of painting over time. The fact that the noise from the content that is inevitably fed into the style imbedding would also require an enormous number of paintings from each artist.
 
 #### Classification of stylized images
-<p align="center">
   
 |           |                    |                    |                    |                    |                    | 
 |-----------|--------------------|--------------------|--------------------|--------------------|--------------------| 
@@ -100,11 +99,9 @@ Alternatively to the random pairings of style/content images, one could have con
 | f1-score  | 0.95 | 0.94 | 0.94 | 0.94 | 0.94 | 
 | support   | 101.0              | 98.0               | 0.94 | 199.0              | 199.0              | 
 
-<em> Original paintings classification report </em></p>
+<em> Original paintings classification report </em>
 
 <br/>
-
-<p align="center">
   
 |           |                     |                     |                     |                     |                     | 
 |-----------|---------------------|---------------------|---------------------|---------------------|---------------------| 
@@ -114,7 +111,7 @@ Alternatively to the random pairings of style/content images, one could have con
 | f1-score  | 0.19 | 0.3 | 0.25 | 0.24   | 0.24   | 
 | support   | 497.0               | 497.0               | 0.25 | 994.0               | 994.0               | 
 
-<em> Stylized paintings classification report. NOTE: Column "monet" refers to classifying the stylized monet paintings (monet content, cezanne style) as monet </em></p>
+<em> Stylized paintings classification report. **NOTE: Column "monet" refers to classifying the stylized monet paintings (monet content, cezanne style) as monet** </em>
 
 As can be seen in the classification report when predicting the original paintings (top), the classifier is able with an macro average F1-score of .94 - in other words performing reasonably well. This was expected, given F1-scores of approx. .32 when classifying between 10 artists in assignment 5.
 
