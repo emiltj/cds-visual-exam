@@ -69,7 +69,7 @@ bash ./create_vis_venv_win.sh
 
 ### Retrieving the data
 
-The data is not contained within this repository, considering the sheer size of the data. Using the provided bash script (```data_download.sh```) that I have created, the data will be downloaded from a Google Drive folder and automatically placed within the respective assignment folders. 
+The data is not contained within this repository, considering the sheer size of the data. Using the provided bash script ```data_download.sh``` that I have created, the data will be downloaded from a Google Drive folder and automatically placed within the respective assignment folders. 
 
 ```bash
 bash data_download.sh
