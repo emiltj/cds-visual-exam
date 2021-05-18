@@ -94,10 +94,11 @@ We see a different trend when using the LeNet architecture. Given the more compl
 ## Usage
 
 Make sure to follow the instructions in the README.md located at the parent level of this repository, for the required installation of the virtual environment as well as the data download.
-Subsequently, use the following code:
+
+Subsequently, use the following code (when within the ```cds-visual-exam``` folder):
 
 ```bash
-cd cds-visual-exam/assignment_2
+cd assignment_5
 source ../cv101/bin/activate
 python cnn-artists.py
 ```
