@@ -77,7 +77,7 @@ Make sure to follow the instructions in the README.md located at the parent leve
 Subsequently, use the following code:
 
 ```bash
-cd cds-visual/assignment_2
+cd cds-visual-exam/assignment_2
 source ../cv101/bin/activate
 python image_search.py
 ```
