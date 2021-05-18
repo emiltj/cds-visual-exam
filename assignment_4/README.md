@@ -96,6 +96,7 @@ In conclusion, the classification reports serve as benchmarks that might be used
 ## Usage
 
 Make sure to follow the instructions in the README.md located at the parent level of this repository, for the required installation of the virtual environment as well as the data download.
+
 Subsequently, use the following code (when within the ```cds-visual-exam``` folder):
 
 ```bash
