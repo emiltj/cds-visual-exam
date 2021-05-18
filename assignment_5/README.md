@@ -43,7 +43,7 @@ Build and train a deep neural networks classifier to classify artists of [impres
 
 **Specifically for this assignment:**
 
-Using a compact looped structure, the paintings of the individual artists were loaded into working memory. As the CNN we use requires data in the same format, the loaded paintings were resized and converted into the right format. To improve the versatility of the script, the user is given the option of choosing between either _LeNet_ or _ShallowNet_, as well as specifying resized dimensions of the images, batch size of the script, and also number of epochs for training. Classification reports are saved to the folder ```out/```, a long with a plot showing the architecture and a plot of the training history (the relationship between training epochs and the loss/accuracy of the model.
+Using a compact looped structure, the paintings of the individual artists were loaded into working memory. As the CNN we use requires data in the same format, the loaded paintings were resized and converted into the right format. To improve the versatility of the script, the user is given the option of choosing between either _LeNet_ or _ShallowNet_, as well as specifying resized dimensions of the images, batch size of the script, and also number of epochs for training. Classification reports are saved to the directory [out/](https://github.com/emiltj/cds-visual-exam/tree/main/assignment_5/out), a long with a plot showing the architecture and a plot of the training history (the relationship between training epochs and the loss/accuracy of the model).
 
 **On a more general level (this applies to all assignments):**
 
