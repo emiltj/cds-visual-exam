@@ -29,7 +29,6 @@ def get_artists(artists_path):
     Function which retrieves an alphabetically sorted artists list
     """
     artists = os.listdir(artists_path) # Get list of directories (each names corresponds to artists' names
-    artists = artists[0:4] + artists[5:] # Removing artifact
     artists = sorted(artists) # Sort alphabetically
     return artists
 
@@ -177,12 +176,13 @@ def main(cnn, resizedim,  batch_size, epochs):
                   optimizer=opt,
                   metrics=["accuracy"])
 
+    print("Commencing model fitting")
     # Fit the model
     H = model.fit(trainX, trainY, 
                   validation_data=(testX, testY), 
                   batch_size = batch_size,
-                  epochs = epochs,
-                  verbose = 1) # Showing the training the terminal
+                  epochs = epochs)#,
+                  #verbose = 1) # Showing the training the terminal
     
     # Information for the user in terminal
     print(f"[INFO] Training of the model has been completed using a batchsize of {batch_size} and using the CNN architecture from {cnn}: \n {architecture}\n")
@@ -217,7 +217,7 @@ def main(cnn, resizedim,  batch_size, epochs):
 ############### Defining use when called from terminal ################
 if __name__=="__main__":
     # Initialise ArgumentParser class
-    parser = argparse.ArgumentParser(description = "[SCRIPT DESCRIPTION] Script that trains a convolutional neural network on impressionist paintings and tests on unseen data. ")
+    parser = argparse.ArgumentParser(description = "[SCRIPT DESCRIPTION] Script that trains a convolutional neural network on impressionist paintings and tests on an unseen part of the same data set. ")
     
     # Add inpath argument
     parser.add_argument(

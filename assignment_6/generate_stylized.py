@@ -103,7 +103,7 @@ def save_examples(content_img, style_img, stylized_img, unique_ending):
     Function that saves a set of content, style and stylized images.
     """
     # Create outpath if it does not exist
-    if not os.path.exists(os.path.join("out", "examples"):
+    if not os.path.exists(os.path.join("out", "examples")):
         os.makedirs(os.path.join("out", "examples"))
 
     # Define outpath
@@ -127,9 +127,6 @@ def save_imgs(imgs, outfolder):
     """
     Function which saves a list of images to a given outfolder with unique names. Also creates the outfolder if it does not already exist.
     """
-    # Info for terminal use
-    print(f"[INFO] Saving stylized images to \"{outfolder}\" ...")
-    
     # Initialize counter for unique names
     counter = 0
     
@@ -178,6 +175,7 @@ def main(inpath_a, inpath_b, outpath_content_a_style_b, outpath_content_b_style_
         save_examples(b[i], a[i], content_b_style_a[i], f"{i+10}")
     
     # Save all newly stylized paintings
+    print("[INFO] Saving of stylized images to ...") # Info for terminal use
     save_imgs(content_a_style_b, outpath_content_a_style_b)
     save_imgs(content_b_style_a, outpath_content_b_style_a)
 

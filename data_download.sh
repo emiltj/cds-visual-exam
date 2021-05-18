@@ -50,4 +50,4 @@ rm assignment_6/data/content_monet_style_monet/9223372032559844173.jpg # Removin
 printf "[INFO] The required data for assignment_6 has been downloaded successfully"
 
 # Ending script
-printf "[INFO] All required data has been downloaded"
+printf "\n\n[INFO] All required data has been downloaded"
