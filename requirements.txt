@@ -1,5 +1,11 @@
 sklearn
 opencv-python
+shutil
+argparse
+joblib
+matplotlib
+tqdm
+PIL
 numpy==1.19.4
 pathlib==1.0.1
 pandas==1.1.5
