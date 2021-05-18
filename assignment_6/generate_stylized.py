@@ -24,7 +24,6 @@ from utils.styletransfer import *
 # matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-#%matplotlib inline
 
 # Load TF-Hub module.
 hub_handle = 'https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2'
