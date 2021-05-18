@@ -45,7 +45,7 @@ Using the [Oxford-17](https://www.robots.ox.ac.uk/~vgg/data/flowers/17/) dataset
 
 For solving the project task I have made use of several functions from the cv2 library; the most important being calcHist(). It was used in this assignment for accessing information about the intensity distribution of all 3 color channels.
 The histograms of non-target images and the target images were then compared using the [chi-square method](https://docs.opencv.org/3.4/d6/dc7/group__imgproc__hist.html#gga994f53817d621e2e4228fc646342d386aa88d6751fb2bb79e07aa8c8717fda881).
-As a bonus, to allow for an easy inspection of the results, I included in the script the ability of saving the target image, and the image closest in distance (see images in directory [out](https://github.com/emiltj/cds-visual-exam/tree/main/assignment_2/out), or in <a href="#results-and-discussion">"results and discussion"</a>, below.
+As a bonus, to allow for an easy inspection of the results, I included in the script the ability of saving the target image, and the image closest in distance (see images in directory ["out"](https://github.com/emiltj/cds-visual-exam/tree/main/assignment_2/out), or in <a href="#results-and-discussion">"results and discussion"</a>, below.
 
 **On a more general level (this applies to all assignments):**
 
