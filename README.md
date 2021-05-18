@@ -42,8 +42,8 @@
 </p>
 
 
-This project contains the exam portofolio coding related to the Spring 2021 module _Visual Analytics_ as part of the bachelor's tilvalg in [_Cultural Data Science_](https://bachelor.au.dk/en/supplementary-subject/culturaldatascience/) at Aarhus University. 
-This README contains all the necessary information needed to get an overview of the repository, as well the installation steps required for rerunning the assignments. 
+This project contains the exam portofolio for the Spring 2021 module _Visual Analytics_ as part of the bachelor's tilvalg in [_Cultural Data Science_](https://bachelor.au.dk/en/supplementary-subject/culturaldatascience/) at Aarhus University. 
+This README contains all the necessary information needed to get an overview of the repository, as well the installation steps required for running the scripts in the assignments. 
 
 <!-- GETTING STARTED -->
 ## Getting started
@@ -69,11 +69,13 @@ bash ./create_vis_venv_win.sh
 
 ### Retrieving the data
 
-The data is not contained within this repository, considering the sheer size of the data. Using the provided bash script ```data_download.sh``` that I have created, the data will be downloaded from a Google Drive folder and automatically placed within the respective assignment folders. 
+The data is not contained within this repository, considering the sheer size of the data. Using the provided bash script ```data_download.sh``` that I have created, the data will be downloaded from a Google Drive folder and automatically placed within the respective assignment directories. 
 
 ```bash
 bash data_download.sh
 ```
+
+After cloning the repo, creating the virutal environment and retrieving the data you should be ready to go. Move to the assignment folders and read the README's for further instructions.
 
 <!-- REPOSITORY STRUCTURE -->
 ## Repository structure
@@ -82,27 +84,25 @@ This repository has the following structure:
 
 | Column | Description|
 |--------|:-----------|
-```assignment_.*/``` | Folders containing the four assignments (both scripts and data)
-```utils/``` | Utility functions written by [Ross](https://pure.au.dk/portal/en/persons/ross-deans-kristensenmclachlan(29ad140e-0785-4e07-bdc1-8af12f15856c).html). These are sourced in some of the assignments
-```data_download.sh``` | Bash script that installs all the necessary data
-```create_vis_venv.*.sh``` | Bash scripts that automatically generates a new virtual environment, and install all the packages contained within ```requirements.txt```
-```kill_vision_venv.sh``` | Bash scripts that uninstalls and deletes the virtual environment
-```requirements.txt``` | A list of packages of certain versions
-```README.md``` | This very README file
+```assignment_*/``` | Directory containing the four assignments
+```utils/``` | Utility functions written by [Ross](https://pure.au.dk/portal/en/persons/ross-deans-kristensenmclachlan(29ad140e-0785-4e07-bdc1-8af12f15856c).html), utilized in a range of the assignments.
+```README_images/``` | Directory containing the few images used in the README's.
+```data_download.sh``` | Bash script that installs all the necessary data.
+```create_vis_venv.*.sh``` | Bash scripts that automatically generates a new virtual environment, and install all the packages contained within ```requirements.txt```.
+```kill_vision_venv.sh``` | Bash script that uninstalls and deletes the virtual environment.
+```requirements.txt``` | A list of the required packages.
+```.gitignore``` | A list of the files that git should ignore upon push/pulling (virtual environment and data).
+```README.md``` | This very README file.
 
 <!-- ASSIGNMENTS -->
 ## Assignments
+Four assignments have been chosen for this portfolio and are included within the assignment directories. Information on script execution, preprocessing steps, results and discussion can be seen in the READMEs located within each of the assignment directories.
 
-4 assignments have been chosen for this portfolio:
+The four assignments are:
 * Assignment 2 - Image search 
 * Assignment 4 - Logistic Regression and Neural Network benchmark mnist classification
 * Assignment 5 - CNN classification of impressionist paintings
-* Self-assigned - * *
-
-**NOTE**:
-
-Information on script execution, preprocessing steps, results and discussion can be seen in the READMEs located within each of the assignment directories.
-For seeing information on e.g. the CNN classification of impressionist paintings project, view ```assignment_5/README.md```.
+* Assignment 6 - Stylized paintings and classification (self-assigned)
 
 <!-- DATA -->
 ## Data
@@ -120,4 +120,5 @@ You can do so on [Slack](https://app.slack.com/client/T01908QBS9X/D01A1LFRDE0) o
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 * [Python](https://www.rstudio.com/) - Software used for conducting the analysis
+* [othneildrew (githubuser)](https://github.com/othneildrew/Best-README-Template) - Providing a template used to create the README's
 * [Ross Dean McLachlan](https://github.com/CDS-AU-DK/) - Our competent instructor for the module on Visual Analytics
