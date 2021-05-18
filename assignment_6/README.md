@@ -113,12 +113,10 @@ As can be seen in the classification report when predicting the original paintin
 | f1-score  | 0.19 | 0.3 | 0.25 | 0.24   | 0.24   | 
 | support   | 497.0               | 497.0               | 0.25 | 994.0               | 994.0               | 
 
-<em> Stylized paintings classification report. **NOTE: The Monet paintings with style from Cezanne had - for this classification - set their True label labelled as "Monet".** </em>
+<em> Stylized paintings classification report. **NOTE: The Monet paintings with style from Cezanne had - for this classification - their True label set as "Monet".** </em>
 
-From inspecting the classification report when predicting the stylized images, we can see that the classifier predicted roughly 25% of the Monet paintings with Cezanne style, as Monet (and vice versa). There are two ways of interpreting these results. The first being that the model bases its predictions not so much on the content of the painting, but rather the style. The second way of interpreting the results takes the way in which the stylized paintings were generated into account - 
+From inspecting the classification report when predicting the stylized images, we can see that the classifier predicted roughly 25% of the Monet paintings with Cezanne style, as Monet (and vice versa). There are two ways of interpreting these results. The first being that the model bases its predictions not so much on the content of the painting, but rather on the style. The second way of interpreting the results takes the way in which the stylized paintings were generated into account. The results are likely the product of the fact that the stylized paintings that were synthesized were not 50% content and 50% style.
 
-
-Do note here that Monet paintings with Cezanne style were labelled "Monet" for the classifer, although they of course are not Monet paintings.
 
 
 https://en.wikipedia.org/wiki/Neural_Style_Transfer#Formulation
