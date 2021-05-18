@@ -99,7 +99,7 @@ Make sure to follow the instructions in the README.md located at the parent leve
 Subsequently, use the following code:
 
 ```bash
-cd cds-visual-exam/assignment_2
+cd assignment_2
 source ../cv101/bin/activate
 python lr_mnist.py
 python nn_mnist.py
