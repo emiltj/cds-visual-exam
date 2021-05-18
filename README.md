@@ -57,13 +57,13 @@ The below code will clone the repository, as well as create a virtual environmen
 __MAC/LINUX/WORKER02__
 ```bash
 git clone https://github.com/emiltj/cds-visual-exam.git
-cd cds-visual
+cd cds-visual-exam
 bash ./create_vis_venv.sh
 ```
 __WINDOWS:__
 ```bash
 git clone https://github.com/emiltj/cds-visual-exam.git
-cd cds-visual
+cd cds-visual-exam
 bash ./create_vis_venv_win.sh
 ```
 
