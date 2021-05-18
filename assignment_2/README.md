@@ -74,7 +74,8 @@ After running the function with the default arguments, a new [output .csv file](
 ## Usage
 
 Make sure to follow the instructions in the README.md located at the parent level of this repository, for the required installation of the virtual environment as well as the data download.
-Subsequently, use the following code:
+
+Subsequently, use the following code (when within the ```cds-visual-exam``` folder):
 
 ```bash
 cd assignment_2
