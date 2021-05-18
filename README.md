@@ -119,6 +119,5 @@ You can do so on [Slack](https://app.slack.com/client/T01908QBS9X/D01A1LFRDE0) o
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* [Python](https://www.rstudio.com/) - Software used for conducting the analysis
-* [othneildrew (githubuser)](https://github.com/othneildrew/Best-README-Template) - Providing a template used to create the README's
 * [Ross Dean McLachlan](https://github.com/CDS-AU-DK/) - Our competent instructor for the module on Visual Analytics
+* [othneildrew (githubuser)](https://github.com/othneildrew/Best-README-Template) - Providing a template used to create the README's
