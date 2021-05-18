@@ -82,7 +82,7 @@ Bottom: Stylized image
 </em>
 <br/>
 </p>
-<p align="center"><a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/examples/example_7.jpg"><img src="./out/example_11.jpg" alt="Logo" width="256" height="768"></a>&nbsp; &nbsp; &nbsp; &nbsp;<a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/examples/example_17.jpg"><img src="./out/example_1.jpg" alt="Logo" width="256" height="768"></a></p>
+<p align="center"><a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/examples/example_7.jpg"><img src="./out/examples/example_11.jpg" alt="Logo" width="256" height="768"></a>&nbsp; &nbsp; &nbsp; &nbsp;<a href="https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/examples/example_17.jpg"><img src="./out/examples/example_1.jpg" alt="Logo" width="256" height="768"></a></p>
 <p align="center"><em>Content: Monet, style: Cezanne  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Content: Gauguin, style: Cezanne</em><p/>
 
 When looking at the above two images and ([the rest of the examples](https://github.com/emiltj/cds-visual-exam/tree/main/assignment_self/out)), it does indeed seem possible to transfer style from a painting, to another painting. However, from a brief glance at the 20 examples it seems that when using portraits of people as style image, the process seems to generate paintings that are hard to interpret (e.g. [image 12](https://github.com/emiltj/cds-visual-exam/blob/main/assignment_self/out/example_12.jpg).
