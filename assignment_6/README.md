@@ -101,7 +101,7 @@ Alternatively to the random pairings of style/content images, one could have con
 
 <em> Original paintings classification report </em>
 
-As can be seen in the classification report when predicting the original paintings (top), the classifier is able with an macro average F1-score of .94 - in other words performing reasonably well. This was expected, given F1-scores of approx. .32 when classifying between 10 artists in assignment 5.
+As can be seen in the classification report when predicting the original paintings, the classifier is able with an macro average F1-score of .94 - in other words performing reasonably well. This was expected, given F1-scores of approx. .32 when classifying between 10 artists in assignment 5.
 
 <br/>
   
@@ -115,7 +115,7 @@ As can be seen in the classification report when predicting the original paintin
 
 <em> Stylized paintings classification report. **NOTE: The Monet paintings with style from Cezanne had - for this classification - set their True label labelled as "Monet".** </em>
 
-When inspecting the classification report of the model predicting the stylized images (bottom), it looks quite differently. 
+From inspecting the classification report when predicting the stylized images, we can see that the classifier predicted roughly 25% of the Monet paintings with Cezanne style, as Monet (and vice versa). There are two ways of interpreting these results. The first being that the model bases its predictions not so much on the content of the painting, but rather the style. The second way of interpreting the results takes the way in which the stylized paintings were generated into account - 
 
 
 Do note here that Monet paintings with Cezanne style were labelled "Monet" for the classifer, although they of course are not Monet paintings.
