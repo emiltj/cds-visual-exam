@@ -128,11 +128,12 @@ Style transfer refers to the act of minimizing the loss of information between t
 ## Usage
 
 Make sure to follow the instructions in the README.md located at the parent level of this repository, for the required installation of the virtual environment as well as the data download.
-Subsequently, use the following code:
+
+Subsequently, use the following code (when within the ```cds-visual-exam``` folder):
 
 ```bash
-cd cds-visual-exam/assignment_2
-source ../cv101/bin/activate
+cd assignment_6
+source ../cv101/bin/activate # If not already activated
 python generate_stylized.py
 python cnn_stylized.py
 ```
