@@ -107,22 +107,26 @@ python cnn-artists.py
 ### Optional arguments:
 
 cnn-artists.py arguments for commandline to consider:
--       "--cnn", 
+-       "-c"
+        "--cnn", 
         type = str,
         default = "ShallowNet",
         required = False,
         help = "str - specifying cnn architecture, use either \"ShallowNet\" or \"LeNet\"")
--       "--resizedim",
+-       "-r"
+        "--resizedim",
         type = list, 
         default = [32, 32],
         required = False,
         help = "list - specifying dimensions that the pictures should be resized to, e.g. [32, 32]")
--       "--batch_size",
+-       "-b"
+        "--batch_size",
         type = int, 
         default = 200,
         required = False,
         help = "int - specifying batch size")
--       "--epochs",
+-       "-e"
+        "--epochs",
         type = int, 
         default = 50,
         required = False,
