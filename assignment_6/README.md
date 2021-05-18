@@ -138,12 +138,52 @@ python cnn_stylized.py
 ```
 
 ### Optional arguments:
-s
 generate_stylized.py arguments for commandline to consider:
--       s
--       
+-       "-i",
+        "--inpatha", 
+        type = str,
+        default = os.path.join("data", "content_cezanne_style_cezanne", "*.jpg"), # Default path to corpus, when none is specified
+        required = False,
+        help= "str - path to image corpus a")
+        
+-       "-I",
+        "--inpathb",
+        type = str,
+        default = os.path.join("data", "content_monet_style_monet", "*.jpg"), # Default path to corpus, when none is specified
+        required = False,
+        help= "str - path to image corpus b")      
+-       "-o",
+        "--outpatha",
+        type = str,
+        default = os.path.join("data", "content_cezanne_style_monet"), # Default path to corpus, when none is specified
+        required = False,
+        help= "str - path to output path of the stylized images with content_a_style_b")
+-       "-O",
+        "--outpathb",
+        type = str,
+        default = os.path.join("data", "content_monet_style_cezanne"), # Default path to corpus, when none is specified
+        required = False,
+        help= "str - path to output path of the stylized images with content_b_style_a")        
+        
 cnn_stylized.py arguments for commandline to consider:
--       
+-       "-d",
+        "--datapath",
+        type = str,
+        default = "data", # Default when not specifying name of outputfile
+        required = False, # Since we have a default value, it is not required to specify this argument
+        help = "str - containing folderpath to parent data folder.")
+-       "-e",
+        "--epochs", 
+        type = int,
+        default = 10, # Default when not specifying anything in the terminal
+        required = False, # Since we have a default value, it is not required to specify this argument
+        help = "int - specifying number of epochs for re-training the trainable layers of the cnn.")
+-       "-s",
+        "--save", 
+        type = bool,
+        default = True, # Default when not specifying anything else
+        required = False, # Since we have a default value, it is not required to specify this argument
+        help = "bool - specifying whether to save classification reports")
 
 <!-- CONTACT -->
 ## Contact
