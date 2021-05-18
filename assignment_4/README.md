@@ -35,11 +35,12 @@
 
 Create two command-line tools which can be used to perform a simple classification task on the MNIST data and print the output to the terminal. These scripts can then be used to provide easy-to-understand benchmark scores for evaluating these models.
 * Include two scripts; one with neural networks and one with logistic regression
-* \[BONUS\] Both scripts output a classification report to the terminal and saves it as well
-* \[BONUS\] Allow the user to determine number and size of layers for the Neural Network
-* \[BONUS\] Allow the user to determine parameters for the Logistic Regression
-* \[BONUS\] Allow the user to add an unseen data of any dimensions, process it, and let the classifier classify the new image
-* \[BONUS\] Allow the user to save the neural network model for future use
+* \[BONUS\] 
+  * Both scripts output a classification report to the terminal and saves it as well
+  * Allow the user to determine number and size of layers for the Neural Network
+  * Allow the user to determine parameters for the Logistic Regression
+  * Allow the user to add an unseen data of any dimensions, process it, and let the classifier classify the new image
+  * Allow the user to save the neural network model for future use
 
 <!-- METHODS -->
 ## Methods
