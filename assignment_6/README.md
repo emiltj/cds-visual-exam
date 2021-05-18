@@ -56,12 +56,7 @@ _When CNN's classify paintings from artists, do they rely on the style of a give
 
 This script utilizes neural style transfer. Style transfer refers to the act of minimizing the distance between two sets of embedded images. One image (the style image) is embedded using the first few layers of a neural network and network activations are sampled from this embedded image. The other image (the content image) is embedded using the same neural network, but using the first <ins>many</ins> layers of the network. Likewise, the embedded image from this layer is also extracted. Using these two embeddings, style transfer then seeks to synthesize the two with regards to a loss function that minimizes the distance between the content embedding and the style embedding. Sometimes - as in the specific model use here - a constant K is introduced, which determines the weight of importance of the style embedding. 
 
-
-The original paintings were loaded and their order shuffled. They were then paired by index and each pair was then use to generate two new stylized paintings using the ["magenta/arbitrary-image-stylization-v1-256"](https://arxiv.org/abs/1705.06830) style transfer procedure. Content from painting A and style from painting B (and vice versa) were synthesized into stylized images. The stylized images were then preprocessed and a few examples of content + style + stylized images were saved to the [examples](https://github.com/emiltj/cds-visual-exam/tree/main/assignment_6/out/examples) directory in the out directory. The entire script is designed to generalize to any other image corpora of any size.
-
-
-
-The stylized images were then preprocessed and a few examples of content + style + stylized images were saved to the [examples](https://github.com/emiltj/cds-visual-exam/tree/main/assignment_6/out/examples) directory in the out directory. The entire script is designed to generalize to any other image corpora of any size.
+The original paintings were loaded and their order shuffled. They were then paired by index and each pair was then use to generate two new stylized paintings using the ["magenta/arbitrary-image-stylization-v1-256"](https://arxiv.org/abs/1705.06830) style transfer procedure. Content from painting A and style from painting B (and vice versa) were synthesized into stylized images. The stylized images were then preprocessed and a few examples of content + style + stylized images were saved to the [examples](https://github.com/emiltj/cds-visual-exam/tree/main/assignment_6/out/examples) directory in the directory "out". The entire script is designed to generalize to any other image corpora of any size.
 
 <br/>
 
