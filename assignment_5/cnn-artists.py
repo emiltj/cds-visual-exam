@@ -100,7 +100,7 @@ def plot_history(H, epochs, cnn):
     plt.savefig(os.path.join("out", f'{cnn}_training_history.png'), format='png', dpi=100)
 
 ############### Defining main function ###############
-def main(cnn, resizedim,  batch_size, epochs):
+def main(cnn, resizedim,  batchsize, epochs):
     """
     Main function.
     """
@@ -180,15 +180,15 @@ def main(cnn, resizedim,  batch_size, epochs):
     # Fit the model
     H = model.fit(trainX, trainY, 
                   validation_data=(testX, testY), 
-                  batch_size = batch_size,
+                  batch_size = batchsize,
                   epochs = epochs)#,
                   #verbose = 1) # Showing the training the terminal
     
     # Information for the user in terminal
-    print(f"[INFO] Training of the model has been completed using a batchsize of {batch_size} and using the CNN architecture from {cnn}: \n {architecture}\n")
+    print(f"[INFO] Training of the model has been completed using a batchsize of {batchsize} and using the CNN architecture from {cnn}: \n {architecture}\n")
 
     # Get predictions:
-    predictions = model.predict(testX, batch_size = batch_size)
+    predictions = model.predict(testX, batch_size = batchsize)
 
     # Get classification report from predictions
     classif_report = pd.DataFrame(classification_report(testY.argmax(axis=1),
@@ -240,7 +240,7 @@ if __name__=="__main__":
     # Add batch size argument
     parser.add_argument(
         "-b",
-        "--batch_size",
+        "--batchsize",
         type = int, 
         default = 200,
         required = False,
@@ -259,4 +259,4 @@ if __name__=="__main__":
     args = parser.parse_args()
 
     # Execute main function
-    main(args.cnn, args.resizedim, args.batch_size, args.epochs)
+    main(args.cnn, args.resizedim, args.batchsize, args.epochs)
