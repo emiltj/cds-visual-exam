@@ -43,7 +43,7 @@ Build and train a deep neural networks classifier to classify artists of [impres
 
 **Specifically for this assignment:**
 
-Using a compact looped structure, the paintings of the individual artists were loaded into working memory. As the CNN we use requires data in the same format, the loaded paintings were resized and converted into the right format. To improve the versatility of the script, the user is given the option of choosing between either _LeNet_ or _ShallowNet_, as well as specifying resized dimensions of the images, batch size of the script, and also number of epochs for training. Classification reports are saved to the directory [out/](https://github.com/emiltj/cds-visual-exam/tree/main/assignment_5/out), a long with a plot showing the architecture and a plot of the training history (the relationship between training epochs and the loss/accuracy of the model).
+Using a compact looped structure, the paintings of the individual artists were loaded into working memory. As the CNN we use requires data in the same format, the loaded paintings were resized and converted into the right format. To improve the versatility of the script, the user is given the option of choosing between either _LeNet_ or _ShallowNet_, as well as specifying resized dimensions of the images (-d), batch size of the script (-b), and also number of epochs for training (-e). Classification reports are saved to the directory [out](https://github.com/emiltj/cds-visual-exam/tree/main/assignment_5/out) using the argument -b, a long with a plot showing the architecture and a plot of the training history (the relationship between training epochs and the loss/accuracy of the model).
 
 **On a more general level (this applies to all assignments):**
 
@@ -120,7 +120,7 @@ cnn-artists.py arguments for commandline to consider:
         required = False,
         help = "list - specifying dimensions that the pictures should be resized to, e.g. [32, 32]")
 -       "-b"
-        "--batch_size",
+        "--batchsize",
         type = int, 
         default = 200,
         required = False,
