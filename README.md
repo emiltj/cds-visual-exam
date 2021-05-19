@@ -10,7 +10,7 @@
   <p align="center">
     Exam portfolio
     <br />
-    <a href="https://github.com/emiltj/cds-visual-exam/blob/main/cds_visual_exam.pdf"><strong>Read about the project here!»</strong></a>
+    <a href="https://github.com/emiltj/cds-visual-exam/blob/main/cds_visual_exam.pdf"><strong>READ ABOUT THE PROJECT HERE»</strong></a>
     <br />
     <a href="https://github.com/emiltj/cds-visual-exam/issues">Report Bug</a>
     ·
@@ -40,6 +40,8 @@
 <p align="center"><img src="README_images/analysis_example.png" alt="Logo" width="375" height="295"></p>
 <p align="center"><em>Example image from one of the assignments</em>
 </p>
+
+**Read about the project [here»](https://github.com/emiltj/cds-visual-exam/blob/main/cds_visual_exam.pdf**)
 
 This project contains the exam portofolio for the Spring 2021 module _Visual Analytics_ as part of the bachelor's tilvalg in [_Cultural Data Science_](https://bachelor.au.dk/en/supplementary-subject/culturaldatascience/) at Aarhus University.
 This README contains all the necessary information needed to get an overview of the repository, as well the installation steps required for running the scripts in the assignments. 
