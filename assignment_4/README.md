@@ -49,7 +49,7 @@ Create two command-line tools which can be used to perform a simple classificati
 Prior to training, both scripts had the data min-max scaled to allow for faster processing and better convergence. Both the training and test data was scaled using the values of the training data, to avoid information to flow from the training set to the test set.
 These scripts allows for simple model benchmarking on the MNIST dataset, which could prove useful if one wanted to test other models for classification of the same dataset.
 
-Moreover, all the "\[BONUS\]" features were included. This means that the user is allowed to specify parameters such as number of epochs and hiddenlayers for the Neural Network (NN), while the arguments for the Logistic Regression (LR) script lets the user specify C-values and penalty method. The classification reports can be saved if specified using the arguments, and the user can furthermore predict any new images (regardless of dimensions and colors) using the argument _--individual_.
+Moreover, all the "\[BONUS\]" features were included. This means that the user is allowed to specify parameters such as number of epochs (-ep) and hiddenlayers (-H) for the Neural Network (NN), while the arguments for the Logistic Regression (LR) script lets the user specify C-values (-c) and penalty method (-p). The classification reports can be saved if specified using the argument _--save_, and the user can furthermore predict any new images (regardless of dimensions and colors) using the argument _--individual_.
 
 **On a more general level (this applies to all assignments):**
 
