@@ -10,7 +10,7 @@
   <p align="center">
     Exam portfolio
     <br />
-    <a href="https://github.com/emiltj/cds-visual-exam/cds-visual-exam.pdf"><strong>Read about the project »</strong></a>
+    <a href="https://github.com/emiltj/cds-visual-exam/blob/main/cds_visual_exam.pdf"><strong>Read about the project here!»</strong></a>
     <br />
     <a href="https://github.com/emiltj/cds-visual-exam/issues">Report Bug</a>
     ·
@@ -41,8 +41,7 @@
 <p align="center"><em>Example image from one of the assignments</em>
 </p>
 
-
-This project contains the exam portofolio for the Spring 2021 module _Visual Analytics_ as part of the bachelor's tilvalg in [_Cultural Data Science_](https://bachelor.au.dk/en/supplementary-subject/culturaldatascience/) at Aarhus University. 
+This project contains the exam portofolio for the Spring 2021 module _Visual Analytics_ as part of the bachelor's tilvalg in [_Cultural Data Science_](https://bachelor.au.dk/en/supplementary-subject/culturaldatascience/) at Aarhus University.
 This README contains all the necessary information needed to get an overview of the repository, as well the installation steps required for running the scripts in the assignments. 
 
 <!-- GETTING STARTED -->
@@ -87,6 +86,7 @@ This repository has the following structure:
 ```assignment_*/``` | Directory containing the four assignments
 ```utils/``` | Utility functions written by our instructor [Ross Deans Kristensen-McLachlan](https://pure.au.dk/portal/en/persons/ross-deans-kristensenmclachlan(29ad140e-0785-4e07-bdc1-8af12f15856c).html), utilized in a range of the assignments.
 ```README_images/``` | Directory containing the few images used in the README's.
+```cds_visual_exam.pdf``` | Document that provides a full overview of the exam project
 ```data_download.sh``` | Bash script that installs all the necessary data.
 ```create_vis_venv.*.sh``` | Bash scripts that automatically generates a new virtual environment, and install all the packages contained within ```requirements.txt```.
 ```kill_vision_venv.sh``` | Bash script that uninstalls and deletes the virtual environment.
