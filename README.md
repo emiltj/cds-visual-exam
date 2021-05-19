@@ -124,4 +124,4 @@ You can do so on [Slack](https://app.slack.com/client/T01908QBS9X/D01A1LFRDE0) o
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 * [Ross Deans Kristensen-McLachlan](https://pure.au.dk/portal/en/persons/ross-deans-kristensenmclachlan(29ad140e-0785-4e07-bdc1-8af12f15856c).html) and [Kristoffer Laigaard Nielbo](https://pure.au.dk/portal/en/persons/kristoffer-laigaard-nielbo(aef8887c-d4e9-4270-9031-1a15553f5590).html) - Our competent instructors for the module on Visual Analytics
-* [othneildrew (githubuser)](https://github.com/othneildrew/Best-README-Template) - Providing a template used to create the README's
+* [othneildrew (githubuser)](https://github.com/othneildrew/Best-README-Template) - Providing a template used to create the READMEs
