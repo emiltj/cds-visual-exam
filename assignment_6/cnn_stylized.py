@@ -61,7 +61,6 @@ def read_from_folders(folders):
     
     return df
 
-# Define function for resizing and making into array
 def get_resized_arrays(arrays, width, height):
     """
     Function which resizes arrays to input dimensions - also scales arrays to be between 0 and 1
