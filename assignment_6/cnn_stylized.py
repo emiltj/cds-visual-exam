@@ -43,15 +43,18 @@ def read_from_folders(folders):
     Function which reads images from a list of folders, as well as generates a label, based on the folder names. 
     Returns a data frame with all the information.
     """
+    # Initialize empty lists for appending to
     arrays = []
     labels = []
     
+    # For each folder in list of folders
     for folder in folders:
         
+        # Get folderpath
         folderpath = os.path.join("data", folder)
-        
         print(f"[INFO] Loading images from: \"{folderpath}\" ...") # Info for terminal
         
+        # For each file within the path, append arrays and labels
         for file in glob.glob(os.path.join(folderpath, "*.jpg")):
             arrays.append(cv2.imread(file))
             labels.append(f"{os.path.split(folderpath)[1]}")
@@ -59,6 +62,7 @@ def read_from_folders(folders):
     # Create dataframe from labels and arrays
     df = pd.DataFrame.from_dict({"X" : arrays, "y" : labels})
     
+    # Return the dataframe
     return df
 
 def get_resized_arrays(arrays, width, height):
@@ -102,11 +106,12 @@ def get_formatted(X, y):
     # Format X
     X = np.array(X).reshape(len(X), 224, 224, 3)
     
-    # Format y
+    # Format y to one-hot encoding
     lb, enc = LabelEncoder(), OneHotEncoder()
     y = lb.fit_transform(y).reshape(-1,1)
     y = enc.fit_transform(y).toarray()
     
+    # Return the transformed X and y
     return X, y
 
 def plot_history(H, epochs, save):
@@ -142,9 +147,9 @@ def get_classif_report(model, X_test, y_test, label_names, save, outname):
     predictions = model.predict(X_test, batch_size = 32)
     
     # Create classification report
-    classif_report = pd.DataFrame(classification_report(y_test.argmax(axis = 1),
+    classif_report = pd.DataFrame(classification_report(y_test.argmax(axis = 1), # Take the maximum probability prediction
                                 predictions.argmax(axis = 1),
-                                target_names = label_names, output_dict = True))
+                                target_names = label_names, output_dict = True)) # Labels for classification report should be "label_names"
     
     # Create outpath if it does not already exist
     if not os.path.exists("out"):
@@ -193,10 +198,10 @@ def main(datapath, epochs, save):
     base_model.trainable = False # Refrain from training the pretrained weights
     model = tf.keras.Sequential([base_model, # Add layers to the pre-trained model
                                      tf.keras.layers.GlobalAveragePooling2D(),
-                                     tf.keras.layers.Dropout(0.2),
+                                     tf.keras.layers.Dropout(0.2), # Dropout layers; randomly drops weights through training (good to avoid overfitting)
                                      tf.keras.layers.Dense(2, activation="softmax")])
     model.compile(optimizer=tf.keras.optimizers.Adam(lr = 0.001), # Compile model
-                  loss=tf.keras.losses.BinaryCrossentropy(from_logits = True),
+                  loss=tf.keras.losses.BinaryCrossentropy(from_logits = True), # Binary classification
                   metrics=['accuracy'])
 
     # Save model architecture
@@ -259,7 +264,6 @@ if __name__=="__main__":
         required = False, # Since we have a default value, it is not required to specify this argument
         help = "bool - specifying whether to save classification reports")
 
-    
     # Taking all the arguments we added to the parser and input into "args"
     args = parser.parse_args()
     
