@@ -100,7 +100,7 @@ Four assignments have been chosen for this portfolio and are included within the
 
 The four assignments are:
 * Assignment 2 - Image search 
-* Assignment 4 - Logistic Regression and Neural Network benchmark mnist classification
+* Assignment 4 - Logistic Regression and Neural Network benchmark MNIST classification
 * Assignment 5 - CNN classification of impressionist paintings
 * Assignment 6 - Stylized paintings and classification (self-assigned)
 
