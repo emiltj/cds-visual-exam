@@ -83,8 +83,8 @@ I have tried to as accessible and user-friendly as possible. This has been attem
 
 When looking at the results, the classification benchmarks for the LR classifier and the NN classifier seem to have similar performance, with a macro average f1-scores of .91 for both models. NN's tend to outperform LR classifiers when both data and training time is plentiful and given the right hidden layer structure and parameter settings. As NN classifiers often take longer to train, the default parameters (hidden layer structure and number of epochs) were set to result in low runtimes for faster processing. More training would likely have resulted in the NN outperforming the LR.
 
-When looking at the performances for the individual numbers, it becomes evident that the classifer did not classify equally well for all numbers. 3, 5 and 8 seem to be harder to predict - this is likely due to the similarity that they may have with other numbers (i.e. pixels of 3 and 5 might have a lot of overlapping). 
-As for out of sample images the scripts were also capable of classifying the individual test image of a written number, correctly classifying it as 4.
+When looking at the performances for the individual numbers, it becomes evident that the classifer did not classify equally well for all numbers. 3, 5 and 8 seem to be harder to predict - this is likely due to the similarity that they may have with other numbers (i.e. pixels of 3 and 5 might have a lot of overlap). 
+When looking at the classification of an individual test image of the number 4 the LR script was capable of classifying it as 4, wheras the NN incorrectly classified it as 5. Again, this is with the default parameters - longer training for the NN may very well have resulted in a better prediction here, also.
 
 In conclusion, the classification reports serve as benchmarks that might be used when evaluating new models for classification purposes: _how well does another model compare in comparison to the relatively simple models used here?_
 
