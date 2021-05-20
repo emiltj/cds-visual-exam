@@ -10,7 +10,7 @@
   <p align="center">
     Exam portfolio
     <br />
-    <a href="https://github.com/emiltj/cds-visual-exam/blob/main/report.pdf"><strong>READ ABOUT THE PROJECT HERE»</strong></a>
+    <a href="https://github.com/emiltj/cds-visual-exam/blob/main/report.pdf"><strong>Read about the entire portfolio here»</strong></a>
     <br />
     <a href="https://github.com/emiltj/cds-visual-exam/issues">Report Bug</a>
     ·
