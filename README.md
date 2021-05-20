@@ -89,8 +89,8 @@ This repository has the following structure:
 |--------|:-----------|
 ```assignment_*/``` | Directory containing the four assignments
 ```utils/``` | Utility functions written by our instructor [Ross Deans Kristensen-McLachlan](https://pure.au.dk/portal/en/persons/ross-deans-kristensenmclachlan(29ad140e-0785-4e07-bdc1-8af12f15856c).html), utilized in a range of the assignments.
-```README_images/``` | Directory containing the few images used in the README's.
-```report.pdf``` | Document that provides a full overview of the exam project
+```README_images/``` | Directory containing the few images used in the READMEs.
+```report.pdf``` | Document that provides a full overview of the exam project. The information contained in this document is the collated information from all READMEs.
 ```data_download.sh``` | Bash script that installs all the necessary data.
 ```create_vis_venv.*.sh``` | Bash scripts that automatically generates a new virtual environment, and install all the packages contained within ```requirements.txt```.
 ```kill_vision_venv.sh``` | Bash script that uninstalls and deletes the virtual environment.
