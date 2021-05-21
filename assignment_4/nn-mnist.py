@@ -22,7 +22,7 @@ from sklearn.metrics import accuracy_score
 
 def load_split_MNIST():
     """
-    Function which loads and splits the MNIST daatset
+    Function which loads and splits the MNIST dataset.
     """
     # Importing data; y = what the image depicts, X = values for all pixels (from top right, moving left)
     print("[INFO] Loading the MNIST dataset ...")
@@ -44,7 +44,10 @@ def load_split_MNIST():
 
 def min_max_scaling(X_train, X_test):
     """
-    Function which min-max scales X_train and X_test
+    Function which min-max scales X_train and X_test.
+    
+    X_train: The features in the training set
+    X_test: The features in the test set
     """
     # Min-max scaling:
     scaler = MinMaxScaler()
@@ -57,7 +60,10 @@ def min_max_scaling(X_train, X_test):
 
 def binarize_labels(y_train, y_test):
     """
-    Function which binarizes labels of y_train and y_test
+    Function which binarizes labels of y_train and y_test.
+    
+    y_train: The labels for the training set
+    y_test: The labels for the test set
     """
     # Binarize the labels (getting from e.g. [3,1,2] to [[0,0,1],[1,0,0],[0,1,0], instead of course with numbers from 0-10) 
     y_train = LabelBinarizer().fit_transform(y_train) 
@@ -68,7 +74,12 @@ def binarize_labels(y_train, y_test):
 
 def train_nn(X_train_scaled, y_train, hiddenlayers, epochs):
     """
-    Function which trains a neural network, with specified parameters
+    Function which trains a neural network, with specified parameters.
+    
+    X_train_scaled: The features of the training set after scaling
+    y_train: The labels for the training set
+    hiddenlayers: The number of nodes in each layer. Specifies both layers are n(nodes). E.g. [16, 8]
+    epochs: Number of epochs for training the model
     """
     # Assigning more layers in the neural network:
     hiddenlayers.insert(0, X_train_scaled.shape[1]) # Inserting the number of features as the input layer
@@ -86,7 +97,13 @@ def train_nn(X_train_scaled, y_train, hiddenlayers, epochs):
 
 def get_performance(save, outname, nn, X_test_scaled, y_test):
     """
-    Function which test the trained neural networks model and outputs a classification metric
+    Function which test the trained neural networks model and outputs a classification metric.
+    
+    save: Specifies whether to save the performance metrics or not
+    outname: Specifies name of potential saved file
+    nn: Trained neural network
+    X_test_scaled: The features of the test data, after scaling
+    y_test: Labels for the test data
     """
     # Using the fitted model to predict the test data
     predictions = nn.predict(X_test_scaled)
@@ -145,7 +162,13 @@ def pred_individual(individual, nn, y_train, scaler):
 ############### Defining main function ###############
 def main(outname, save, individual, hiddenlayers, epochs):
     """
-    Main function
+    Main function.
+    
+    outname: Name of classification report
+    save: Bool, specifying whether to save classification or not
+    individual: Specifying a file outside the corpus to classify using the trained model
+    hiddenlayers: The number of nodes in each layer. Specifies both layers are n(nodes). E.g. [16, 8]
+    epochs: The number of epochs for training the model
     """
     # Load MNIST dataset and split it
     X_train, X_test, y_train, y_test = load_split_MNIST()
