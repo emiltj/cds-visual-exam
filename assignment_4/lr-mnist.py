@@ -42,6 +42,9 @@ def load_split_MNIST():
 def min_max_scaling(X_train, X_test):
     """
     Function which min-max scales X_train and X_test.
+    
+    X_train: X_train - the X-values for the training set 
+    X_test: X_test - the X-values for the test set
     """
     # Min-max scaling:
     scaler = MinMaxScaler()
@@ -54,6 +57,11 @@ def min_max_scaling(X_train, X_test):
 def train_log_reg(X_train_scaled, y_train, penalty, c):
     """
     Function which trains a logistic regression classifier.
+    
+    X_train_scaled: X_train after scaling
+    y_train: labels for the training set
+    penalty: Penalty to use for the logistic regression classifer
+    c: C parameter for the logistic regression classifier
     """
     # Fitting a model to the training data
     print(f"[INFO] Training a logistic regression classifier using penalty: \"{penalty}\" and c-value of: {c} ...")
@@ -69,6 +77,12 @@ def train_log_reg(X_train_scaled, y_train, penalty, c):
 def get_performance(save, outname, clf, X_test_scaled, y_test):
     """
     Function which test the logistic regression classifier, and outputs performance metrics.
+    
+    Save: Bool, specifying whether to save or not
+    outname: Name of output file
+    clf: The logistic regression model
+    X_test_scaled: X_test after scaling
+    y_test: Labels for the testset
     """
     # Predicting the test data, using the model fitted on the training data
     print("[INFO] Evaluating the logistic classifier ...") 
@@ -99,6 +113,10 @@ def get_performance(save, outname, clf, X_test_scaled, y_test):
 def pred_individual(individual, clf, y_train):
     """
     Function which uses a trained logistic regression classifier to classify a new image outside the MNIST corpus.
+    
+    Individual: Path to an image outside the corpus, that should be classified by the trained model
+    clf: Logistic regression model
+    y_train: Labels for the training set
     """
     # Get the possible labels, as well as the number of possible labels
     classes = sorted(set(y_train))
@@ -119,7 +137,13 @@ def pred_individual(individual, clf, y_train):
 ############### Defining main function ###############
 def main(outname, save, individual, penalty, c):
     """
-    Main function
+    Main function.
+    
+    outname:
+    save: Bool specifying whether to save performance metrics and the model.
+    individual: Path to an image outside the corpus that we want classified using the trained model
+    penalty: Which penalty the model should use
+    c: Which c-parameter the model should use
     """
     # Load MNIST dataset and split it
     X_train, X_test, y_train, y_test = load_split_MNIST()
