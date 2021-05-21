@@ -8,7 +8,9 @@ from shutil import copyfile
 ############### Defining functions to be used in main ###############
 def get_target_inf(targetpath):
     """
-    Function which retrieves information on the target image (normalized rgb histogram and name of target image) 
+    Function which retrieves information on the target image (normalized rgb histogram and name of target image).
+    
+    Targetpath: String that points to target image
     """
     # Getting the filename of the target image
     target_name = os.path.split(targetpath)[-1]
@@ -24,6 +26,11 @@ def get_target_inf(targetpath):
 def get_dist(filepath, target_hist_norm, target_name, targetpath):
     """
     Function which calculates RGB-histogram distances using the chi-square method, between target image and the corpus.
+    
+    Filepath: String that points to images in corpus
+    Target_hist_norm: Target histogram, normalized
+    Target_name: Name of target image
+    Targetpath: String that points to target image
     """
     # Info for user in terminal
     print(f"[INFO] Calculating distances from corpus \"{filepath}\" to \"{target_name}\" ...")
@@ -59,6 +66,10 @@ def get_dist(filepath, target_hist_norm, target_name, targetpath):
 def save_df(file_names, distances_to_target, target_name):
     """
     Function which saves a .csv file with distances from corpus to target image (as well as the filenames)
+    
+    file_names: Names of the files in the corpus to which distances were calculated
+    distances_to_target: List of distances to target. Same index as "file_names"
+    target_name: Name of target image
     """
     # Create a df with the information on distances
     df = pd.DataFrame(list(zip(file_names, distances_to_target)),
@@ -81,7 +92,10 @@ def save_df(file_names, distances_to_target, target_name):
 ############### Defining main function ###############
 def main(targetpath, filepath):
     """
-    Main function of the script 
+    Main function of the script.
+    
+    Targetpath: Path to target image
+    Filepath: Path to image corpus
     """
     # Get target info
     target_name, target_hist_norm = get_target_inf(targetpath)
