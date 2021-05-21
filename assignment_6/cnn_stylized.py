@@ -42,6 +42,8 @@ def read_from_folders(folders):
     """
     Function which reads images from a list of folders, as well as generates a label, based on the folder names. 
     Returns a data frame with all the information.
+    
+    Folders: List of paths to folders where images reside
     """
     # Initialize empty lists for appending to
     arrays = []
@@ -67,7 +69,11 @@ def read_from_folders(folders):
 
 def get_resized_arrays(arrays, width, height):
     """
-    Function which resizes arrays to input dimensions - also scales arrays to be between 0 and 1
+    Function which resizes arrays to input dimensions - also scales arrays to be between 0 and 1.
+    
+    Arrays: List of arrays to resize
+    Width: Width to resize to
+    Height: Height to resize to
     """
     # Info for terminal use
     print("[INFO] Resizing images to match CNN input dimensions ...")
@@ -96,6 +102,9 @@ def get_resized_arrays(arrays, width, height):
 def get_formatted(X, y):
     """
     Function that formats arrays and labels to be usable in the CNN.
+    
+    X: List of arrays
+    y: List of labels for arrays
     """
     # If pd.series, convert to list
     if type(X) == "pandas.core.series.Series":
@@ -117,6 +126,10 @@ def get_formatted(X, y):
 def plot_history(H, epochs, save):
     """
     Function which plots accuracy and loss over epochs.
+    
+    H: History of model training
+    epochs: Number of epochs
+    save: Whether to save the model performance metrics or not
     """
     # Make a list of epochs
     epochs_range = range(epochs)
@@ -143,6 +156,16 @@ def plot_history(H, epochs, save):
     plt.show()
 
 def get_classif_report(model, X_test, y_test, label_names, save, outname):
+    '''
+    Function for retrieving and potentially saving a classification report.
+    
+    model: Trained model
+    X_test: Features/arrays for test
+    y_test: Labels for the test set
+    label_names: Names of labels
+    save: Bool specifying whether to save classification report or not
+    outname: Name of file to be saved
+    '''
     # Make predictions
     predictions = model.predict(X_test, batch_size = 32)
     
@@ -166,7 +189,13 @@ def get_classif_report(model, X_test, y_test, label_names, save, outname):
 
 ############### Defining main function ###############
 def main(datapath, epochs, save):
+    '''
+    Defining main function.
     
+    datapath: Path to data to classify on
+    epochs: Number of epochs for training
+    save: Bool specifying whether to save performance metrics or not
+    '''
     # Load data
     df = read_from_folders(os.listdir(datapath))
 
