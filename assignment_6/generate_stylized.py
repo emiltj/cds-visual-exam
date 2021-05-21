@@ -32,7 +32,9 @@ hub_module = hub.load(hub_handle)
 ############### Defining functions to be used in main ###############
 def file_load_random(files):
     """
-    Function which loads files from a directory and shuffles the order
+    Function which loads files from a directory and shuffles the order.
+    
+    Files: List of filepaths
     """
     # Info for terminal use
     print(f"[INFO] Loading files: \"{files}\" ...")
@@ -54,6 +56,9 @@ def file_load_random(files):
 def get_stylized(imgs_a, imgs_b):
     """
     Function which generates stylized images. Takes two arguments; imgs_a (list) and imgs_b (also list). Outputs the two lists of images, with each others style.
+    
+    imgs_a: List of images
+    imgs_b: List of other images
     """
     # Info for terminal use
     print(f"[INFO] Generating stylized images (this may take a while) ...")
@@ -75,6 +80,8 @@ def get_stylized(imgs_a, imgs_b):
 def preprocess(imgs):
     """
     Function that preprocesses a list of images; returns images as arrays and converts from BGR to RGB.
+    
+    imgs: List of images
     """
     # Empty list for appending to
     preprocessed = []
@@ -100,6 +107,11 @@ def preprocess(imgs):
 def save_examples(content_img, style_img, stylized_img, unique_ending):
     """
     Function that saves a set of content, style and stylized images.
+    
+    content_img: Content image
+    style_img: Style image
+    stylized_img: Stylized image (from the other two images)
+    unique_ending: Unique ending for outname
     """
     # Create outpath if it does not exist
     if not os.path.exists(os.path.join("out", "examples")):
@@ -125,6 +137,9 @@ def save_examples(content_img, style_img, stylized_img, unique_ending):
 def save_imgs(imgs, outfolder):
     """
     Function which saves a list of images to a given outfolder with unique names. Also creates the outfolder if it does not already exist.
+    
+    imgs: List of images to save
+    outfolder: Folder to save images in
     """
     # Initialize counter for unique names
     counter = 0
@@ -150,6 +165,11 @@ def save_imgs(imgs, outfolder):
 def main(inpath_a, inpath_b, outpath_content_a_style_b, outpath_content_b_style_a):
     """
     Main function.
+    
+    inpath_a: Folder to a set of images
+    inpath_b: Folder to another set of images
+    outpath_content_a_style_b: Outfolder to images with content from inpath_a and style from inpath_b
+    outpath_content_b_style_a: Outfolder to images with content from inpath_b and style from inpath_a
     """
     # Loading files
     a = file_load_random(inpath_a)
