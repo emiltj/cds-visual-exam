@@ -26,7 +26,9 @@ from tensorflow.keras.layers import (Conv2D,
 ############### Defining functions to be used in main ###############
 def get_artists(artists_path):
     """
-    Function which retrieves an alphabetically sorted artists list
+    Function which retrieves an alphabetically sorted artists list.
+    
+    artists_path: Path to folder containing all folders with artists
     """
     artists = os.listdir(artists_path) # Get list of directories (each names corresponds to artists' names
     artists = sorted(artists) # Sort alphabetically
@@ -35,6 +37,8 @@ def get_artists(artists_path):
 def get_train_test(artists):
     """
     Function which retrieves the train/test data from the folder structure.
+    
+    artists: list of names of artists
     """
     # Make empty lists, which are to be appended to
     train_paintings, train_paintings_artists = [], []
@@ -59,7 +63,11 @@ def get_train_test(artists):
 
 def get_resized_arrays(paintings, width, height): 
     """
-    Function which resizes images to argument dimensions and makes them into np.arrays
+    Function which resizes images to argument dimensions and makes them into np.arrays.
+    
+    paintings: list of arrays/paintings
+    width: wanted width after using the function
+    height: wanted height after using the function
     """
     # Empty list for appending to
     paintings_resized = []
@@ -83,7 +91,11 @@ def get_resized_arrays(paintings, width, height):
 
 def plot_history(H, epochs, cnn):
     """
-    Function which plots accuracy and loss over epochs (courtesy of Ross McLachlan)
+    Function which plots accuracy and loss over epochs (courtesy of Ross McLachlan).
+    
+    H: History of the model
+    epochs: Number of epochs
+    cnn: Name of cnn architecture
     """
     # Visualizing performance
     plt.style.use("fivethirtyeight")
@@ -103,6 +115,11 @@ def plot_history(H, epochs, cnn):
 def main(cnn, resizedim,  batchsize, epochs):
     """
     Main function.
+    
+    cnn: Name of cnn architecture
+    resizedim: Dimensions to resize to
+    batchsize: Batch size for training
+    epochs: Number of epochs
     """
     # Make a alphabetically sorted list of all the artists
     artists_path = os.path.join("data", "training")
