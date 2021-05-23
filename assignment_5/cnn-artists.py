@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
-############### Importing libraries ################
+##################################################################################
+############################## Importing libraries ###############################
+##################################################################################
 # data tools
 import os, cv2, glob, argparse
 import numpy as np
@@ -23,7 +25,9 @@ from tensorflow.keras.layers import (Conv2D,
                                      Flatten, 
                                      Dense)
 
-############### Defining functions to be used in main ###############
+###################################################################################
+###################### Defining functions to be used in main ######################
+###################################################################################
 def get_artists(artists_path):
     """
     Function which retrieves an alphabetically sorted artists list.
@@ -111,7 +115,9 @@ def plot_history(H, epochs, cnn):
     plt.tight_layout()
     plt.savefig(os.path.join("out", f'{cnn}_training_history.png'), format='png', dpi=100)
 
-############### Defining main function ###############
+###################################################################################
+############################## Defining main function #############################
+###################################################################################
 def main(cnn, resizedim,  batchsize, epochs):
     """
     Main function.
@@ -231,7 +237,9 @@ def main(cnn, resizedim,  batchsize, epochs):
     plot_model(model, to_file = model_plot_outname, show_shapes=True, show_layer_names=True)
     print(f"A visualization of the CNN model architecture has been saved succesfully: \"{model_plot_outname}\"")
 
-############### Defining use when called from terminal ################
+###################################################################################
+##################### Defining use when called from terminal ######################
+###################################################################################
 if __name__=="__main__":
     # Initialise ArgumentParser class
     parser = argparse.ArgumentParser(description = "[SCRIPT DESCRIPTION] Script that trains a convolutional neural network on impressionist paintings and tests on an unseen part of the same data set. ")
