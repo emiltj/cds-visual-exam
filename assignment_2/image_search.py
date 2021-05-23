@@ -1,17 +1,17 @@
 #!/usr/bin/env python
 '''
-##################################################################################
-############################## Importing libraries ###############################
-##################################################################################
+###############################################################
+--------------- Import of modules and libraries ---------------
+###############################################################
 '''
 import os, glob, argparse, cv2
 import pandas as pd
 from shutil import copyfile
 
 '''
-##################################################################################
-###################### Defining functions to be used in main #####################
-##################################################################################
+###############################################################
+--------------- Import of modules and libraries ---------------
+###############################################################
 '''
 def get_target_inf(targetpath):
     """
@@ -125,10 +125,11 @@ def main(targetpath, filepath):
     copyfile(os.path.join("data", closest_image[0]), os.path.join("out", "closest_image.jpg"))
     print(f"[INFO] The target image (\"{target_name})\" and the closest image (\"{closest_image[0]})\" have been saved to \"out\". The chi-square histogram distance was found to be: {closest_image[1]}")
     
-
-###################################################################################
-##################### Defining use when called from terminal ######################
-###################################################################################
+'''
+###############################################################
+----------- Defining use when called from terminal ------------
+###############################################################
+'''
 if __name__=="__main__":
     # Initialize ArgumentParser class
     parser = argparse.ArgumentParser(description = "[SCRIPT DESCRIPTION] Calculates RGB-distance from image corpus to a specified target image using the chi-square method")
