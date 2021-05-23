@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
-############### Importing libraries ################
+##################################################################################
+############################## Importing libraries ###############################
+##################################################################################
 # base tools
 import os, sys, random, cv2, glob, argparse
 random.seed(15)
@@ -29,7 +31,9 @@ import matplotlib.image as mpimg
 hub_handle = 'https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2'
 hub_module = hub.load(hub_handle)
 
-############### Defining functions to be used in main ###############
+###################################################################################
+###################### Defining functions to be used in main ######################
+###################################################################################
 def file_load_random(files):
     """
     Function which loads files from a directory and shuffles the order.
@@ -161,7 +165,9 @@ def save_imgs(imgs, outfolder):
     # Info for terminal use
     print(f"[INFO] Stylized images have been saved to \"{outfolder}\" successfully")
     
-############### Defining main function ###############
+###################################################################################
+############################## Defining main function #############################
+###################################################################################
 def main(inpath_a, inpath_b, outpath_content_a_style_b, outpath_content_b_style_a):
     """
     Main function.
@@ -198,7 +204,9 @@ def main(inpath_a, inpath_b, outpath_content_a_style_b, outpath_content_b_style_
     save_imgs(content_a_style_b, outpath_content_a_style_b)
     save_imgs(content_b_style_a, outpath_content_b_style_a)
 
-############### Defining use when called from terminal ################
+###################################################################################
+##################### Defining use when called from terminal ######################
+###################################################################################
 if __name__=="__main__":
     # Initialize ArgumentParser class
     parser = argparse.ArgumentParser(description = "[SCRIPT DESCRIPTION] Generates two sets of stylized images from two corpora. It pairs images from the two corpora randomly, and generates two new stylized images per pair. One with content of image a and style of image b, and vice versa.")
