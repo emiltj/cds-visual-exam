@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
-##################################################################################
-############################## Importing libraries ###############################
-##################################################################################
+'''
+###############################################################
+--------------- Import of modules and libraries ---------------
+###############################################################
+'''
 import sys, os, cv2, joblib, argparse
 sys.path.append(os.path.join(".."))
 import utils.classifier_utils as clf_util
@@ -18,9 +20,11 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import classification_report
 from sklearn.metrics import accuracy_score
 
-###################################################################################
-###################### Defining functions to be used in main ######################
-###################################################################################
+'''
+###############################################################
+------------ Defining functions to be used in main ------------
+###############################################################
+'''
 def load_split_MNIST():
     """
     Function which loads and splits the MNIST dataset.
@@ -77,7 +81,6 @@ def train_log_reg(X_train_scaled, y_train, penalty, c):
     # Return the model
     return clf
 
-# Define function for getting performance metrics
 def get_performance(save, outname, clf, X_test_scaled, y_test):
     """
     Function which test the logistic regression classifier, and outputs performance metrics.
@@ -138,9 +141,11 @@ def pred_individual(individual, clf, y_train):
     print(f"[IMAGE PREDICTION] Image prediction for \"{individual}\": {individual_pred}")
 
 
-###################################################################################
-############################## Defining main function #############################
-###################################################################################
+'''
+###############################################################
+---------- Defining the main function of the script -----------
+###############################################################
+'''
 def main(outname, save, individual, penalty, c):
     """
     Main function.
@@ -167,10 +172,11 @@ def main(outname, save, individual, penalty, c):
     if individual != None:
         pred_individual(individual, clf, y_train)
         
-
-###################################################################################
-##################### Defining use when called from terminal ######################
-###################################################################################
+'''
+###############################################################
+----------- Defining use when called from terminal ------------
+###############################################################
+'''
 if __name__=="__main__":
     # Initialize ArgumentParser class
     parser = argparse.ArgumentParser(
