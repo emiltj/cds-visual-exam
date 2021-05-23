@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
-############### Importing libraries ################
+##################################################################################
+############################## Importing libraries ###############################
+##################################################################################
 # data tools
 import os, cv2, glob, argparse
 import numpy as np
@@ -37,7 +39,9 @@ from tensorflow.keras.applications.vgg16 import (preprocess_input,
                                                  decode_predictions,
                                                  VGG16)
 
-############### Defining functions to be used in main ###############
+###################################################################################
+###################### Defining functions to be used in main ######################
+###################################################################################
 def read_from_folders(folders):
     """
     Function which reads images from a list of folders, as well as generates a label, based on the folder names. 
@@ -187,7 +191,9 @@ def get_classif_report(model, X_test, y_test, label_names, save, outname):
         classif_report.to_csv(classif_report_outpath, sep = ',', index = True)
         print(f"A classification report has been saved succesfully: \"{classif_report_outpath}\"")
 
-############### Defining main function ###############
+###################################################################################
+############################## Defining main function #############################
+###################################################################################
 def main(datapath, epochs, save):
     '''
     Defining main function.
@@ -260,7 +266,9 @@ def main(datapath, epochs, save):
     # Predict the stylized set
     get_classif_report(model, X_stylized, y_stylized, label_names, save, "classification_report_generated.csv")
 
-############### Defining use when called from terminal ################
+###################################################################################
+##################### Defining use when called from terminal ######################
+###################################################################################
 if __name__=="__main__":
     # Initialize ArgumentParser class
     parser = argparse.ArgumentParser(
