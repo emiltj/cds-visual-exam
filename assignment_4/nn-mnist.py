@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
-##################################################################################
-############################## Importing libraries ###############################
-##################################################################################
+'''
+###############################################################
+--------------- Import of modules and libraries ---------------
+###############################################################
+'''
 import sys, os, argparse, joblib, cv2
 sys.path.append(os.path.join(".."))
 import utils.classifier_utils as clf_util
@@ -20,9 +22,11 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import classification_report
 from sklearn.metrics import accuracy_score
 
-###################################################################################
-###################### Defining functions to be used in main ######################
-###################################################################################
+'''
+###############################################################
+------------ Defining  functions to be used in main -----------
+###############################################################
+'''
 def load_split_MNIST():
     """
     Function which loads and splits the MNIST dataset.
@@ -161,10 +165,12 @@ def pred_individual(individual, nn, y_train, scaler):
     individual_pred = nn.predict(compressed_flattened)
     individual_pred = int(individual_pred.argmax(axis=1))
     print(f"[IMAGE PREDICTION] Image prediction for \"{individual}\": {individual_pred}") # Printing into terminal, the prediction
-    
-###################################################################################
-############################## Defining main function #############################
-###################################################################################
+
+'''
+###############################################################
+---------- Defining the main function of the script -----------
+###############################################################
+'''
 def main(outname, save, individual, hiddenlayers, epochs):
     """
     Main function.
@@ -194,9 +200,11 @@ def main(outname, save, individual, hiddenlayers, epochs):
     if individual != None:
         pred_individual(individual, nn, y_train, scaler)
 
-###################################################################################
-##################### Defining use when called from terminal ######################
-###################################################################################
+'''
+###############################################################
+----------- Defining use when called from terminal ------------
+###############################################################
+'''
 if __name__=="__main__":
     # Initialize ArgumentParser class
     parser = argparse.ArgumentParser(
